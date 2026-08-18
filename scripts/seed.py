@@ -32,12 +32,14 @@ CATEGORIES = [
     {"id": "strat", "name": "战略与转型", "icon": "🚀", "description": "组织层面怎么走"},
     {"id": "org",   "name": "组织与团队", "icon": "👥", "description": "人 / 协作"},
     {"id": "meta",  "name": "元技能 / 工具", "icon": "🧰", "description": "工具类技能"},
+    {"id": "loop",  "name": "循环工程", "icon": "⚡", "description": "设计 AI 自动化循环系统（Loop Engineering）"},
 ]
 CATEGORY_NAMES = {c["id"]: c["name"] for c in CATEGORIES}
 
 SOURCE_AI = "吴恩达《AI for Everyone》· kangarooking/ai-for-everyone-skill 蒸馏"
 SOURCE_CANGJIE = "kangarooking/cangjie-skill（拆书蒸馏元技能）"
 SOURCE_FIND = "DSH 内置技能（skills.sh 生态）"
+SOURCE_LOOP = "kangarooking/loop-engineering-skill（Loop Engineering 视频合集蒸馏）"
 
 # ---------- skill -> (分类, 来源) 映射（扩展时在此追加一行） ----------
 SKILL_META = {
@@ -68,6 +70,14 @@ SKILL_META = {
     "role-tiered-training": ("org", SOURCE_AI),
     "cangjie-skill": ("meta", SOURCE_CANGJIE),
     "find-skills": ("meta", SOURCE_FIND),
+    "loop-three-elements": ("loop", SOURCE_LOOP),
+    "loop-worthiness-test": ("loop", SOURCE_LOOP),
+    "goal-verification": ("loop", SOURCE_LOOP),
+    "loop-5plus1-architecture": ("loop", SOURCE_LOOP),
+    "loop-build-path": ("loop", SOURCE_LOOP),
+    "maker-checker": ("loop", SOURCE_LOOP),
+    "comprehension-gap": ("loop", SOURCE_LOOP),
+    "three-stage-evolution": ("loop", SOURCE_LOOP),
 }
 
 
