@@ -1,0 +1,14 @@
+{
+  "skill": "ml-workflow",
+  "version": "0.1.0",
+  "test_cases": [
+    {"id": "should-trigger-01", "type": "should_trigger", "prompt": "我们确定了要做垃圾邮件过滤器,ML项目怎么做?步骤是什么?", "expected_behavior": "调用ml-workflow,给出四阶段流程:收集数据→训练模型→部署→迭代", "notes": "典型ML项目流程咨询"},
+    {"id": "should-trigger-02", "type": "should_trigger", "prompt": "模型训练完了不知道下一步该做什么,怎么上线?", "expected_behavior": "调用ml-workflow,指导部署阶段(集成到产品/灰度发布/监控)", "notes": "训练后部署场景"},
+    {"id": "should-trigger-03", "type": "should_trigger", "prompt": "怎么推进AI项目?从开始到上线要走哪些阶段?", "expected_behavior": "调用ml-workflow,给出完整的四阶段闭环流程", "notes": "通用项目推进咨询"},
+    {"id": "should-trigger-04", "type": "should_trigger", "prompt": "部署后发现效果不好,模型把很多正常邮件判为垃圾邮件,怎么改进?", "expected_behavior": "调用ml-workflow,指导迭代优化(收集失败案例→加入训练数据→重新训练)", "notes": "部署后迭代场景"},
+    {"id": "should-not-trigger-01", "type": "should_not_trigger", "prompt": "帮我写一个Flask API接收JSON请求返回预测结果", "expected_behavior": "纯后端开发问题,不涉及ML项目流程", "notes": "诱饵:API开发"},
+    {"id": "should-not-trigger-02", "type": "should_not_trigger", "prompt": "我想分析一下过去一年的销售数据,看看有什么趋势", "expected_behavior": "数据科学/探索性分析,产出是洞察而非运行的软件,不属于ML工作流", "notes": "诱饵:DS分析"},
+    {"id": "edge-01", "type": "edge_case", "prompt": "我们想做一个推荐系统,但还没有数据,该先收集数据还是先想清楚推荐什么?", "expected_behavior": "ML工作流第一步是收集数据,但需要先通过ab-mapping定义A→B,需引导回到问题定义", "notes": "边界:数据与定义的先后"},
+    {"id": "edge-02", "type": "edge_case", "prompt": "模型在测试集上准确率99%但上线后效果很差,为什么?", "expected_behavior": "可能是训练-测试分布不一致或数据泄露,需引导检查数据划分和评估方法", "notes": "边界:评估指标与实际效果差异"}
+  ]
+}

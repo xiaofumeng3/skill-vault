@@ -1,0 +1,76 @@
+{
+  "skill": "ai-project-lifecycle",
+  "version": "1.0",
+  "test_cases": [
+    {
+      "id": "apl-trigger-01",
+      "type": "should_trigger",
+      "prompt": "我们要启动一个新的AI项目，完整的流程是什么？从开始到上线要做哪些事？",
+      "expected_behavior": "应调用ai-project-lifecycle，介绍六阶段生命周期（明确业务目标→数据收集→模型训练→部署上线→持续监控→迭代优化）。",
+      "notes": "典型的AI项目启动场景，用户需要完整的流程指导。"
+    },
+    {
+      "id": "apl-trigger-02",
+      "type": "should_trigger",
+      "prompt": "AI项目已经部署上线了，接下来应该做什么？",
+      "expected_behavior": "应调用ai-project-lifecycle，强调部署不是终点，需要持续监控和迭代优化。",
+      "notes": "用户进入了生命周期的后期阶段，需要后续指导。"
+    },
+    {
+      "id": "apl-trigger-03",
+      "type": "should_trigger",
+      "prompt": "AI项目各阶段的时间怎么分配？哪个阶段最耗时？",
+      "expected_behavior": "应调用ai-project-lifecycle，指出数据准备通常占60-80%的时间，并给出各阶段的时间分配建议。",
+      "notes": "项目规划场景，用户需要时间估算参考。"
+    },
+    {
+      "id": "apl-trigger-04",
+      "type": "should_trigger",
+      "prompt": "向管理层汇报AI项目计划，应该包含哪些内容？",
+      "expected_behavior": "应调用ai-project-lifecycle，建议按生命周期六阶段组织汇报内容，明确各阶段交付物和时间节点。",
+      "notes": "项目汇报场景，需要结构化的计划框架。"
+    },
+    {
+      "id": "apl-trigger-05",
+      "type": "should_trigger",
+      "prompt": "AI项目上线后效果下降，怎么判断是哪个阶段出了问题？",
+      "expected_behavior": "应调用ai-project-lifecycle，建议按生命周期逐阶段排查（数据漂移？模型过时？部署问题？）。",
+      "notes": "问题诊断场景，需要系统性的排查框架。"
+    },
+    {
+      "id": "apl-notrigger-01",
+      "type": "should_not_trigger",
+      "prompt": "怎么判断一个AI项目技术上能不能实现？",
+      "expected_behavior": "不应触发本skill，这是技术可行性问题，应该用ml-feasibility或one-second-rule。",
+      "notes": "bait：涉及AI项目，但用户关注的是可行性判断而非流程管理。"
+    },
+    {
+      "id": "apl-notrigger-02",
+      "type": "should_not_trigger",
+      "prompt": "帮我写一个图像分类的PyTorch代码。",
+      "expected_behavior": "不应触发本skill，这是纯编程问题，不涉及项目管理。",
+      "notes": "bait：涉及AI技术，但用户要的是代码而非流程指导。"
+    },
+    {
+      "id": "apl-notrigger-03",
+      "type": "should_not_trigger",
+      "prompt": "公司要做AI转型，CEO让我们制定一个三年规划，应该怎么做？",
+      "expected_behavior": "不应触发本skill，这是组织级转型场景，应该用ai-transformation-playbook。",
+      "notes": "bait：涉及AI项目，但用户需要的是组织转型路线图而非单个项目管理。"
+    },
+    {
+      "id": "apl-edge-01",
+      "type": "edge_case",
+      "prompt": "我们的AI项目已经做了半年，还在数据收集阶段，正常吗？",
+      "expected_behavior": "应识别出数据收集占60-80%时间是正常的，但也要排查是否存在数据获取困难或范围蔓延的问题。",
+      "notes": "边界：项目进度是否正常需要结合具体情况判断。"
+    },
+    {
+      "id": "apl-edge-02",
+      "type": "edge_case",
+      "prompt": "AI项目各阶段是线性的吗？能不能跳过某个阶段？",
+      "expected_behavior": "应指出实际项目中各阶段不是线性的，经常需要回到上一阶段，但不应跳过任何阶段。",
+      "notes": "边界：用户对线性流程的假设需要纠正，实际是迭代的。"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "skill": "triple-due-diligence",
+  "version": "0.1.0",
+  "test_cases": [
+    {"id": "should-trigger-01", "type": "should_trigger", "prompt": "我们准备投入半年时间开发一套AI客服系统,这个项目值得做吗?该投入多少?", "expected_behavior": "调用triple-due-diligence,从技术/商业/伦理三个维度全面评估", "notes": "典型立项决策场景"},
+    {"id": "should-trigger-02", "type": "should_trigger", "prompt": "公司要做一个AI招聘筛选工具,技术上能做吗?有没有风险?", "expected_behavior": "调用triple-due-diligence,特别关注伦理尽调(招聘歧视风险)", "notes": "涉及敏感伦理的场景"},
+    {"id": "should-trigger-03", "type": "should_trigger", "prompt": "我们的AI视觉质检项目ROI是多少?会不会有什么负面影响?", "expected_behavior": "调用triple-due-diligence,建立财务模型+评估工人替代的伦理影响", "notes": "ROI+伦理双重关注"},
+    {"id": "should-trigger-04", "type": "should_trigger", "prompt": "老板想投资一个AI创业公司,让我做尽职调查,应该关注哪些方面?", "expected_behavior": "调用triple-due-diligence,提供技术+商业+伦理的三维评估框架", "notes": "投资尽调场景"},
+    {"id": "should-not-trigger-01", "type": "should_not_trigger", "prompt": "帮我写一个图像分类的PyTorch代码", "expected_behavior": "纯编程问题,不需要尽职调查", "notes": "诱饵:编程任务"},
+    {"id": "should-not-trigger-02", "type": "should_not_trigger", "prompt": "这个周末我想做个小项目,用AI识别手写数字,可行吗?", "expected_behavior": "小型探索项目(几天工作量),不需要正式尽职调查,用ml-feasibility即可", "notes": "诱饵:小型项目"},
+    {"id": "edge-01", "type": "edge_case", "prompt": "我们想用AI做信用评分,技术上没问题,但担心被监管查", "expected_behavior": "涉及合规/监管风险,属于伦理尽调范畴,需引导全面评估公平性和合规性", "notes": "边界:监管合规场景"},
+    {"id": "edge-02", "type": "edge_case", "prompt": "AI辅助诊断系统,医生说好用但患者不信任,怎么办?", "expected_behavior": "涉及用户信任和接受度,属于伦理/社会影响维度,需纳入尽调考量", "notes": "边界:用户信任问题"}
+  ]
+}

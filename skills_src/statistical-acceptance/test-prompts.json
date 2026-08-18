@@ -1,0 +1,76 @@
+{
+  "skill": "statistical-acceptance",
+  "version": "1.0",
+  "test_cases": [
+    {
+      "id": "sa-trigger-01",
+      "type": "should_trigger",
+      "prompt": "业务方要求AI系统必须100%准确，零错误才能上线，怎么说服他们？",
+      "expected_behavior": "应使用统计化验收标准的框架，说明100%准确率的不可能性，建议定义如95%的可接受标准。",
+      "notes": "典型的'零错误'要求场景，本技能的核心触发条件。"
+    },
+    {
+      "id": "sa-trigger-02",
+      "type": "should_trigger",
+      "prompt": "AI团队说模型达到了92%准确率，但业务方觉得不够，要求做到98%。团队说数据有噪声做不到，怎么处理这个争议？",
+      "expected_behavior": "应引导双方达成统计化验收标准共识，讨论合理的准确率目标，并建立错误处理机制。",
+      "notes": "验收标准争议场景。"
+    },
+    {
+      "id": "sa-trigger-03",
+      "type": "should_trigger",
+      "prompt": "我们做了一个客服机器人，偶尔会回答错误，业务方因此想终止整个项目。怎么让他们理解AI不可能是完美的？",
+      "expected_behavior": "应说明AI犯错是正常的，关键是定义可接受的错误率，并设计错误发生时的应对方案。",
+      "notes": "因AI错误而否定项目的场景。"
+    },
+    {
+      "id": "sa-trigger-04",
+      "type": "should_trigger",
+      "prompt": "怎么定义AI项目的验收标准？什么样的准确率算'合格'？",
+      "expected_behavior": "应建议与AI团队讨论可达成的准确率，将目标量化为具体数字，并写入项目文档。",
+      "notes": "验收标准定义询问。"
+    },
+    {
+      "id": "sa-trigger-05",
+      "type": "should_trigger",
+      "prompt": "CEO说'这个AI连这么简单的问题都会答错，有什么用'，怎么回应？",
+      "expected_behavior": "应引导CEO理解统计化验收的概念，AI系统的价值不在于零错误而在于整体准确率达标。",
+      "notes": "高管因个别错误否定AI价值的场景。"
+    },
+    {
+      "id": "sa-notrigger-01",
+      "type": "should_not_trigger",
+      "prompt": "我们的推荐系统给用户推荐了不相关的内容，怎么优化推荐算法？",
+      "expected_behavior": "不应触发本技能，这是推荐算法优化问题，不涉及验收标准的设定。",
+      "notes": "bait：涉及AI效果问题，但核心是算法优化而非验收标准定义。"
+    },
+    {
+      "id": "sa-notrigger-02",
+      "type": "should_not_trigger",
+      "prompt": "AI模型的训练时间太长了，从一周缩短到一天有什么方法？",
+      "expected_behavior": "不应触发本技能，这是训练效率问题，与验收标准无关。",
+      "notes": "bait：涉及AI团队工作，但核心是工程效率。"
+    },
+    {
+      "id": "sa-notrigger-03",
+      "type": "should_not_trigger",
+      "prompt": "我们想做AI转型，应该先做哪个业务场景的试点？",
+      "expected_behavior": "不应触发本技能，这是试点项目选择问题，与验收标准无关。",
+      "notes": "bait：涉及AI项目，但核心是项目选择而非验收定义。"
+    },
+    {
+      "id": "sa-edge-01",
+      "type": "edge_case",
+      "prompt": "我们的医疗影像AI准确率达到了97%，但3%的漏诊可能导致严重后果，这个准确率够吗？",
+      "expected_behavior": "应识别出这是安全关键场景，95%的标准可能不够，需要远高于此的标准，并强调错误成本评估的重要性。",
+      "notes": "安全关键场景，标准验收框架的边界情况。"
+    },
+    {
+      "id": "sa-edge-02",
+      "type": "edge_case",
+      "prompt": "金融反欺诈系统的准确率是99%，但1%的漏检可能让公司损失数百万，怎么设定验收标准？",
+      "expected_behavior": "应说明在错误代价极高的场景下，不能简单套用95%标准，需要结合业务影响来定义验收指标（如召回率）。",
+      "notes": "高代价错误场景，需要超越简单准确率。"
+    }
+  ]
+}

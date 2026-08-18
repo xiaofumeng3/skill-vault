@@ -1,0 +1,76 @@
+{
+  "skill": "dont-wait-perfect-data",
+  "version": "1.0",
+  "test_cases": [
+    {
+      "id": "dwpd-trigger-01",
+      "type": "should_trigger",
+      "prompt": "我们的数据团队说数据还没准备好，已经清洗了三个月了，项目一直无法启动。怎么让他们开始做模型？",
+      "expected_behavior": "应建议定义'足够好'的门槛，评估当前数据是否已达到，如果达到就立即开始建模。",
+      "notes": "典型的数据准备拖延场景。"
+    },
+    {
+      "id": "dwpd-trigger-02",
+      "type": "should_trigger",
+      "prompt": "业务方要求数据必须100%准确才能开始做AI项目，但永远达不到100%，怎么破？",
+      "expected_behavior": "应说明追求完美数据是项目无法启动的常见借口，建议定义可接受的准确率门槛（如80%），达到就开始。",
+      "notes": "完美主义阻碍项目启动的场景。"
+    },
+    {
+      "id": "dwpd-trigger-03",
+      "type": "should_trigger",
+      "prompt": "我们的标注数据有很多错误，团队觉得质量太差不敢用来训练，怎么办？",
+      "expected_behavior": "应说明ML算法对噪声有一定鲁棒性，建议先用现有数据训练一个基线模型，通过结果判断数据质量是否'足够好'。",
+      "notes": "标注数据质量问题场景。"
+    },
+    {
+      "id": "dwpd-trigger-04",
+      "type": "should_trigger",
+      "prompt": "AI项目启动前，数据治理应该做到什么程度？有没有一个标准？",
+      "expected_behavior": "应建议定义'足够好'的门槛而非追求完美，达到门槛后立即启动，后续持续迭代。",
+      "notes": "数据治理程度询问。"
+    },
+    {
+      "id": "dwpd-trigger-05",
+      "type": "should_trigger",
+      "prompt": "有人说'垃圾数据进，垃圾结果出'，所以我们必须先把数据弄干净才能开始。这话对吗？",
+      "expected_behavior": "应承认数据质量重要但反对极端化，建议用现有数据先跑一个实验来验证数据是否可用。",
+      "notes": "GIGO原则的过度解读场景。"
+    },
+    {
+      "id": "dwpd-notrigger-01",
+      "type": "should_not_trigger",
+      "prompt": "我们的数据仓库需要整合多个数据源，ETL流程怎么设计？",
+      "expected_behavior": "不应触发本技能，这是数据工程/ETL设计问题，不涉及是否等待完美数据的决策。",
+      "notes": "bait：涉及数据准备，但核心是技术架构而非启动时机。"
+    },
+    {
+      "id": "dwpd-notrigger-02",
+      "type": "should_not_trigger",
+      "prompt": "怎么评估数据标注的质量？标注一致性怎么计算？",
+      "expected_behavior": "不应触发本技能，这是数据质量评估方法论问题，不涉及是否等待的决策。",
+      "notes": "bait：涉及数据质量，但核心是评估方法而非启动策略。"
+    },
+    {
+      "id": "dwpd-notrigger-03",
+      "type": "should_not_trigger",
+      "prompt": "公司想做数据治理项目，应该买什么数据治理工具？",
+      "expected_behavior": "不应触发本技能，这是工具选型问题，与是否等待完美数据无关。",
+      "notes": "bait：涉及数据治理，但核心是工具选择。"
+    },
+    {
+      "id": "dwpd-edge-01",
+      "type": "edge_case",
+      "prompt": "我们的训练数据全部来自一线城市，但产品要推向全国。这数据算'足够好'吗？",
+      "expected_behavior": "应识别出这是系统性偏差问题（非随机噪声），数据可能不够好，需要补充二三线城市数据或明确产品先聚焦一线城市。",
+      "notes": "系统性偏差场景，'不够好'的边界判断。"
+    },
+    {
+      "id": "dwpd-edge-02",
+      "type": "edge_case",
+      "prompt": "我们的医疗AI项目，数据有一些标注错误。这时候'先用起来'合适吗？",
+      "expected_behavior": "应识别出安全关键场景不适合'不等完美数据'框架，医疗数据质量关乎生命安全，需要更高标准。",
+      "notes": "安全关键场景，框架的边界情况。"
+    }
+  ]
+}

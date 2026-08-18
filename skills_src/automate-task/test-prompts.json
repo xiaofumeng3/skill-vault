@@ -1,0 +1,14 @@
+{
+  "skill": "automate-task",
+  "version": "0.1.0",
+  "test_cases": [
+    {"id": "should-trigger-01", "type": "should_trigger", "prompt": "我们想用AI取代客服岗位,全自动处理客户问题", "expected_behavior": "调用automate-task,引导拆解客服岗位的具体任务(接听电话/分类邮件/处理退款等),而非整体替代", "notes": "典型'替代岗位'叙事"},
+    {"id": "should-trigger-02", "type": "should_trigger", "prompt": "能不能让AI把财务的工作全部接管了?", "expected_behavior": "调用automate-task,引导列出财务岗位的所有任务,逐一评估可自动化性", "notes": "全自动诉求"},
+    {"id": "should-trigger-03", "type": "should_trigger", "prompt": "AI取代放射科医生,你觉得现实吗?", "expected_behavior": "调用automate-task,拆解放射科任务(X光解读/患者沟通/培训/报告),说明只能自动化部分任务", "notes": "知名AI替代讨论"},
+    {"id": "should-trigger-04", "type": "should_trigger", "prompt": "我们想实现生产线全自动,不需要人了", "expected_behavior": "调用automate-task,引导拆解生产线上各环节任务,区分可自动化和不可自动化部分", "notes": "制造业全自动化"},
+    {"id": "should-not-trigger-01", "type": "should_not_trigger", "prompt": "帮我写一个自动化测试脚本", "expected_behavior": "软件测试自动化(RPA/脚本),不是AI任务分解问题", "notes": "诱饵:编程自动化"},
+    {"id": "should-not-trigger-02", "type": "should_not_trigger", "prompt": "AI对就业市场有什么影响?", "expected_behavior": "宏观趋势讨论,不是具体岗位的任务分解", "notes": "诱饵:宏观讨论"},
+    {"id": "edge-01", "type": "edge_case", "prompt": "我们想让AI帮产品经理做一些工作", "expected_behavior": "需要澄清具体哪些工作,产品经理任务多样(需求文档/数据分析/用户研究),粒度需要先明确", "notes": "边界:岗位任务过于多样"},
+    {"id": "edge-02", "type": "edge_case", "prompt": "AI能不能帮我做家务?", "expected_hint": "非工作场景,但可引导拆解家务任务(扫地/洗碗/整理),说明框架的通用性", "notes": "边界:非工作场景"}
+  ]
+}

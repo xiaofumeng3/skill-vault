@@ -1,0 +1,76 @@
+{
+  "skill": "ai-pipeline",
+  "version": "1.0",
+  "test_cases": [
+    {
+      "id": "pipeline-trigger-01",
+      "type": "should_trigger",
+      "prompt": "我们要设计一个智能音箱的AI系统，需要多个步骤协同工作，怎么设计架构？",
+      "expected_behavior": "应调用ai-pipeline，介绍多组件串联的流水线模式（唤醒→识别→意图→执行），并说明误差累积问题。",
+      "notes": "典型的多模块AI系统设计场景，智能音箱是书中经典案例。"
+    },
+    {
+      "id": "pipeline-trigger-02",
+      "type": "should_trigger",
+      "prompt": "我们的AI系统每个模块准确率都很高，但用户体验很差，为什么？",
+      "expected_behavior": "应调用ai-pipeline，解释误差累积效应（如4个95%模块串联只有81%整体准确率），建议从端到端角度优化。",
+      "notes": "用户遇到了典型的误差累积问题，需要从系统角度分析。"
+    },
+    {
+      "id": "pipeline-trigger-03",
+      "type": "should_trigger",
+      "prompt": "自动驾驶系统需要哪些AI模块？它们是怎么协作的？",
+      "expected_behavior": "应调用ai-pipeline，介绍自动驾驶的流水线（检测→预测→规划→控制），并说明各模块的输入输出。",
+      "notes": "自动驾驶是书中经典的多模块AI系统案例。"
+    },
+    {
+      "id": "pipeline-trigger-04",
+      "type": "should_trigger",
+      "prompt": "复杂AI产品怎么分解为多个子问题？有没有一个设计模式？",
+      "expected_behavior": "应调用ai-pipeline，介绍流水线设计模式：将复杂问题分解为多个连续的A→B步骤，每个步骤独立优化。",
+      "notes": "用户直接询问复杂AI系统的设计模式。"
+    },
+    {
+      "id": "pipeline-trigger-05",
+      "type": "should_trigger",
+      "prompt": "多个团队协作开发一个AI系统，怎么划分模块和接口？",
+      "expected_behavior": "应调用ai-pipeline，建议按流水线模块划分团队，明确各模块的输入输出接口规范。",
+      "notes": "组织设计场景，流水线模式支持多团队并行开发。"
+    },
+    {
+      "id": "pipeline-notrigger-01",
+      "type": "should_not_trigger",
+      "prompt": "一个AI模型怎么从训练到部署？",
+      "expected_behavior": "不应触发本skill，这是单模型的工作流问题，应该用ml-workflow。",
+      "notes": "bait：涉及AI系统，但用户关注的是单模型流程而非多模块架构。"
+    },
+    {
+      "id": "pipeline-notrigger-02",
+      "type": "should_not_trigger",
+      "prompt": "怎么评估一个AI模型的准确率？",
+      "expected_behavior": "不应触发本skill，这是模型评估问题，应该用train-test-split或statistical-acceptance。",
+      "notes": "bait：涉及AI性能，但关注点是单模型评估而非系统设计。"
+    },
+    {
+      "id": "pipeline-notrigger-03",
+      "type": "should_not_trigger",
+      "prompt": "AI项目的完整流程是什么？",
+      "expected_behavior": "不应触发本skill，这是项目管理问题，应该用ai-project-lifecycle。",
+      "notes": "bait：涉及AI系统，但用户关注的是项目流程而非技术架构。"
+    },
+    {
+      "id": "pipeline-edge-01",
+      "type": "edge_case",
+      "prompt": "我们的流水线有5个模块，但第3个模块的错误会改变第4个模块的输入分布，怎么办？",
+      "expected_behavior": "应识别出模块间存在依赖关系（非独立），建议增加模块间的反馈机制或联合优化。",
+      "notes": "边界：模块间存在分布漂移，超出简单误差累积模型的假设。"
+    },
+    {
+      "id": "pipeline-edge-02",
+      "type": "edge_case",
+      "prompt": "有些步骤可以用规则引擎而非AI模型，流水线里可以混用吗？",
+      "expected_behavior": "应指出流水线中AI模块和非AI模块可以混用，规则引擎适合确定性高的步骤，AI适合需要学习的步骤。",
+      "notes": "边界：用户询问AI与非AI组件的混合使用，超出纯AI流水线的讨论范围。"
+    }
+  ]
+}

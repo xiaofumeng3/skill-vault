@@ -1,0 +1,14 @@
+{
+  "skill": "ml-feasibility",
+  "version": "0.1.0",
+  "test_cases": [
+    {"id": "should-trigger-01", "type": "should_trigger", "prompt": "我们想做AI视觉质检,需要检测电路板焊接缺陷,这个想法可行吗?需要多少数据?", "expected_behavior": "调用ml-feasibility,评估概念简单性(一看就知道好坏)+数据充足性(有多少标注样本)", "notes": "典型双因素评估场景"},
+    {"id": "should-trigger-02", "type": "should_trigger", "prompt": "用AI预测设备故障,技术上能做到吗?我们只有200条历史记录", "expected_behavior": "调用ml-feasibility,概念可能简单但数据可能不足,给出2×2矩阵定位", "notes": "数据量不足的场景"},
+    {"id": "should-trigger-03", "type": "should_trigger", "prompt": "这个项目值得做吗?AI自动审核贷款申请", "expected_behavior": "调用ml-feasibility,评估判断的简单性和历史贷款数据充足性", "notes": "金融风控场景"},
+    {"id": "should-trigger-04", "type": "should_trigger", "prompt": "我们需要训练一个模型来判断客户评论是正面还是负面,有10万条标注数据,可行吗?", "expected_behavior": "调用ml-feasibility,概念简单(情感判断)+数据充足,建议立即推进", "notes": "双因素都满足的场景"},
+    {"id": "should-not-trigger-01", "type": "should_not_trigger", "prompt": "帮我用Python画一个折线图展示销售趋势", "expected_behavior": "纯编程/数据可视化问题,不涉及ML可行性评估", "notes": "诱饵:编程问题"},
+    {"id": "should-not-trigger-02", "type": "should_not_trigger", "prompt": "深度学习和机器学习有什么区别?", "expected_behavior": "知识查询,不需要可行性评估框架", "notes": "诱饵:概念辨析"},
+    {"id": "edge-01", "type": "edge_case", "prompt": "我们想用AI做需求预测,有5年历史销售数据但都没有标注", "expected_behavior": "需要澄清:时间序列预测的"标注"概念不同,需引导用户理解监督学习的(A,B)定义", "notes": "边界:无标注数据的预测场景"},
+    {"id": "edge-02", "type": "edge_case", "prompt": "AI能不能帮我写代码?", "expected_behavior": "写代码不是简单的是/否判断,双因素框架可能不完全适用,需说明LLM时代的局限性", "notes": "边界:生成任务vs分类任务"}
+  ]
+}

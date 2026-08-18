@@ -1,0 +1,76 @@
+{
+  "skill": "ai-strategy-moat",
+  "version": "1.0",
+  "test_cases": [
+    {
+      "id": "asm-trigger-01",
+      "type": "should_trigger",
+      "prompt": "我们公司想用AI构建竞争优势，但担心竞争对手也能用同样的AI技术，怎么办？",
+      "expected_behavior": "应调用ai-strategy-moat，指出AI算法本身不是壁垒，真正的护城河来自数据、网络效应、品牌和规模。",
+      "notes": "典型的护城河焦虑场景，用户担心AI技术被复制。"
+    },
+    {
+      "id": "asm-trigger-02",
+      "type": "should_trigger",
+      "prompt": "向投资人阐述我们的AI竞争优势，应该从哪些角度讲？",
+      "expected_behavior": "应调用ai-strategy-moat，建议从数据优势、网络效应、品牌信任、规模经济四个角度阐述护城河。",
+      "notes": "融资场景，需要向投资人解释竞争壁垒。"
+    },
+    {
+      "id": "asm-trigger-03",
+      "type": "should_trigger",
+      "prompt": "AI本身是不是护城河？如果竞争对手用同样的AI技术，我们还能赢吗？",
+      "expected_behavior": "应调用ai-strategy-moat，明确指出AI算法本身不是壁垒（开源和云让算法民主化了），关键是有没有AI之外的优势。",
+      "notes": "用户对AI是否是护城河有疑问，需要澄清。"
+    },
+    {
+      "id": "asm-trigger-04",
+      "type": "should_trigger",
+      "prompt": "怎么分析一个AI产品的长期竞争力？",
+      "expected_behavior": "应调用ai-strategy-moat，建议用护城河框架分析：数据优势、网络效应、品牌、规模经济。",
+      "notes": "竞争分析场景，需要长期竞争力的评估框架。"
+    },
+    {
+      "id": "asm-trigger-05",
+      "type": "should_trigger",
+      "prompt": "AI战略应该怎么制定？怎么确保AI投资能带来持续回报？",
+      "expected_behavior": "应调用ai-strategy-moat，建议盘点现有优势、识别AI放大机会、构建数据飞轮、对齐业务战略。",
+      "notes": "战略规划场景，需要AI战略制定的方法论。"
+    },
+    {
+      "id": "asm-notrigger-01",
+      "type": "should_not_trigger",
+      "prompt": "怎么判断一个AI项目技术上能不能实现？",
+      "expected_behavior": "不应触发本skill，这是技术可行性问题，应该用ml-feasibility。",
+      "notes": "bait：涉及AI项目，但用户关注的是技术可行性而非战略护城河。"
+    },
+    {
+      "id": "asm-notrigger-02",
+      "type": "should_not_trigger",
+      "prompt": "我们是自建AI能力还是买第三方服务？",
+      "expected_behavior": "不应触发本skill，这是build-vs-buy决策问题，应该用build-vs-buy。",
+      "notes": "bait：涉及AI战略，但用户需要的是具体的购买决策而非护城河分析。"
+    },
+    {
+      "id": "asm-notrigger-03",
+      "type": "should_not_trigger",
+      "prompt": "怎么收集用户行为数据来改进推荐系统？",
+      "expected_behavior": "不应触发本skill，这是数据获取问题，应该用data-flywheel。",
+      "notes": "bait：涉及数据战略，但用户关注的是数据收集方法而非护城河构建。"
+    },
+    {
+      "id": "asm-edge-01",
+      "type": "edge_case",
+      "prompt": "我们是创业公司，没有数据优势也没有规模，还能构建AI护城河吗？",
+      "expected_behavior": "应识别出创业公司的资源限制，建议从细分市场的独特数据、快速建立网络效应、或深耕垂直领域品牌入手。",
+      "notes": "边界：创业公司缺乏传统护城河要素，需要寻找替代路径。"
+    },
+    {
+      "id": "asm-edge-02",
+      "type": "edge_case",
+      "prompt": "我们的护城河是数据，但新的隐私法规限制了数据使用，护城河是不是消失了？",
+      "expected_behavior": "应指出护城河是动态的，隐私法规可能削弱数据护城河，需要寻找新的壁垒（如品牌信任、合规能力）。",
+      "notes": "边界：外部环境变化导致护城河被侵蚀，需要动态调整战略。"
+    }
+  ]
+}

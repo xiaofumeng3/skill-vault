@@ -1,0 +1,76 @@
+{
+  "skill": "unified-data-warehouse",
+  "version": "1.0",
+  "test_cases": [
+    {
+      "id": "udw-trigger-01",
+      "type": "should_trigger",
+      "prompt": "我们的数据散落在CRM、ERP、APP、网站等各个系统里，AI团队说数据拿不到，怎么解决？",
+      "expected_behavior": "应建议建设统一数据仓库，将各系统数据汇聚到一个平台，打破数据孤岛。",
+      "notes": "典型的数据孤岛场景。"
+    },
+    {
+      "id": "udw-trigger-02",
+      "type": "should_trigger",
+      "prompt": "公司想做AI项目，但不知道数据在哪里、有多少、质量怎么样。怎么开始梳理？",
+      "expected_behavior": "应建议先做数据资产盘点，梳理所有数据源，再设计统一数据仓库架构。",
+      "notes": "数据资产梳理场景。"
+    },
+    {
+      "id": "udw-trigger-03",
+      "type": "should_trigger",
+      "prompt": "销售部和市场部对'活跃用户'的定义不一样，每次开会数字都对不齐。怎么解决？",
+      "expected_behavior": "应建议通过统一数据仓库建立统一的数据定义和指标口径，保证数据一致性。",
+      "notes": "数据口径不一致场景。"
+    },
+    {
+      "id": "udw-trigger-04",
+      "type": "should_trigger",
+      "prompt": "我们的AI团队想做用户画像，但用户行为数据分散在五个系统里，怎么整合？",
+      "expected_behavior": "应建议将各系统的用户数据接入统一数据仓库，在仓库中整合为用户全景视图。",
+      "notes": "用户数据整合场景。"
+    },
+    {
+      "id": "udw-trigger-05",
+      "type": "should_trigger",
+      "prompt": "公司想做数据中台，但不知道从技术选型到实施路径怎么规划？",
+      "expected_behavior": "应提供统一数据仓库的建设步骤：盘点→设计架构→制定标准→分批接入→数据治理→赋能AI团队。",
+      "notes": "数据中台建设咨询场景。"
+    },
+    {
+      "id": "udw-notrigger-01",
+      "type": "should_not_trigger",
+      "prompt": "我们的MySQL数据库查询很慢，用户抱怨加载时间长，怎么优化？",
+      "expected_behavior": "不应触发本技能，这是单库性能优化问题，不涉及多源数据整合。",
+      "notes": "bait：涉及数据，但核心是性能优化而非数据整合。"
+    },
+    {
+      "id": "udw-notrigger-02",
+      "type": "should_not_trigger",
+      "prompt": "公司想做一次用户调研，了解用户对新功能的反馈，应该怎么设计问卷？",
+      "expected_behavior": "不应触发本技能，这是用户调研方法问题，不涉及数据仓库建设。",
+      "notes": "bait：涉及数据收集，但核心是调研方法。"
+    },
+    {
+      "id": "udw-notrigger-03",
+      "type": "should_not_trigger",
+      "prompt": "我们的数据被勒索病毒加密了，怎么恢复？需要备份方案吗？",
+      "expected_behavior": "不应触发本技能，这是数据安全和灾备问题，不涉及数据仓库建设。",
+      "notes": "bait：涉及数据，但核心是安全灾备。"
+    },
+    {
+      "id": "udw-edge-01",
+      "type": "edge_case",
+      "prompt": "我们是一家50人的创业公司，数据量不大但也在几个系统里。需要建统一数据仓库吗？",
+      "expected_behavior": "应识别出公司规模较小的边界情况，可能建议轻量级方案（如云数仓或简单ETL），而非重型数据中台。",
+      "notes": "小公司场景，重型方案的适用性边界。"
+    },
+    {
+      "id": "udw-edge-02",
+      "type": "edge_case",
+      "prompt": "我们的AI项目很紧急，三个月要出成果，但数据仓库建设至少要一年。怎么办？",
+      "expected_behavior": "应建议'边建边用'策略——先接入最急需的数据源启动AI项目，同时继续完善仓库建设。",
+      "notes": "紧急项目与长期建设的矛盾场景。"
+    }
+  ]
+}

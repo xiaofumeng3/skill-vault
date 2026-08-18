@@ -1,0 +1,12 @@
+{
+  "skill": "ab-mapping",
+  "version": "0.1.0",
+  "test_cases": [
+    {"id": "should-trigger-01", "type": "should_trigger", "prompt": "我们公司想用AI来筛选简历,这能做吗?该怎么定义输入输出?", "expected_behavior": "调用ab-mapping,引导定义A=简历内容,B=是否合格", "notes": "典型A→B映射问题"},
+    {"id": "should-trigger-02", "type": "should_trigger", "prompt": "能不能用AI预测客户会不会流失?", "expected_behavior": "调用ab-mapping,定义A=客户特征,B=是否流失", "notes": "二分类问题"},
+    {"id": "should-trigger-03", "type": "should_trigger", "prompt": "AI能不能帮我们做点什么?", "expected_behavior": "调用ab-mapping,引导用户思考具体A和B", "notes": "开放式AI咨询"},
+    {"id": "should-not-trigger-01", "type": "should_not_trigger", "prompt": "帮我写一段Python代码读取CSV文件", "expected_behavior": "纯编程问题,不应调用AI可行性skill", "notes": "诱饵:编程问题"},
+    {"id": "should-not-trigger-02", "type": "should_not_trigger", "prompt": "什么是机器学习?", "expected_behavior": "知识查询,不需要A→B映射框架", "notes": "诱饵:纯知识查询"},
+    {"id": "edge-01", "type": "edge_case", "prompt": "我想让AI帮我分析数据看看有什么规律", "expected_behavior": "可能是数据科学(无明确B),需先澄清是否有明确输出", "notes": "边界:DS vs ML"}
+  ]
+}

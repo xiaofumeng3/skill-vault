@@ -1,0 +1,76 @@
+{
+  "skill": "three-value-drivers",
+  "version": "1.0",
+  "test_cases": [
+    {
+      "id": "tvd-trigger-01",
+      "type": "should_trigger",
+      "prompt": "我们想做一个AI项目，但老板问'这个项目怎么赚钱'，我该怎么回答？",
+      "expected_behavior": "应调用three-value-drivers，引导用户从降本/增收/新业务三个角度分析项目价值。",
+      "notes": "典型的价值评估场景，用户需要向管理层解释AI项目的商业价值。"
+    },
+    {
+      "id": "tvd-trigger-02",
+      "type": "should_trigger",
+      "prompt": "这个AI项目说不清能带来什么收益，该不该继续？",
+      "expected_behavior": "应调用three-value-drivers，用三问框架评估：降本？增收？新业务？如果都答不上来，项目价值存疑。",
+      "notes": "用户明确表达了对项目价值的困惑，需要结构化评估框架。"
+    },
+    {
+      "id": "tvd-trigger-03",
+      "type": "should_trigger",
+      "prompt": "公司有三个AI候选项目，该怎么排优先级？",
+      "expected_behavior": "应调用three-value-drivers，建议从三个价值驱动维度评估每个项目的价值类型和量级。",
+      "notes": "多项目比较场景，需要价值评估框架来排序。"
+    },
+    {
+      "id": "tvd-trigger-04",
+      "type": "should_trigger",
+      "prompt": "AI项目的ROI怎么算？有没有一个框架？",
+      "expected_behavior": "应调用three-value-drivers，介绍降本/增收/新业务三途径，并说明如何量化每类价值。",
+      "notes": "用户直接询问ROI计算框架，三价值驱动是ROI分析的基础。"
+    },
+    {
+      "id": "tvd-trigger-05",
+      "type": "should_trigger",
+      "prompt": "我们的AI项目主要是降低客服成本，这算好的AI应用吗？",
+      "expected_behavior": "应调用three-value-drivers，确认降本是三价值驱动之一，并引导评估降本的具体量级。",
+      "notes": "用户的项目属于'降本'类型，需要确认并量化。"
+    },
+    {
+      "id": "tvd-notrigger-01",
+      "type": "should_not_trigger",
+      "prompt": "帮我写一个图像分类的PyTorch代码。",
+      "expected_behavior": "不应触发本skill，这是纯编程问题，不涉及项目价值评估。",
+      "notes": "bait：涉及AI技术，但用户要的是代码而非价值分析。"
+    },
+    {
+      "id": "tvd-notrigger-02",
+      "type": "should_not_trigger",
+      "prompt": "我们准备投入半年时间开发一套AI客服系统，这个项目值得做吗？该投入多少？",
+      "expected_behavior": "不应触发本skill，这是正式立项决策场景，应该用triple-due-diligence做全面评估。",
+      "notes": "bait：涉及项目价值评估，但需要的是全面尽调而非简单的价值分类。"
+    },
+    {
+      "id": "tvd-notrigger-03",
+      "type": "should_not_trigger",
+      "prompt": "怎么判断一个AI项目技术上能不能实现？",
+      "expected_behavior": "不应触发本skill，这是技术可行性问题，应该用ml-feasibility或one-second-rule。",
+      "notes": "bait：涉及AI项目评估，但关注点是技术可行性而非商业价值。"
+    },
+    {
+      "id": "tvd-edge-01",
+      "type": "edge_case",
+      "prompt": "我们的AI项目既能降本又能增收，怎么判断哪个是主要驱动力？",
+      "expected_behavior": "应识别出这是多价值驱动场景，建议量化两个维度的具体贡献，以较大者为主要驱动力。",
+      "notes": "边界：项目同时涉及多个价值维度，需要判断主次。"
+    },
+    {
+      "id": "tvd-edge-02",
+      "type": "edge_case",
+      "prompt": "这个AI项目短期不赚钱，但能积累大量数据，以后可能有战略价值，这算有价值吗？",
+      "expected_behavior": "应指出三价值驱动框架偏向短期经济价值，但数据积累的战略价值也需要考虑，建议补充评估长期战略价值。",
+      "notes": "边界：项目的价值是战略性的、长期的，超出三问框架的覆盖范围。"
+    }
+  ]
+}

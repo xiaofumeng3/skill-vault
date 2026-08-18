@@ -1,0 +1,76 @@
+{
+  "skill": "iterate-not-perfect",
+  "version": "1.0",
+  "test_cases": [
+    {
+      "id": "inp-trigger-01",
+      "type": "should_trigger",
+      "prompt": "我们的AI模型准确率已经92%了，团队想再优化到95%再上线，但已经优化两个月了。怎么让他们先发布？",
+      "expected_behavior": "应建议92%已经足够好，可以先上线，通过真实用户反馈来指导后续优化方向。",
+      "notes": "典型的追求完美推迟上线场景。"
+    },
+    {
+      "id": "inp-trigger-02",
+      "type": "should_trigger",
+      "prompt": "业务方说功能还不完善，要求再加五个功能才能发布。怎么说服他们先上线核心功能？",
+      "expected_behavior": "应建议定义MVP标准，核心功能可用就发布，其他功能通过迭代逐步加入。",
+      "notes": "功能完备性阻碍发布的场景。"
+    },
+    {
+      "id": "inp-trigger-03",
+      "type": "should_trigger",
+      "prompt": "AI产品上线后怎么持续改进？有没有一个迭代的框架或流程？",
+      "expected_behavior": "应介绍'发布→收集反馈→迭代改进→再发布'的持续迭代循环。",
+      "notes": "迭代流程询问场景。"
+    },
+    {
+      "id": "inp-trigger-04",
+      "type": "should_trigger",
+      "prompt": "我们的语音助手已经内测半年了，团队觉得还不够好，但竞品已经发布了。怎么办？",
+      "expected_behavior": "应指出竞品已发布是强烈的市场信号，建议立即发布MVP版本，用真实数据驱动后续改进。",
+      "notes": "竞品压力下的发布决策场景。"
+    },
+    {
+      "id": "inp-trigger-05",
+      "type": "should_trigger",
+      "prompt": "怎么判断AI产品'足够好'可以上线了？有没有一个标准？",
+      "expected_behavior": "应建议与团队和业务方协商定义可量化的MVP标准（准确率底线、核心功能清单），达到即发布。",
+      "notes": "上线标准询问场景。"
+    },
+    {
+      "id": "inp-notrigger-01",
+      "type": "should_not_trigger",
+      "prompt": "我们的敏捷开发流程不太顺畅，每日站会效率低，怎么改进？",
+      "expected_behavior": "不应触发本技能，这是敏捷开发流程优化问题，不涉及AI产品迭代策略。",
+      "notes": "bait：涉及'迭代'概念，但核心是开发流程而非AI产品上线策略。"
+    },
+    {
+      "id": "inp-notrigger-02",
+      "type": "should_not_trigger",
+      "prompt": "模型训练过程中loss不收敛，有什么调试方法？",
+      "expected_behavior": "不应触发本技能，这是ML训练调试问题，不涉及产品发布策略。",
+      "notes": "bait：涉及AI模型，但核心是训练技术而非上线迭代。"
+    },
+    {
+      "id": "inp-notrigger-03",
+      "type": "should_not_trigger",
+      "prompt": "我们的产品要做A/B测试，怎么设计实验方案？",
+      "expected_behavior": "不应触发本技能，这是A/B测试方法论问题，不涉及是否应该先发布。",
+      "notes": "bait：涉及产品发布策略，但核心是实验设计而非迭代理念。"
+    },
+    {
+      "id": "inp-edge-01",
+      "type": "edge_case",
+      "prompt": "我们是医疗AI产品，准确率已经97%了，但3%的错误可能延误诊断。这时候还应该'先上线再迭代'吗？",
+      "expected_behavior": "应识别出安全关键场景不适合'先上线再迭代'框架，医疗AI需要达到极高标准才能发布。",
+      "notes": "安全关键场景，框架的边界情况。"
+    },
+    {
+      "id": "inp-edge-02",
+      "type": "edge_case",
+      "prompt": "我们发布了MVP版本，用户反馈很差，评分只有2星。这是迭代失败了还是正常过程？",
+      "expected_behavior": "应承认MVP阶段收到负面反馈是可能的，建议分析反馈类型——是'功能不足'还是'核心功能有缺陷'，前者可迭代解决后者需要紧急修复。",
+      "notes": "MVP发布后反馈差的应对场景。"
+    }
+  ]
+}

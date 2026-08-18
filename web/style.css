@@ -1,0 +1,174 @@
+/* ============ 基础 ============ */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #f4f6f9;
+  --card: #ffffff;
+  --ink: #1e2a3a;
+  --muted: #6b7787;
+  --accent: #2f6fed;
+  --accent-soft: #e8effd;
+  --border: #e3e8ef;
+  --ok: #1e9e5a;
+  --warn: #c7791a;
+  --bad: #c0392b;
+  --radius: 12px;
+  --shadow: 0 1px 3px rgba(30, 42, 58, .08), 0 4px 14px rgba(30, 42, 58, .06);
+}
+html { -webkit-text-size-adjust: 100%; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+    "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.7;
+  padding-bottom: 56px;
+}
+
+/* ============ 顶栏 ============ */
+.topbar {
+  position: sticky; top: 0; z-index: 50;
+  background: var(--ink); color: #fff;
+  box-shadow: 0 1px 0 rgba(255,255,255,.08);
+}
+.topbar-inner {
+  max-width: 860px; margin: 0 auto; padding: 0 16px;
+  height: 52px; display: flex; align-items: center; justify-content: space-between;
+}
+.brand {
+  display: flex; align-items: center; gap: 8px;
+  background: none; border: none; color: #fff; cursor: pointer;
+  font-size: 17px; font-weight: 700; padding: 6px 8px; border-radius: 8px;
+}
+.brand:hover { background: rgba(255,255,255,.08); }
+.brand-icon { font-size: 20px; }
+.topnav { display: flex; gap: 4px; }
+.nav-link {
+  color: #c6d0dd; text-decoration: none; padding: 6px 14px;
+  border-radius: 8px; font-size: 15px;
+}
+.nav-link:hover { background: rgba(255,255,255,.08); color: #fff; }
+.nav-link.active { background: var(--accent); color: #fff; }
+
+/* ============ 布局 ============ */
+.container { max-width: 860px; margin: 0 auto; padding: 16px; }
+.loading { text-align: center; color: var(--muted); padding: 60px 0; }
+
+/* ============ 搜索与筛选 ============ */
+.searchbar { display: flex; gap: 10px; margin: 6px 0 14px; flex-wrap: wrap; }
+.search-input {
+  flex: 1 1 220px; min-width: 0;
+  padding: 11px 14px; border: 1px solid var(--border); border-radius: 10px;
+  font-size: 15px; background: var(--card);
+}
+.search-input:focus { outline: 2px solid var(--accent-soft); border-color: var(--accent); }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+.chip {
+  border: 1px solid var(--border); background: var(--card); color: var(--ink);
+  padding: 6px 12px; border-radius: 999px; font-size: 13.5px; cursor: pointer;
+  transition: all .15s;
+}
+.chip:hover { border-color: var(--accent); }
+.chip.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+.chip .count { opacity: .65; font-size: 12px; margin-left: 2px; }
+
+/* ============ 技能卡片 ============ */
+.skill-card {
+  display: block; text-decoration: none; color: inherit;
+  background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 14px 16px; margin-bottom: 10px; box-shadow: var(--shadow);
+  transition: transform .12s, box-shadow .12s;
+}
+.skill-card:hover { transform: translateY(-1px); box-shadow: 0 4px 18px rgba(30,42,58,.12); }
+.card-head { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+.card-name { font-size: 16.5px; font-weight: 700; }
+.card-cn { color: var(--muted); font-size: 14px; }
+.card-cat {
+  margin-left: auto; font-size: 12px; color: var(--accent);
+  background: var(--accent-soft); padding: 2px 8px; border-radius: 999px; white-space: nowrap;
+}
+.card-desc { color: var(--muted); font-size: 13.5px; margin-top: 4px;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.card-foot { display: flex; justify-content: space-between; margin-top: 8px;
+  color: var(--muted); font-size: 12px; }
+.empty { text-align: center; color: var(--muted); padding: 40px 0; }
+
+/* ============ 详情页 ============ */
+.back-link {
+  display: inline-block; margin-bottom: 12px; color: var(--accent);
+  text-decoration: none; font-size: 14px;
+}
+.back-link:hover { text-decoration: underline; }
+.detail-head {
+  background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 18px; box-shadow: var(--shadow); margin-bottom: 14px;
+}
+.detail-title { font-size: 22px; font-weight: 800; }
+.detail-cn { color: var(--muted); font-size: 15px; margin-left: 6px; }
+.detail-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.badge { font-size: 12.5px; padding: 3px 10px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); }
+.badge.source { background: #eef4ee; color: #2c6e49; }
+
+.section {
+  background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 16px 18px; margin-bottom: 14px; box-shadow: var(--shadow);
+}
+.section h3 { font-size: 15px; margin-bottom: 10px; display: flex; align-items: center; gap: 6px; }
+.section p, .section li { font-size: 14.5px; }
+.section ul, .section ol { padding-left: 20px; }
+.section li { margin-bottom: 6px; }
+
+.plain-box {
+  background: #fffbea; border: 1px solid #f2e3b8; border-radius: 10px;
+  padding: 14px 16px; font-size: 15.5px; line-height: 1.85;
+}
+.plain-box::before { content: "💬 大白话："; font-weight: 700; color: #8a6d1a; display: block; margin-bottom: 4px; }
+
+.quote-box {
+  border-left: 4px solid var(--accent); background: var(--accent-soft);
+  padding: 12px 14px; border-radius: 0 10px 10px 0; font-size: 14.5px; color: #33507e;
+  font-style: italic;
+}
+.example-box {
+  background: #eef7f0; border: 1px solid #cfe6d6; border-radius: 10px;
+  padding: 14px 16px; font-size: 14.5px;
+}
+.example-box::before { content: "🏠 生活化例子"; font-weight: 700; color: #2c6e49; display: block; margin-bottom: 4px; }
+
+.boundary-item::marker { color: var(--warn); }
+.step-item::marker { color: var(--accent); }
+.case-item::marker { color: var(--ok); }
+
+.related-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.related-chip {
+  text-decoration: none; font-size: 13.5px; background: var(--accent-soft);
+  color: var(--accent); padding: 4px 12px; border-radius: 999px;
+}
+.related-chip:hover { background: var(--accent); color: #fff; }
+.related-chip small { opacity: .7; }
+
+/* ============ 术语表 ============ */
+.term-group { margin-bottom: 18px; }
+.term-group h2 { font-size: 15px; color: var(--muted); margin-bottom: 8px; }
+.term-card {
+  background: var(--card); border: 1px solid var(--border); border-radius: 10px;
+  padding: 12px 14px; margin-bottom: 8px;
+}
+.term-name { font-weight: 700; font-size: 15px; color: var(--accent); }
+.term-plain { font-size: 14px; margin-top: 2px; }
+.term-skills { margin-top: 6px; font-size: 12px; color: var(--muted); }
+.term-skills a { color: var(--accent); text-decoration: none; }
+.term-skills a:hover { text-decoration: underline; }
+
+/* ============ 页脚 ============ */
+.footer {
+  position: fixed; bottom: 0; left: 0; right: 0;
+  background: var(--ink); color: #9fb0c3; font-size: 12.5px;
+}
+.footer-inner { padding: 10px 16px; text-align: center; }
+
+/* ============ 移动端微调 ============ */
+@media (max-width: 480px) {
+  .detail-title { font-size: 19px; }
+  .container { padding: 12px; }
+  .card-name { font-size: 15.5px; }
+}

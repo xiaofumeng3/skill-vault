@@ -1,0 +1,76 @@
+{
+  "skill": "dont-acquire-for-data",
+  "version": "1.0",
+  "test_cases": [
+    {
+      "id": "dad-trigger-01",
+      "type": "should_trigger",
+      "prompt": "我们公司想收购一家数据公司，说他们的数据很有价值，怎么判断这值不值得买？",
+      "expected_behavior": "应调用dont-acquire-for-data，要求回答'谁用、做什么用、怎么变现'三个问题，警告'数据≠价值'。",
+      "notes": "典型的数据收购评估场景，用户需要判断数据投资的合理性。"
+    },
+    {
+      "id": "dad-trigger-02",
+      "type": "should_trigger",
+      "prompt": "老板说'先把数据买下来，以后总能找到用途'，这种想法对吗？",
+      "expected_behavior": "应调用dont-acquire-for-data，指出这是常见幻觉，强调没有明确用例的数据收购风险极高。",
+      "notes": "用户质疑'先买后用'的思维，需要警告这种策略的危险性。"
+    },
+    {
+      "id": "dad-trigger-03",
+      "type": "should_trigger",
+      "prompt": "有公司想买一个数据集，说数据量很大所以很有价值，这种逻辑对吗？",
+      "expected_behavior": "应调用dont-acquire-for-data，指出数据量≠数据价值，关键是有没有明确的A→B映射和AI用例。",
+      "notes": "用户质疑'大数据=大价值'的逻辑，需要纠正这种误解。"
+    },
+    {
+      "id": "dad-trigger-04",
+      "type": "should_trigger",
+      "prompt": "我们想投资一家AI创业公司，主要看中了他们的数据资产，该怎么评估？",
+      "expected_behavior": "应调用dont-acquire-for-data，建议让AI团队参与评估，验证数据是否能转化为具体的AI用例。",
+      "notes": "投资评估场景，数据是核心资产但需要验证其可用性。"
+    },
+    {
+      "id": "dad-trigger-05",
+      "type": "should_trigger",
+      "prompt": "数据团队说'给我更多数据，我就能做出更好的模型'，该不该批预算买数据？",
+      "expected_behavior": "应调用dont-acquire-for-data，要求数据团队明确具体用例和预期效果，避免盲目采购。",
+      "notes": "内部数据采购请求，需要验证其合理性。"
+    },
+    {
+      "id": "dad-notrigger-01",
+      "type": "should_not_trigger",
+      "prompt": "怎么收集用户行为数据来改进推荐系统？",
+      "expected_behavior": "不应触发本skill，这是产品设计问题，应该用data-flywheel。",
+      "notes": "bait：涉及数据获取，但用户关注的是有机增长（产品→数据循环）而非收购。"
+    },
+    {
+      "id": "dad-notrigger-02",
+      "type": "should_not_trigger",
+      "prompt": "公司内部各部门数据分散，怎么整合？",
+      "expected_behavior": "不应触发本skill，这是数据孤岛问题，应该用unified-data-warehouse。",
+      "notes": "bait：涉及数据获取，但用户关注的是内部数据整合而非外部收购。"
+    },
+    {
+      "id": "dad-notrigger-03",
+      "type": "should_not_trigger",
+      "prompt": "怎么评估一个AI项目的技术可行性？",
+      "expected_behavior": "不应触发本skill，这是技术评估问题，应该用ml-feasibility。",
+      "notes": "bait：涉及AI项目评估，但关注点是技术而非数据投资。"
+    },
+    {
+      "id": "dad-edge-01",
+      "type": "edge_case",
+      "prompt": "我们想收购一家公司，主要目的是获取他们的AI团队，数据是附带的，这算'为数据而收购'吗？",
+      "expected_behavior": "应识别出主要目的是人才而非数据，但需要评估附带数据的真实价值，避免为无用数据支付溢价。",
+      "notes": "边界：收购的主要目的不是数据，但数据是附带资产，需要分别评估。"
+    },
+    {
+      "id": "dad-edge-02",
+      "type": "edge_case",
+      "prompt": "竞争对手在收购某家公司，我们担心他们获得数据后超越我们，要不要抢先收购？",
+      "expected_behavior": "应指出这是防御性收购，战略价值可能超出A→B映射的评估范围，但也要警惕'为竞争而竞争'的陷阱。",
+      "notes": "边界：收购的动机是竞争防御而非直接价值，超出skill的典型适用范围。"
+    }
+  ]
+}

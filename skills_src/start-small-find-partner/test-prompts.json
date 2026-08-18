@@ -1,0 +1,76 @@
+{
+  "skill": "start-small-find-partner",
+  "version": "1.0",
+  "test_cases": [
+    {
+      "id": "ssfp-trigger-01",
+      "type": "should_trigger",
+      "prompt": "我是传统行业的，完全不懂AI，想入门但不知道从哪开始，第一步应该做什么？",
+      "expected_behavior": "应调用start-small-find-partner，建议找一个伙伴一起学习，选一个小项目快速动手，不要等准备好再开始。",
+      "notes": "典型的个人入门场景，用户表达了对AI的陌生感和不知如何开始的困惑。"
+    },
+    {
+      "id": "ssfp-trigger-02",
+      "type": "should_trigger",
+      "prompt": "我想学AI，但身边没有懂技术的朋友，一个人学感觉很孤单，有什么建议？",
+      "expected_behavior": "应调用start-small-find-partner，强调寻找伙伴的重要性，建议参加AI社群、找外部顾问、或在线学习社区。",
+      "notes": "用户明确表达了孤单感和对伙伴的需求。"
+    },
+    {
+      "id": "ssfp-trigger-03",
+      "type": "should_trigger",
+      "prompt": "等我把数学基础学完了再开始做AI项目，这样对吗？",
+      "expected_behavior": "应调用start-small-find-partner，指出这是常见陷阱，建议'做中学'，不要等完美准备。",
+      "notes": "用户陷入了'先学完再做'的思维陷阱，需要引导先动手。"
+    },
+    {
+      "id": "ssfp-trigger-04",
+      "type": "should_trigger",
+      "prompt": "第一个AI项目做什么比较好？我想做一个很大的系统。",
+      "expected_behavior": "应调用start-small-find-partner，建议选一个小项目（1-2周能完成），不要追求大。",
+      "notes": "用户想做'大项目'，需要引导从小处着手。"
+    },
+    {
+      "id": "ssfp-trigger-05",
+      "type": "should_trigger",
+      "prompt": "我想和同事一起学AI，有什么好的学习方式推荐？",
+      "expected_behavior": "应调用start-small-find-partner，建议组建学习小组、一起做项目、互相督促。",
+      "notes": "用户主动提出协作学习，符合skill的核心建议。"
+    },
+    {
+      "id": "ssfp-notrigger-01",
+      "type": "should_not_trigger",
+      "prompt": "我们公司要做AI转型，CEO让我们制定一个三年规划，应该怎么做？",
+      "expected_behavior": "不应触发本skill，这是组织级AI转型场景，应该用ai-transformation-playbook。",
+      "notes": "bait：涉及AI学习/开始，但对象是公司而非个人，需要的是转型路线图而非入门建议。"
+    },
+    {
+      "id": "ssfp-notrigger-02",
+      "type": "should_not_trigger",
+      "prompt": "推荐几本AI入门的书和课程。",
+      "expected_behavior": "不应触发本skill，这是资源推荐请求，不需要行动原则指导。",
+      "notes": "bait：涉及AI入门，但用户要的是学习资源而非行动建议。"
+    },
+    {
+      "id": "ssfp-notrigger-03",
+      "type": "should_not_trigger",
+      "prompt": "我们的AI团队刚组建完，现在要选第一个项目，应该选什么样的？",
+      "expected_behavior": "不应触发本skill，这是组织级项目选择场景，应该用pilot-momentum-flywheel。",
+      "notes": "bait：涉及'第一个项目'，但对象是团队而非个人，需要的是试点策略而非入门建议。"
+    },
+    {
+      "id": "ssfp-edge-01",
+      "type": "edge_case",
+      "prompt": "我在一家小公司，公司只有我一个人对AI感兴趣，找不到伙伴怎么办？",
+      "expected_behavior": "应识别出这是'寻找伙伴'的困难场景，建议外部社群、在线学习小组、或找外部顾问作为替代方案。",
+      "notes": "边界：用户想遵循建议但客观条件限制，需要灵活应对。"
+    },
+    {
+      "id": "ssfp-edge-02",
+      "type": "edge_case",
+      "prompt": "我做了一个小项目但失败了，还有必要继续吗？",
+      "expected_behavior": "应调用start-small-find-partner，强调第一个项目失败是正常的，关键是复盘并做第二个项目。",
+      "notes": "边界：用户已经行动了但遇到挫折，需要鼓励继续而非放弃。"
+    }
+  ]
+}

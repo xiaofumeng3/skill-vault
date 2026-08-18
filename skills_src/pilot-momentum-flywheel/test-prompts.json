@@ -1,0 +1,76 @@
+{
+  "skill": "pilot-momentum-flywheel",
+  "version": "1.0",
+  "test_cases": [
+    {
+      "id": "pmf-trigger-01",
+      "type": "should_trigger",
+      "prompt": "我们公司想做AI，现在有三个候选项目：智能客服、供应链预测、营销推荐。应该先做哪个？",
+      "expected_behavior": "应按成功概率而非价值来排序，建议评估每个项目的数据可得性、技术成熟度、团队能力，选择最可能成功的。",
+      "notes": "典型的第一个AI项目选择场景。"
+    },
+    {
+      "id": "pmf-trigger-02",
+      "type": "should_trigger",
+      "prompt": "第一个AI项目做什么？有没有什么选项目的原则？",
+      "expected_behavior": "应介绍'先求成功再求价值'的反直觉原则，建议选择成功概率高的项目而非价值最高的项目。",
+      "notes": "直接询问第一个项目选择原则。"
+    },
+    {
+      "id": "pmf-trigger-03",
+      "type": "should_trigger",
+      "prompt": "我们的AI团队刚成立，其他业务线都不信任我们，怎么打破僵局让大家愿意合作？",
+      "expected_behavior": "应建议先做一个容易成功的项目，通过可见的成果建立信誉，形成飞轮效应。",
+      "notes": "AI团队缺乏信任的场景。"
+    },
+    {
+      "id": "pmf-trigger-04",
+      "type": "should_trigger",
+      "prompt": "试点项目选好了，但怎么确保它能'成功'？成功之后怎么让更多人知道？",
+      "expected_behavior": "应建议提前定义可量化的成功标准，项目完成后主动向全公司宣传成果，吸引下一个合作。",
+      "notes": "试点项目执行和宣传策略。"
+    },
+    {
+      "id": "pmf-trigger-05",
+      "type": "should_trigger",
+      "prompt": "Google Brain是怎么从语音识别做到广告的？他们的项目选择有什么规律？",
+      "expected_behavior": "应介绍Google Brain的飞轮案例：从低风险非核心业务开始，逐步建立信誉后挑战高价值项目。",
+      "notes": "询问经典案例的场景。"
+    },
+    {
+      "id": "pmf-notrigger-01",
+      "type": "should_not_trigger",
+      "prompt": "我们的AI模型准确率一直上不去，有什么调参的技巧？",
+      "expected_behavior": "不应触发本技能，这是模型调优的技术问题，不涉及项目选择策略。",
+      "notes": "bait：涉及AI项目，但核心是技术优化而非项目选择。"
+    },
+    {
+      "id": "pmf-notrigger-02",
+      "type": "should_not_trigger",
+      "prompt": "公司已经有三个AI项目在跑了，怎么评估哪个项目ROI最高？",
+      "expected_behavior": "不应触发本技能，这是已有项目的ROI评估，而非选择第一个项目。",
+      "notes": "bait：涉及项目选择，但核心是评估已有项目而非选择第一个。"
+    },
+    {
+      "id": "pmf-notrigger-03",
+      "type": "should_not_trigger",
+      "prompt": "AI团队的绩效考核应该怎么做？怎么衡量AI团队的贡献？",
+      "expected_behavior": "不应触发本技能，这是团队管理问题，与试点项目选择无关。",
+      "notes": "bait：涉及AI团队，但核心是绩效管理。"
+    },
+    {
+      "id": "pmf-edge-01",
+      "type": "edge_case",
+      "prompt": "我们所有候选项目的成功概率都差不多，这时候应该选哪个？",
+      "expected_behavior": "应识别出这是飞轮策略的边界情况——当成功概率相近时，应转向选择价值最高的项目。",
+      "notes": "所有项目成功概率相同时的决策。"
+    },
+    {
+      "id": "pmf-edge-02",
+      "type": "edge_case",
+      "prompt": "我们选了一个'容易成功'的项目，做完了但没人觉得这有什么价值，飞轮没转起来怎么办？",
+      "expected_behavior": "应指出'容易但无关'是飞轮策略的失败模式，建议重新选择有一定业务价值的项目，并加强成果宣传。",
+      "notes": "飞轮启动失败的应对场景。"
+    }
+  ]
+}

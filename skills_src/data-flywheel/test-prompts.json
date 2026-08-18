@@ -1,0 +1,76 @@
+{
+  "skill": "data-flywheel",
+  "version": "1.0",
+  "test_cases": [
+    {
+      "id": "df-trigger-01",
+      "type": "should_trigger",
+      "prompt": "我们的AI产品怎么建立长期的竞争壁垒？怎么让后来者追不上我们？",
+      "expected_behavior": "应介绍数据飞轮概念——更好的产品吸引更多用户，更多用户产生更多数据，更多数据让产品更好，形成自我强化的循环。",
+      "notes": "竞争壁垒咨询场景，数据飞轮的典型应用。"
+    },
+    {
+      "id": "df-trigger-02",
+      "type": "should_trigger",
+      "prompt": "Google搜索为什么能一直保持领先？TikTok推荐为什么越来越准？背后的机制是什么？",
+      "expected_behavior": "应分析这些产品的数据飞轮效应——用户行为数据直接改进产品，形成正向循环。",
+      "notes": "经典产品分析场景。"
+    },
+    {
+      "id": "df-trigger-03",
+      "type": "should_trigger",
+      "prompt": "我们的推荐系统怎么设计数据收集策略？收集哪些数据能让推荐越来越准？",
+      "expected_behavior": "应建议识别飞轮要素（哪些用户行为数据能改进推荐），设计数据收集方案，并绘制飞轮循环图。",
+      "notes": "数据收集策略设计场景。"
+    },
+    {
+      "id": "df-trigger-04",
+      "type": "should_trigger",
+      "prompt": "创业公司怎么做AI产品？没有大量用户数据怎么启动？",
+      "expected_behavior": "应说明飞轮需要初始推动，建议用公开数据、人工规则或MVP让产品足够好，吸引第一批用户。",
+      "notes": "冷启动场景，飞轮的初始推动问题。"
+    },
+    {
+      "id": "df-trigger-05",
+      "type": "should_trigger",
+      "prompt": "我们的智能产品用户增长很快，但怎么把用户行为转化为产品改进？有没有系统化的方法？",
+      "expected_behavior": "应建议绘制飞轮循环、设计数据管道、建立数据到产品改进的闭环机制。",
+      "notes": "用户增长与产品改进的联动场景。"
+    },
+    {
+      "id": "df-notrigger-01",
+      "type": "should_not_trigger",
+      "prompt": "我们的数据库查询很慢，用户抱怨加载时间长，怎么优化？",
+      "expected_behavior": "不应触发本技能，这是数据库性能优化问题，不涉及数据飞轮效应。",
+      "notes": "bait：涉及'数据'和'用户'，但核心是技术性能而非飞轮效应。"
+    },
+    {
+      "id": "df-notrigger-02",
+      "type": "should_not_trigger",
+      "prompt": "公司想做一次用户调研，了解用户对新功能的反馈，应该怎么设计问卷？",
+      "expected_behavior": "不应触发本技能，这是用户调研方法问题，不涉及数据飞轮。",
+      "notes": "bait：涉及用户数据收集，但核心是调研方法而非飞轮机制。"
+    },
+    {
+      "id": "df-notrigger-03",
+      "type": "should_not_trigger",
+      "prompt": "我们的数据仓库要迁移到云端，有什么注意事项？",
+      "expected_behavior": "不应触发本技能，这是数据基础设施迁移问题，不涉及飞轮效应。",
+      "notes": "bait：涉及数据存储，但核心是迁移而非飞轮。"
+    },
+    {
+      "id": "df-edge-01",
+      "type": "edge_case",
+      "prompt": "我们的B2B产品只有几十个客户，每个客户的数据量很大，这种场景有飞轮效应吗？",
+      "expected_behavior": "应分析B2B场景下飞轮的特殊性——用户量少但数据密度高，飞轮可能转得慢但仍有价值。",
+      "notes": "B2B场景，飞轮效应的适用性边界。"
+    },
+    {
+      "id": "df-edge-02",
+      "type": "edge_case",
+      "prompt": "我们收集了大量用户数据但不知道怎么用，数据堆在那里变成了'数据沼泽'，怎么办？",
+      "expected_behavior": "应识别出这是飞轮的失败模式——数据未转化为产品改进，建议先明确产品改进目标再反向设计数据收集。",
+      "notes": "数据沼泽场景，飞轮失效的应对。"
+    }
+  ]
+}

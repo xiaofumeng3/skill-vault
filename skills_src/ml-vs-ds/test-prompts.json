@@ -1,0 +1,14 @@
+{
+  "skill": "ml-vs-ds",
+  "version": "0.1.0",
+  "test_cases": [
+    {"id": "should-trigger-01", "type": "should_trigger", "prompt": "我们该做ML还是DS?想预测下季度销售额", "expected_behavior": "调用ml-vs-ds,引导判断:产出是持续运行的预测系统(ML)还是一次性分析报告(DS)", "notes": "典型ML vs DS判定"},
+    {"id": "should-trigger-02", "type": "should_trigger", "prompt": "这个项目最终要交付什么东西?建系统还是做报告?", "expected_behavior": "调用ml-vs-ds,用'软件vs洞察'框架帮助团队对齐期望", "notes": "项目类型澄清"},
+    {"id": "should-trigger-03", "type": "should_trigger", "prompt": "老板让我招人,我要招ML工程师还是数据分析师?", "expected_behavior": "调用ml-vs-ds,根据项目产出类型(M:L系统/DS报告)建议对应人才", "notes": "招聘决策场景"},
+    {"id": "should-trigger-04", "type": "should_trigger", "prompt": "是建系统还是做分析?我们想用AI优化广告投放", "expected_behavior": "调用ml-vs-ds,广告投放优化通常需要持续运行的CTR预测系统→ML项目", "notes": "广告场景判定"},
+    {"id": "should-not-trigger-01", "type": "should_not_trigger", "prompt": "帮我写一个SQL查询统计用户留存率", "expected_behavior": "纯数据分析任务,不涉及项目类型判定", "notes": "诱饵:SQL查询"},
+    {"id": "should-not-trigger-02", "type": "should_not_trigger", "prompt": "随机森林和梯度提升树哪个更好?", "expected_behavior": "算法选择问题,不涉及ML vs DS项目类型判定", "notes": "诱饵:算法比较"},
+    {"id": "edge-01", "type": "edge_case", "prompt": "我们想先分析用户数据找到机会,再建一个推荐系统", "expected_behavior": "混合项目(DS→ML),需说明两阶段的不同产出形式和流程", "notes": "边界:混合项目"},
+    {"id": "edge-02", "type": "edge_case", "prompt": "AI帮我们做一个PPT给投资人看", "expected_behavior": "产出是PPT/报告→DS项目,但内容可能由AI生成,需澄清是DS洞察还是AI生成内容", "notes": "边界:DS产出形式"}
+  ]
+}

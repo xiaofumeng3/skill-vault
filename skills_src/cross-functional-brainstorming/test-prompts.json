@@ -1,0 +1,13 @@
+{
+  "skill": "cross-functional-brainstorming",
+  "version": "0.1.0",
+  "test_cases": [
+    {"id": "should-trigger-01", "type": "should_trigger", "prompt": "我们公司刚成立了AI团队,应该从哪些业务场景切入?", "expected_behavior": "调用cross-functional-brainstorming,引导组织AI专家×业务专家的头脑风暴", "notes": "典型AI场景发现需求"},
+    {"id": "should-trigger-02", "type": "should_trigger", "prompt": "怎么找到AI在制造业的落地场景?", "expected_behavior": "调用cross-functional-brainstorming,建议召集AI专家和制造工程师共同脑暴", "notes": "行业AI场景探索"},
+    {"id": "should-trigger-03", "type": "should_trigger", "prompt": "我们想启动AI转型,但不知道该做什么项目,brainstorm一下?", "expected_behavior": "调用cross-functional-brainstorming,提供结构化创意发现流程", "notes": "明确的brainstorm请求"},
+    {"id": "should-trigger-04", "type": "should_trigger", "prompt": "技术团队和业务团队对AI方向有分歧,怎么让大家对齐?", "expected_behavior": "调用cross-functional-brainstorming,作为跨职能协作机制促进对齐", "notes": "跨团队对齐场景"},
+    {"id": "should-not-trigger-01", "type": "should_not_trigger", "prompt": "帮我写一个机器学习模型训练代码", "expected_behavior": "纯技术执行问题,不需要头脑风暴", "notes": "诱饵:编程任务"},
+    {"id": "should-not-trigger-02", "type": "should_not_trigger", "prompt": "我们的图像识别模型准确率只有85%,怎么提升?", "expected_behavior": "技术优化问题,已有明确项目,不需要创意发现", "notes": "诱饵:技术优化"},
+    {"id": "edge-01", "type": "edge_case", "prompt": "我们想用AI提升客户满意度,有什么建议?", "expected_behavior": "目标模糊但属于AI场景探索,可调用brainstorming引导细化,或先做任务分解", "notes": "边界:目标不够具体"}
+  ]
+}

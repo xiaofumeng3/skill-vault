@@ -1,0 +1,14 @@
+{
+  "skill": "one-second-rule",
+  "version": "0.1.0",
+  "test_cases": [
+    {"id": "should-trigger-01", "type": "should_trigger", "prompt": "AI能不能自动检测产品表面有没有划痕?", "expected_behavior": "调用one-second-rule,引导用户模拟人类判断时间(质检员一看就知道,不到一秒)", "notes": "典型一秒判断场景"},
+    {"id": "should-trigger-02", "type": "should_trigger", "prompt": "用AI自动听录音判断客户语气是愤怒还是平静,技术上可行吗?", "expected_behavior": "调用one-second-rule,人类一听就能判断情绪,属于简单概念", "notes": "音频分类任务"},
+    {"id": "should-trigger-03", "type": "should_trigger", "prompt": "这个任务AI能做吗?就是看X光片判断有没有骨折", "expected_behavior": "调用one-second-rule,有经验医生能快速判断,一秒法则判定可行", "notes": "医学影像判断"},
+    {"id": "should-trigger-04", "type": "should_trigger", "prompt": "能不能让AI自动判断一张图片里有没有猫?", "expected_behavior": "调用one-second-rule,人类一眼就能判断,远不到一秒", "notes": "图像分类基础任务"},
+    {"id": "should-not-trigger-01", "type": "should_not_trigger", "prompt": "帮我写一份市场分析报告,大概50页", "expected_behavior": "长文本生成任务,不应调用一秒法则(这是复杂任务)", "notes": "诱饵:复杂长文本生成"},
+    {"id": "should-not-trigger-02", "type": "should_not_trigger", "prompt": "AI现在发展到什么水平了?有哪些最新突破?", "expected_behavior": "知识查询,不涉及具体任务可行性判断", "notes": "诱饵:纯知识查询"},
+    {"id": "edge-01", "type": "edge_case", "prompt": "AI能不能自动回复客户邮件?", "expected_behavior": "需要澄清:简单FAQ回复可能一秒内判断,但共情式回复需要几分钟,应引导任务分解", "notes": "边界:任务粒度模糊"},
+    {"id": "edge-02", "type": "edge_case", "prompt": "让AI帮我把这段话翻译成英文,一秒法则适用吗?", "expected_behavior": "翻译不是简单的是/否判断,一秒法则可能不完全适用,需说明局限性", "notes": "边界:生成任务vs判断任务"}
+  ]
+}

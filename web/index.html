@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#1e2a3a">
+  <title>AI 方法论技能库</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <button class="brand" id="brandBtn" title="回到首页">
+        <span class="brand-icon">🧠</span>
+        <span class="brand-text">AI 方法论技能库</span>
+      </button>
+      <nav class="topnav">
+        <a href="#/" data-nav="list" class="nav-link">技能</a>
+        <a href="#/terms" data-nav="terms" class="nav-link">名词</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="app" class="container">
+    <div class="loading">加载中…</div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      数据来源：吴恩达《AI for Everyone》蒸馏技能包 · 共 <span id="statSkills">–</span> 个技能 / <span id="statTerms">–</span> 个名词
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

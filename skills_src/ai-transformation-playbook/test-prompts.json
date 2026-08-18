@@ -1,0 +1,76 @@
+{
+  "skill": "ai-transformation-playbook",
+  "version": "1.0",
+  "test_cases": [
+    {
+      "id": "atp-trigger-01",
+      "type": "should_trigger",
+      "prompt": "我们是一家传统制造企业，CEO说要做AI转型，但完全不知道从哪里开始，有没有一个完整的路线图可以参考？",
+      "expected_behavior": "应提供五步指南作为整体转型路线图：试点项目→组建团队→分层培训→制定战略→统一沟通。",
+      "notes": "典型的传统企业AI转型咨询场景。"
+    },
+    {
+      "id": "atp-trigger-02",
+      "type": "should_trigger",
+      "prompt": "公司想做AI转型，应该先做什么？后做什么？有没有一个推荐的执行顺序？",
+      "expected_behavior": "应按五步指南的顺序说明各阶段的先后关系和大致时间线（2-3年）。",
+      "notes": "询问转型执行顺序的场景。"
+    },
+    {
+      "id": "atp-trigger-03",
+      "type": "should_trigger",
+      "prompt": "怎么让公司变成AI驱动的公司？需要哪些方面的改变？",
+      "expected_behavior": "应从组织、人才、战略、文化等多个维度说明AI转型涉及的变革领域。",
+      "notes": "整体变革咨询场景。"
+    },
+    {
+      "id": "atp-trigger-04",
+      "type": "should_trigger",
+      "prompt": "我们公司刚成立了一个AI部门，接下来应该怎么推进全公司的AI能力建设？",
+      "expected_behavior": "应基于五步指南，从团队建设之后的步骤（培训、战略、沟通）给出建议。",
+      "notes": "已有AI部门，需要后续推进计划的场景。"
+    },
+    {
+      "id": "atp-trigger-05",
+      "type": "should_trigger",
+      "prompt": "高管团队对AI很焦虑，觉得不转型就会被淘汰，怎么制定一个让全员理解的AI战略？",
+      "expected_behavior": "应建议先通过试点项目积累经验和信心，再基于实践制定战略，最后统一内外部沟通。",
+      "notes": "高管焦虑驱动的战略制定场景。"
+    },
+    {
+      "id": "atp-notrigger-01",
+      "type": "should_not_trigger",
+      "prompt": "我们想做一个AI客服机器人，应该用什么技术方案？",
+      "expected_behavior": "不应触发本技能，这是单个AI项目的技术选型问题，不涉及整体组织转型。",
+      "notes": "bait：涉及AI，但核心是单个项目而非组织变革。"
+    },
+    {
+      "id": "atp-notrigger-02",
+      "type": "should_not_trigger",
+      "prompt": "机器学习模型的过拟合问题怎么解决？",
+      "expected_behavior": "不应触发本技能，这是ML技术问题，与组织转型无关。",
+      "notes": "bait：涉及AI技术，但核心是算法问题。"
+    },
+    {
+      "id": "atp-notrigger-03",
+      "type": "should_not_trigger",
+      "prompt": "我们公司要买一套AI软件，市场上有哪些供应商可以选？",
+      "expected_behavior": "不应触发本技能，这是软件采购问题，不涉及组织转型路线图。",
+      "notes": "bait：涉及AI采购，但核心是供应商选择。"
+    },
+    {
+      "id": "atp-edge-01",
+      "type": "edge_case",
+      "prompt": "我们是一家50人的小公司，想做AI转型，五步指南对我们来说是不是太复杂了？",
+      "expected_behavior": "应识别出中小企业场景，建议压缩版本——缩短时间线、精简团队规模、合并步骤。",
+      "notes": "中小企业场景，标准框架需要调整。"
+    },
+    {
+      "id": "atp-edge-02",
+      "type": "edge_case",
+      "prompt": "我们的第一个AI试点项目失败了，转型还要继续吗？接下来怎么办？",
+      "expected_behavior": "应承认书中对失败应对的不足，建议分析失败原因、调整项目选择、可能需要更小的项目重新开始。",
+      "notes": "试点失败场景，框架的盲区。"
+    }
+  ]
+}
