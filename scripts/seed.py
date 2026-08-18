@@ -100,8 +100,30 @@ def parse_skill_md(skill_id):
                 ln = re.sub(r"^\s+", "", ln)
                 lines.append(ln)
             desc = "\n".join(lines).strip()
-    related = re.findall(r"\*\*([a-z0-9-]+)\*\*\s*\(([a-z-]+)\)", text)
-    related = [{"id": rid, "relation": rel} for rid, rel in related]
+    related = []
+    seen = set()
+    # 1) 正文里 **id** (relation) 格式（如 AI for Everyone 系列的"相关 skills"段落）
+    for rid, rel in re.findall(r"\*\*([a-z0-9-]+)\*\*\s*\(([a-z-]+)\)", text):
+        if rid not in seen:
+            seen.add(rid)
+            related.append({"id": rid, "relation": rel})
+    # 2) yaml 块（frontmatter 或 ```yaml 代码块）里的 related_skills：
+    #    内联数组 [a, b] 或列表 - slug: a
+    fm = re.search(r"(?s)^---\r?\n(.*?)\r?\n---", text)
+    blocks = re.findall(r"(?s)```yaml\r?\n(.*?)```", text)
+    if fm:
+        blocks.append(fm.group(1))
+    for block in blocks:
+        for mm in re.finditer(r"(?m)^related_skills:\s*\[([^\]]*)\]", block):
+            for rid in re.findall(r"[a-z0-9-]+", mm.group(1)):
+                if rid not in seen:
+                    seen.add(rid)
+                    related.append({"id": rid, "relation": "related"})
+        for mm in re.finditer(r"(?m)^\s*-\s*slug:\s*([a-z0-9-]+)", block):
+            rid = mm.group(1)
+            if rid not in seen:
+                seen.add(rid)
+                related.append({"id": rid, "relation": "related"})
     return desc, related
 
 

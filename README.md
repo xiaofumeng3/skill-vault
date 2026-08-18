@@ -6,7 +6,8 @@
 
 ```
 skill-vault/
-├── skills_src/           # 原始 SKILL.md 源文件（27 个技能，只读参考）
+├── skills_src/           # 原始 SKILL.md 源文件（35 个技能，只读参考）
+│   └── <skill-id>/SKILL.md   # ★ 规范：每个技能一个目录，直接放在 skills_src/ 下（目录名 = 技能 id）
 ├── content/              # 内容包 JSON（每个技能一个：大白话解释/场景/案例…）
 ├── scripts/
 │   ├── seed.py           # ★ 主构建脚本：建库 + 导入 + 导出
@@ -34,9 +35,11 @@ skill-vault/
 
 ## ➕ 以后加新技能（三步）
 
-1. **内容包**：把新技能的 JSON 放进 `content/<新id>.json`（字段结构参考 `content/one-second-rule.json`；也可以让我从 SKILL.md 自动生成）
-2. **映射**：在 `scripts/seed.py` 的 `SKILL_META` 字典里加一行：`"新id": ("分类id", "来源说明")`
-3. **重建**：`python scripts/seed.py`
+1. **源文件**：把技能目录放到 `skills_src/<技能id>/SKILL.md`（必须直接放 `skills_src/` 下，不要再多套一层目录）
+2. **内容包**：把新技能的 JSON 放进 `content/<新id>.json`（字段结构参考 `content/one-second-rule.json`；也可以让我从 SKILL.md 自动生成）
+3. **映射**：在 `scripts/seed.py` 的 `SKILL_META` 字典里加一行：`"新id": ("分类id", "来源说明")`，然后 `python scripts/seed.py`
+
+> 相关技能（related）解析支持两种 SKILL.md 写法：正文的 `**id** (relation)` 格式，以及 yaml 块里的 `related_skills: [a, b]` / `- slug: a` 格式。
 
 分类 id：`eval` 评估与决策 / `exec` 流程与执行 / `data` 数据与技术 / `strat` 战略与转型 / `org` 组织与团队 / `meta` 元技能工具（也可在 `CATEGORIES` 里新增分类）。
 

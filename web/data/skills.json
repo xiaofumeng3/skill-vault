@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-18T17:14:08",
+ "generated_at": "2026-08-18T18:05:09",
  "categories": [
   {
    "id": "eval",
@@ -291,7 +291,16 @@
     "失败模式：误将“正在标准化”的组件当作差异化机会投入自研会浪费资源；误将“真正独特”的组件外包则丧失竞争优势",
     "时代局限：“行业标准”往往只有事后才能看清，实时判断可能看错，需结合融资、社区活跃度、大厂动向等市场信号并保持谦逊"
    ],
-   "related": []
+   "related": [
+    {
+     "id": "ai-strategy-moat",
+     "relation": "related"
+    },
+    {
+     "id": "triple-due-diligence",
+     "relation": "related"
+    }
+   ]
   },
   {
    "id": "three-value-drivers",
@@ -332,7 +341,16 @@
     "别只算经济账，忽视实施成本、变革管理成本，以及数据积累、能力建设这类战略价值。",
     "框架偏向短期经济价值，衡量不了\"攒数据、练队伍、树信心\"这类长期战略收益。"
    ],
-   "related": []
+   "related": [
+    {
+     "id": "triple-due-diligence",
+     "relation": "related"
+    },
+    {
+     "id": "cross-functional-brainstorming",
+     "relation": "related"
+    }
+   ]
   },
   {
    "id": "dont-acquire-for-data",
@@ -372,7 +390,16 @@
     "失败模式：只看数据量不看质量和可用性、没有AI团队参与纯业务团队拍板，都容易翻车。",
     "作者盲点：有些数据投资是“期权价值”（现在没用、将来可能有用）或防御价值（防止竞争对手拿到），完全否定可能错失机会。"
    ],
-   "related": []
+   "related": [
+    {
+     "id": "data-flywheel",
+     "relation": "related"
+    },
+    {
+     "id": "triple-due-diligence",
+     "relation": "related"
+    }
+   ]
   },
   {
    "id": "triple-due-diligence",
@@ -464,7 +491,16 @@
     "跳过业务目标直接搞技术（“拿着锤子找钉子”）是最常见的失败模式。",
     "实际项目中各阶段不是线性的，经常要回到上一阶段，别把流程当死规矩。"
    ],
-   "related": []
+   "related": [
+    {
+     "id": "ml-workflow",
+     "relation": "related"
+    },
+    {
+     "id": "triple-due-diligence",
+     "relation": "related"
+    }
+   ]
   },
   {
    "id": "ml-workflow",
@@ -558,7 +594,16 @@
     "失败模式：过度设计——能用一个模块解决的事，拆成三个模块",
     "作者盲区：误差累积假设各模块独立，实际模块间可能相互影响（一个模块的错误会改变下一个模块的输入）"
    ],
-   "related": []
+   "related": [
+    {
+     "id": "ml-workflow",
+     "relation": "related"
+    },
+    {
+     "id": "ab-mapping",
+     "relation": "related"
+    }
+   ]
   },
   {
    "id": "train-test-split",
@@ -596,7 +641,16 @@
     "失败模式：训练集和测试集有重叠、或测试集分布与真实场景不符——测试集表现好，上线后表现却差",
     "时代局限：吴恩达只讲了训练/测试两分法，严肃项目通常需要三个集合（训练/开发验证/测试），建议另加一个隐藏测试集防偏差"
    ],
-   "related": []
+   "related": [
+    {
+     "id": "ml-workflow",
+     "relation": "related"
+    },
+    {
+     "id": "statistical-acceptance",
+     "relation": "related"
+    }
+   ]
   },
   {
    "id": "iterate-not-perfect",
@@ -634,7 +688,20 @@
     "失败模式：用\"迭代\"掩盖懒惰——\"先发布再迭代\"变成\"发布后不管\"。",
     "作者盲区：Andrew Ng未讨论\"快速上线\"与\"品牌风险\"的平衡，知名品牌建议采用\"软发布\"（小范围灰度测试）降低风险。"
    ],
-   "related": []
+   "related": [
+    {
+     "id": "ml-workflow",
+     "relation": "related"
+    },
+    {
+     "id": "statistical-acceptance",
+     "relation": "related"
+    },
+    {
+     "id": "start-small-find-partner",
+     "relation": "related"
+    }
+   ]
   },
   {
    "id": "dont-wait-perfect-data",
@@ -672,7 +739,16 @@
     "失败模式：用'不等完美'掩盖懒惰——不是'不等完美'而是'完全不准备'",
     "失败模式：启动后把'数据改进'忘得一干二净，永远不回头改进"
    ],
-   "related": []
+   "related": [
+    {
+     "id": "unified-data-warehouse",
+     "relation": "related"
+    },
+    {
+     "id": "data-flywheel",
+     "relation": "related"
+    }
+   ]
   },
   {
    "id": "statistical-acceptance",
@@ -709,7 +785,20 @@
     "失败模式：盲目接受95%而不评估每个错误的代价，可能远远不够。",
     "失败模式：只告诉业务方\"会有5%错误\"却没有设计任何兜底措施；书中也未深入讨论\"AI初筛+人工复核\"的混合模式。"
    ],
-   "related": []
+   "related": [
+    {
+     "id": "train-test-split",
+     "relation": "related"
+    },
+    {
+     "id": "ml-workflow",
+     "relation": "related"
+    },
+    {
+     "id": "iterate-not-perfect",
+     "relation": "related"
+    }
+   ]
   },
   {
    "id": "automate-task",
@@ -800,7 +889,20 @@
     "过度收集数据会引发隐私问题，反而损害用户信任，让飞轮转不动",
     "飞轮效应被过度浪漫化：现实中很多飞轮转得很慢，甚至根本转不起来，冷启动失败也很常见"
    ],
-   "related": []
+   "related": [
+    {
+     "id": "unified-data-warehouse",
+     "relation": "related"
+    },
+    {
+     "id": "dont-acquire-for-data",
+     "relation": "related"
+    },
+    {
+     "id": "dont-wait-perfect-data",
+     "relation": "related"
+    }
+   ]
   },
   {
    "id": "unified-data-warehouse",
@@ -839,7 +941,16 @@
     "失败模式：追求大而全，试图一次性整合所有数据，结果项目永远完不成。",
     "失败模式：忽视数据安全——统一仓库意味着更大的安全风险，必须有访问控制；还要警惕建设周期与AI项目节奏的矛盾，用「边建边用」缓解。"
    ],
-   "related": []
+   "related": [
+    {
+     "id": "data-flywheel",
+     "relation": "related"
+    },
+    {
+     "id": "dont-wait-perfect-data",
+     "relation": "related"
+    }
+   ]
   },
   {
    "id": "ai-strategy-moat",
@@ -879,7 +990,20 @@
     "护城河分析是静态的，现实中护城河会被新技术颠覆（如 AI 本身就在颠覆传统护城河）",
     "过度强调护城河会导致保守主义，不敢尝试新的 AI 应用"
    ],
-   "related": []
+   "related": [
+    {
+     "id": "build-vs-buy",
+     "relation": "related"
+    },
+    {
+     "id": "data-flywheel",
+     "relation": "related"
+    },
+    {
+     "id": "three-value-drivers",
+     "relation": "related"
+    }
+   ]
   },
   {
    "id": "ai-transformation-playbook",
@@ -917,7 +1041,20 @@
     "跳过试点直接上大项目：失败风险极高，一次失败可能让整个转型夭折",
     "只做技术不搞培训，或战略先行而非试点先行，都会让计划变成空中楼阁；另外这是大公司经验，中小企业应压缩到12-18个月、3-5人起步，并提前准备试点失败的Plan B"
    ],
-   "related": []
+   "related": [
+    {
+     "id": "pilot-momentum-flywheel",
+     "relation": "related"
+    },
+    {
+     "id": "role-tiered-training",
+     "relation": "related"
+    },
+    {
+     "id": "ai-team-building",
+     "relation": "related"
+    }
+   ]
   },
   {
    "id": "pilot-momentum-flywheel",
@@ -955,7 +1092,20 @@
     "失败模式：选了\"容易但无关紧要\"的项目，成功了也没人关心，飞轮转不起来",
     "失败模式：成功后不宣传，飞轮需要\"被看到\"才能转起来；启动前也要定清可见、可量化的成功标准，否则做完大家不认账"
    ],
-   "related": []
+   "related": [
+    {
+     "id": "ai-transformation-playbook",
+     "relation": "related"
+    },
+    {
+     "id": "start-small-find-partner",
+     "relation": "related"
+    },
+    {
+     "id": "cross-functional-brainstorming",
+     "relation": "related"
+    }
+   ]
   },
   {
    "id": "start-small-find-partner",
@@ -994,7 +1144,16 @@
     "作者盲区：他假设你能找到\"工程师朋友\"，传统行业可能找不到——可考虑参加AI社群、找外部顾问、或从在线课程的项目开始。",
     "\"从小处着手\"不等于\"只做小事\"，入门后要快速过渡到有影响力的项目。"
    ],
-   "related": []
+   "related": [
+    {
+     "id": "pilot-momentum-flywheel",
+     "relation": "related"
+    },
+    {
+     "id": "iterate-not-perfect",
+     "relation": "related"
+    }
+   ]
   },
   {
    "id": "cross-functional-brainstorming",
@@ -1082,7 +1241,20 @@
     "失败模式：团队内“技术-业务”鸿沟严重各说各话，或追求大而全导致沟通成本高、效率低。",
     "时代局限：组队只是第一步，AI人才竞争激烈，留住人才同样重要；远程/分布式团队的协作挑战被低估。"
    ],
-   "related": []
+   "related": [
+    {
+     "id": "ai-transformation-playbook",
+     "relation": "related"
+    },
+    {
+     "id": "role-tiered-training",
+     "relation": "related"
+    },
+    {
+     "id": "cross-functional-brainstorming",
+     "relation": "related"
+    }
+   ]
   },
   {
    "id": "role-tiered-training",
@@ -1120,7 +1292,16 @@
     "失败模式：培训时长不足（4小时被压成1小时）建立不了基本认知；只培训技术人员而忽视管理层，管理层不懂AI就无法支持AI项目；培训后没有实践机会，学了就忘",
     "时代局限：4/12/100小时的时长建议基于大公司经验，中小企业应压缩（如高管2小时、经理6小时、工程师50小时）；且分层假设角色清晰，扁平化组织或创业公司中一人可能身兼多个角色"
    ],
-   "related": []
+   "related": [
+    {
+     "id": "ai-transformation-playbook",
+     "relation": "related"
+    },
+    {
+     "id": "ai-team-building",
+     "relation": "related"
+    }
+   ]
   },
   {
    "id": "cangjie-skill",
@@ -1218,7 +1399,7 @@
    "category": "loop",
    "category_name": "循环工程",
    "source": "kangarooking/loop-engineering-skill（Loop Engineering 视频合集蒸馏）",
-   "short_desc": "",
+   "short_desc": "|\n设计或审计任何循环系统的起点: 将循环拆解为 Trigger(触发器)、Action(动作)、Stop Condition(停止条件) 三要素。\n当用户需要设计一个新循环、诊断一个失效循环、或向他人解释\"什么是 Loop\"时使用。\n不适用于: 单次任务执行、非循环的自动化脚本、或已经稳定运行无需重新设计的系统。\n关键 trigger: \"设计一个 loop\"、\"这个循环为什么不停止\"、\"什么是 loop 的最小结构\"。\n---\n\n## Source Metadata",
    "plain": "这个方法教我们怎么设计一个会自己反复干活的小系统（也叫循环系统）。它把任何这样的系统拆成三块：触发器——什么时候开始干活，比如每天早晨8点自动启动；动作——启动后具体做什么，比如读取信息、分析、写结果；停止条件——什么时候算干完了，比如凑够5条就停，或者最多跑8轮就停。这三块缺一不可：没有触发器，系统不知道该何时开始；没有动作，系统只是个空壳；没有停止条件，系统会一直跑下去，直到把资源耗光。普通人什么时候用得上？比如你想做一个每天自动汇总新闻、自动整理邮件的小工具，只要先想清楚「何时启动、做什么、何时停止」这三件事，就能把想法变成一个可靠、不会失控的自动小工具。",
    "use_cases": [
     "当你想设计一个新循环、让 AI 每天自动做某件事时用，先拆出触发器、动作、停止条件三要素",
@@ -1245,7 +1426,20 @@
     "局限：三要素是静态分析框架，不涉及循环系统如何随时间演化",
     "局限：案例全部基于 Claude Code 生态，其他工具的三要素实现方式可能不同"
    ],
-   "related": []
+   "related": [
+    {
+     "id": "loop-worthiness-test",
+     "relation": "related"
+    },
+    {
+     "id": "goal-verification",
+     "relation": "related"
+    },
+    {
+     "id": "loop-build-path",
+     "relation": "related"
+    }
+   ]
   },
   {
    "id": "loop-worthiness-test",
@@ -1254,7 +1448,7 @@
    "category": "loop",
    "category_name": "循环工程",
    "source": "kangarooking/loop-engineering-skill（Loop Engineering 视频合集蒸馏）",
-   "short_desc": "",
+   "short_desc": "|\n判断一个任务是否值得做成 Loop 的四条决策标准。\n当用户在纠结\"这件事要不要自动化\"、\"该不该用 loop\"、或\"为什么我的 loop 得不偿失\"时使用。\n不适用于: 已经决定要做 loop 后的设计阶段、或一次性任务。\n关键 trigger: \"这件事值得做 loop 吗\"、\"该不该自动化\"、\"loop 成本太高怎么办\"。\n---\n\n## Source Metadata",
    "plain": "这个方法是帮你判断：一件事值不值得让 AI 没日没夜地自动循环去干。很多人一看到 AI 很能干，就兴奋地把什么都交给它自动跑，结果搭了一套复杂的系统，钱花了不少，活却没省多少——这就是过度工程化。这个方法给了四条检查标准：第一，这件事是不是每周都会重复发生；第二，做出来的结果能不能让机器自动检查好坏；第三，你花不花得起反复试错的钱；第四，AI 手里有没有干这活需要的工具。四条全满足，才值得做成自动循环；不满足，就别硬做，用一次性的简单办法就行。普通人什么时候用得上？比如你想让 AI 每天帮你整理信息、生成内容之前，先拿这四条过一遍，能避免白花钱、白费劲。",
    "use_cases": [
     "当你在纠结\"这件事要不要自动化、该不该做成 AI 循环\"时用",
@@ -1285,7 +1479,20 @@
     "创意类任务（写作、设计）很难满足\"可自动验证\"，但这类任务仍可能有 loop 价值",
     "视频作者全部是技术背景，对非技术场景（内容创作、研究）的适用性判断可能不准确"
    ],
-   "related": []
+   "related": [
+    {
+     "id": "loop-three-elements",
+     "relation": "related"
+    },
+    {
+     "id": "loop-build-path",
+     "relation": "related"
+    },
+    {
+     "id": "comprehension-gap",
+     "relation": "related"
+    }
+   ]
   },
   {
    "id": "goal-verification",
@@ -1294,7 +1501,7 @@
    "category": "loop",
    "category_name": "循环工程",
    "source": "kangarooking/loop-engineering-skill（Loop Engineering 视频合集蒸馏）",
-   "short_desc": "",
+   "short_desc": "|\n设计 Loop 的 Goal 和 Verification 环节: 将模糊目标转化为可验证的停止条件。\n当用户发现 loop 产出质量不稳定、循环无法停止、或\"不知道什么时候算做完\"时使用。\n不适用于: 目标已经非常清晰可量的任务、或非循环场景。\n关键 trigger: \"loop 停不下来\"、\"产出质量不稳定\"、\"怎么定义完成\"、\"goal 怎么写\"。\n---\n\n## Source Metadata",
    "plain": "让AI自己反复干活（我们叫它\"循环\"）的时候，最怕两件事：一是它停不下来，二是它干出来的东西时好时坏。这套方法解决的就是这个问题：在让AI开工之前，先把\"什么叫干完了\"说清楚。怎么算说清楚？就是目标必须能测量、能检查——比如不说\"把图片做得好看\"，而说\"评分到8分以上，最多改5轮\"。前者是感觉，谁也说不准；后者是数字，到了就是到了，没到就是没到，AI自己也能判断。核心思想就一句话：循环的质量，取决于\"怎么判断完成\"这步的质量。普通人什么时候能用上？比如你让AI帮你写文章、做图、整理资料，如果它没完没了或者结果不稳定，你就该给它定一个可检查的完成标准：要几篇、多少分、最多几轮、最多多长时间，到了就停，这样你省心，结果也靠谱。",
    "use_cases": [
     "当AI循环跑了很久还停不下来时用",
@@ -1324,7 +1531,20 @@
     "\"越客观越好\"有局限：有时主观判断（如人类审美）恰恰就是目标本身",
     "案例覆盖不足：书中全是技术任务，对内容创作、研究等场景的验证设计帮助有限"
    ],
-   "related": []
+   "related": [
+    {
+     "id": "loop-three-elements",
+     "relation": "related"
+    },
+    {
+     "id": "maker-checker",
+     "relation": "related"
+    },
+    {
+     "id": "loop-build-path",
+     "relation": "related"
+    }
+   ]
   },
   {
    "id": "loop-5plus1-architecture",
@@ -1333,7 +1553,7 @@
    "category": "loop",
    "category_name": "循环工程",
    "source": "kangarooking/loop-engineering-skill（Loop Engineering 视频合集蒸馏）",
-   "short_desc": "",
+   "short_desc": "|\n设计或审计完整 Loop 系统的组件架构: 5 大组件 + 1 根脊柱。\n当用户需要搭建一个完整的 (而非最小可用的) loop 系统、或审计现有系统的组件完整性时使用。\n不适用于: 最小可用 loop 的设计、或单次任务的自动化。\n关键 trigger: \"设计一个完整的 loop 系统\"、\"我的 loop 缺什么\"、\"loop 系统怎么组织\"。\n---\n\n## Source Metadata",
    "plain": "这套方法讲的是一个“全自动机器人小分队”该怎么搭，一共要凑齐五样东西加一本记性本。首先得有个闹钟，到点自动开工，不用人催，这叫心跳；接着每个机器人都有自己的独立小办公室，一起干活也不会互相踩脚，这叫工作树；办公室里贴着工作守则，谁进来都先读一遍再动手，这叫技能；光有规矩还不行，机器人还得有手脚，能自己去翻资料、查数据库、发消息，这叫连接器；一个人干容易出错，所以写东西的和检查东西的要分成两个机器人，这叫子智能体。最后也是最关键的一样，全队共用一个记性本，把干过的事、试过的办法、没做完的事都记下来，这样机器人聊完天也不会忘，这叫脊柱。五样加一本记性本凑齐，一套完整的自动化系统就成型了。普通人什么时候用得上？比如你想让电脑每天自动整理邮件、写汇报、跟进客户，或者想检查自己搭的流程到底缺了哪块，都可以拿这份清单对照一下。",
    "use_cases": [
     "当你想搭建一套完整的自动化系统（比如每天自动处理邮件、生成报告、跟进客户）时用",
@@ -1361,7 +1581,20 @@
     "5+1 架构是 Idoos Money 的原创框架，未经广泛验证，不可当作普适标准；“脊柱”具体选文件、数据库还是看板，作者没有给出选择指南，落地时需自己判断。",
     "案例全部基于 Claude Code 生态，换成其他工具可能需要不同的组件。"
    ],
-   "related": []
+   "related": [
+    {
+     "id": "loop-three-elements",
+     "relation": "related"
+    },
+    {
+     "id": "maker-checker",
+     "relation": "related"
+    },
+    {
+     "id": "goal-verification",
+     "relation": "related"
+    }
+   ]
   },
   {
    "id": "loop-build-path",
@@ -1370,7 +1603,7 @@
    "category": "loop",
    "category_name": "循环工程",
    "source": "kangarooking/loop-engineering-skill（Loop Engineering 视频合集蒸馏）",
-   "short_desc": "",
+   "short_desc": "|\n从\"手动做事\"到\"系统自动做事\"的四步渐进构建路径。\n当用户已经决定要做 loop、但不知道从何入手时;或团队正在将手工流程自动化时使用。\n不适用于: 尚未决定要不要做 loop 的任务、或已经稳定运行的 loop 优化。\n关键 trigger: \"怎么开始做 loop\"、\"自动化第一步\"、\"从手动到自动\"。\n---\n\n## Source Metadata",
    "plain": "这个方法教你怎么把一件反复要做的杂事，一步步变成AI自动帮你做、还会自己检查改错的系统。核心思想是别想一步到位，而是走四步渐进的路：第一步，先手动指挥AI做几遍，确认它真的能干成这件事；第二步，把指挥它的方法写成固定说明书（技能包），让AI每次照着做都一样；第三步，给AI装上触发器，比如定个时间让它到点就自动开工——但到这一步还只是\"自动化\"，只会按表干活，不会自我改进；第四步，加上检查环节和记账本，AI干完活会自己判断好不好、记下历史、下次调整。到这一步才是真正的\"循环\"。关键区别是：自动化是到点就干，循环是干了→检查→调整→再干的闭环。普通人什么时候能用上？当你有一件每天重复、规则清楚、AI又能干成的杂事（比如整理资料、回固定格式的邮件）时，就可以照这个路径把它交给AI。",
    "use_cases": [
     "当你想把一件反复做的杂事交给AI、却不知道第一步该从哪里开始时用",
@@ -1400,7 +1633,20 @@
     "四步路径假设任务已经明确，不涉及\"如何发现值得自动化的任务\"。",
     "手动验证在复杂任务中可能耗时很长，作者没给出\"何时放弃\"的标准；视频案例全是成功路径，缺少\"某一步卡住怎么办\"的失败处理。"
    ],
-   "related": []
+   "related": [
+    {
+     "id": "loop-worthiness-test",
+     "relation": "related"
+    },
+    {
+     "id": "loop-three-elements",
+     "relation": "related"
+    },
+    {
+     "id": "goal-verification",
+     "relation": "related"
+    }
+   ]
   },
   {
    "id": "maker-checker",
@@ -1409,7 +1655,7 @@
    "category": "loop",
    "category_name": "循环工程",
    "source": "kangarooking/loop-engineering-skill（Loop Engineering 视频合集蒸馏）",
-   "short_desc": "",
+   "short_desc": "|\n设计 Loop 中的 Maker-Checker 模式: 用独立 agent 审查产出,避免自产自检。\n当用户发现 loop 产出质量不稳定、agent 自我评估过于宽容、或需要提升产出可信度时使用。\n不适用于: 产出可以客观验证 (测试通过/失败) 的任务、或成本极其敏感的场景。\n关键 trigger: \"agent 自评不准确\"、\"产出质量不稳定\"、\"怎么让 agent 审查 agent\"。\n---\n\n## Source Metadata",
    "plain": "这个方法论解决一个很常见的问题：一个人（或一个AI）干完活后自己检查自己，往往检查不出毛病——就像学生自己给自己批改作业，总觉得自己写得挺好。Maker-Checker模式的做法很简单：把“干活”和“检查”拆成两个不同的角色。干活的人（Maker）专心把事情做出来，检查的人（Checker）在旁边挑毛病、打分、提意见，但它不能改动干活人的成果，只能评估。因为两个人思路不一样，检查的人更容易发现干活的人自己看不见的错误。这个道理在生活里到处都用得上：比如你写完一份重要文件，最好找别人帮忙过一遍，而不是自己反复看；做饭时可以让家人尝尝咸淡；发工资前让另一个人核对一遍数字。用在AI身上也一样：让一个AI写东西，再让另一个AI独立检查，就能减少“自己夸自己”造成的错误，让结果更可靠。核心思想就一句话：干活的和检查的必须是两个人，别让同一个人既当运动员又当裁判。",
    "use_cases": [
     "当你发现AI自己说“做得很好”，但实际结果很糟糕时用",
@@ -1438,7 +1684,20 @@
     "作者没讲清楚“checker 也不靠谱时怎么办”，这个模式假设两个 agent 一定比一个好",
     "独立 checker 的 token 和时间成本被低估；视频案例全是代码审查，对内容创作等非技术场景的适用性未知"
    ],
-   "related": []
+   "related": [
+    {
+     "id": "goal-verification",
+     "relation": "related"
+    },
+    {
+     "id": "loop-5plus1-architecture",
+     "relation": "related"
+    },
+    {
+     "id": "loop-three-elements",
+     "relation": "related"
+    }
+   ]
   },
   {
    "id": "comprehension-gap",
@@ -1447,7 +1706,7 @@
    "category": "loop",
    "category_name": "循环工程",
    "source": "kangarooking/loop-engineering-skill（Loop Engineering 视频合集蒸馏）",
-   "short_desc": "",
+   "short_desc": "|\n识别和管理 Loop 系统的认知风险: 自动化程度越高,你真正理解的部分越少。\n当用户发现\"仓库里有很多代码但我看不懂\"、\"loop 产出很多但不确定对不对\"、或需要向团队警示 AI 使用风险时使用。\n不适用于: 纯技术调试、或产出完全可客观验证的场景。\n关键 trigger: \"AI 生成的代码我看不懂\"、\"产出太多理解不过来\"、\"AI 使用风险\"。\n---\n\n## Source Metadata",
    "plain": "这个方法是给让AI帮忙干活的人提个醒。AI自动做一件事、再做下一件，像机器转圈一样不停运转，我们叫它\"循环\"。循环干得越快、越多，你就越容易看不懂它到底做了什么——它一天能产出几千行东西，而你真正亲眼看过、亲手检查过的只有一点点。你脑子里真正弄懂的部分，和它实际做出来的东西之间，就出现了一条看不见的沟，这条沟就是风险：越是你不了解的内容，风险越大。最危险的还不是AI犯错，而是你习惯了它\"吐出来什么就信什么\"，舒舒服服地全盘照收，什么都不检查。这个方法论的核心思想就一句话：AI再能干，最后把关的还得是你自己，验证永远在你手上，你要时不时亲自抽查它干的活，看得懂才放心。普通人什么时候用得上？比如你用AI帮你写工作总结、整理表格、回复消息，干得多了，就偶尔打开看看它写了什么、有没有乱来，别全盘照收。",
    "use_cases": [
     "当AI帮你自动干的活越来越多，你开始看不懂它产出的是什么时用",
@@ -1478,7 +1737,20 @@
     "作者局限：\"理解越深越好\"是隐含假设，有些场景（如 CI/CD）并不需要人理解每一行。",
     "作者局限：没有给出\"理解到什么程度就够了\"的标准，也没有量化\"差距多大算危险\"。"
    ],
-   "related": []
+   "related": [
+    {
+     "id": "loop-worthiness-test",
+     "relation": "related"
+    },
+    {
+     "id": "maker-checker",
+     "relation": "related"
+    },
+    {
+     "id": "three-stage-evolution",
+     "relation": "related"
+    }
+   ]
   },
   {
    "id": "three-stage-evolution",
@@ -1487,7 +1759,7 @@
    "category": "loop",
    "category_name": "循环工程",
    "source": "kangarooking/loop-engineering-skill（Loop Engineering 视频合集蒸馏）",
-   "short_desc": "",
+   "short_desc": "|\n评估个人或团队在 AI 工具使用上的进化阶段,给出下一步提升建议。\n当用户想判断\"我现在 AI 用得怎么样\"、\"下一步该学什么\"、或团队要做 AI 能力评估时使用。\n不适用于: 已经处于 Loop 阶段需要优化具体系统的场景。\n关键 trigger: \"我现在在哪个阶段\"、\"AI 使用下一步\"、\"团队 AI 能力评估\"。\n---\n\n## Source Metadata",
    "plain": "这个模型讲的是“人和AI合作”的三个阶段。第一阶段叫“逐行驾驶”：你自己动手做一件事，AI在旁边帮你补全，就像你开车、AI帮你按导航。第二阶段叫“并行手动”：你同时开好几个AI对话窗口，每个窗口都在干活，你像调度员一样在窗口之间来回切换，效率高了，但每件事都得你亲手发起。第三阶段叫“系统自主”：你不再一个个发对话，而是设计一套系统，让AI自己去看材料、发现问题、决定怎么做，你只负责搭建和监督。核心思想是：用得越好，人越少插手细节，从“自己动手”慢慢变成“设计系统让AI干活”。普通人什么时候用得上？比如你好奇“我AI用得怎么样”“下一步该学什么”，或者团队想评估大家的AI水平时，就用这套模型给自己定位。",
    "use_cases": [
     "当你想知道“我现在AI用得怎么样”时用",
@@ -1515,7 +1787,20 @@
     "三阶段是线性假设，实际使用中可能混合多个阶段。",
     "“Stage 3最好”是隐含假设，但作者也承认多数任务不需要loop。"
    ],
-   "related": []
+   "related": [
+    {
+     "id": "loop-build-path",
+     "relation": "related"
+    },
+    {
+     "id": "loop-worthiness-test",
+     "relation": "related"
+    },
+    {
+     "id": "comprehension-gap",
+     "relation": "related"
+    }
+   ]
   }
  ],
  "terms": [
