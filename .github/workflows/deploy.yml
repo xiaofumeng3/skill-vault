@@ -1,0 +1,52 @@
+# GitHub Pages 部署工作流（自定义部署路径）
+#
+# 用法：
+#   1. 把本文件放到你的 GitHub 仓库的 .github/workflows/deploy.yml
+#   2. 仓库 Settings → Pages → Source 选择 "GitHub Actions"
+#   3. push 到 main/master 分支即自动部署，之后每次 push 自动更新
+#
+# ★ 部署路径（重要）：
+#   本文件默认部署 web/ 子目录（path: web）。
+#   - 如果 index.html 在仓库根目录：把 path 改成  .
+#   - 如果在 docs/ 目录：把 path 改成  docs
+
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main, master]
+  workflow_dispatch: # 允许在 Actions 页手动触发
+
+# 赋予部署所需的权限
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# 同一时间只跑一个部署任务，新 push 会取消进行中的
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # ★ 部署路径：网页文件所在的目录
+          path: web
+
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
