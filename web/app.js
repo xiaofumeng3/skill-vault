@@ -55,6 +55,66 @@
     return DATA.skills.filter(function (s) { return s.category === id; }).length;
   }
 
+  function isCodingSkill(s) {
+    return s && s.content_type === "coding-agent";
+  }
+
+  function detailLabels(s) {
+    if (isCodingSkill(s)) {
+      return {
+        quote: "🧭 核心原则",
+        core: "🧱 工作机制",
+        cases: "🧪 开发场景",
+        steps: "🛠️ 怎么使用"
+      };
+    }
+    return {
+      quote: "📜 原文金句",
+      core: "🧱 方法论骨架",
+      cases: "📖 书里的案例",
+      steps: "🛠️ 怎么做（步骤）"
+    };
+  }
+
+  function promptExamples(s) {
+    if (!s.prompt_examples || !s.prompt_examples.length) return "";
+    return section(
+      "📋 复制调用示例",
+      '<div class="prompt-grid">' + s.prompt_examples.map(function (p) {
+        return '<div class="prompt-card"><div class="prompt-title">' +
+          escapeHtml(p.title || "调用示例") +
+          '</div><pre class="prompt-code"><code>' +
+          escapeHtml(p.prompt || "") + '</code></pre></div>';
+      }).join("") + "</div>"
+    );
+  }
+
+  function recommendedWith(s) {
+    if (!s.recommended_with || !s.recommended_with.length) return "";
+    return section(
+      "🔁 推荐组合",
+      '<div class="workflow-list">' + s.recommended_with.map(function (flow) {
+        const links = (flow.skills || []).map(function (sid) {
+          const target = skillById(sid);
+          return '<a class="related-chip" href="#/skill/' + encodeURIComponent(sid) + '">' +
+            escapeHtml(target ? (target.name_cn || sid) : sid) + '</a>';
+        }).join('<span class="flow-arrow">→</span>');
+        return '<div class="workflow-card"><strong>' + escapeHtml(flow.title || "工作流") +
+          '</strong><div class="related-chips">' + links + '</div></div>';
+      }).join("") + "</div>"
+    );
+  }
+
+  function sourceInfo(s) {
+    if (!s.source_url) return escapeHtml(s.source);
+    return '<a class="source-link" href="' + escapeHtml(s.source_url) +
+      '" target="_blank" rel="noopener">上游仓库</a> · ' +
+      '<a class="source-link" href="' + escapeHtml(s.source_file_url) +
+      '" target="_blank" rel="noopener">原始 SKILL.md</a>' +
+      (s.snapshot_commit ? ' · 快照 ' + escapeHtml(s.snapshot_date || "") +
+        ' · Commit ' + escapeHtml(s.snapshot_commit) : "");
+  }
+
   /* ---------- 视图：列表 ---------- */
   function viewList() {
     const q = state.query.trim().toLowerCase();
@@ -81,6 +141,7 @@
         '<span class="card-name">' + escapeHtml(s.name_cn || s.id) + "</span>" +
         '<span class="card-cn">' + escapeHtml(s.id) + "</span>" +
         '<span class="card-cat">' + (cat ? cat.icon + " " + cat.name : "") + "</span>" +
+        (s.role ? '<span class="card-role">' + escapeHtml(s.role) + "</span>" : "") +
         "</div>" +
         '<div class="card-desc">' + escapeHtml(s.short_desc || s.plain.slice(0, 80)) + "</div>" +
         '<div class="card-foot"><span>' + escapeHtml(s.source) + "</span></div>" +
@@ -130,6 +191,7 @@
     }).map(function (t) {
       return '<a class="related-chip" href="#/terms">' + escapeHtml(t.term) + "</a>";
     }).join("");
+    const labels = detailLabels(s);
 
     return (
       '<a class="back-link" href="#/">← 返回列表</a>' +
@@ -138,17 +200,20 @@
       '<span class="detail-cn">' + escapeHtml(s.id) + "</span></div>" +
       '<div class="detail-meta">' +
       '<span class="badge">' + (cat ? cat.icon + " " + cat.name : "") + "</span>" +
-      '<span class="badge source">📚 ' + escapeHtml(s.source) + "</span>" +
+      (s.role ? '<span class="badge role">' + escapeHtml(s.role) + "</span>" : "") +
+      '<span class="badge source">📚 ' + sourceInfo(s) + "</span>" +
       "</div></div>" +
 
       section("💬 大白话 · 一句话懂它", '<div class="plain-box">' + nl2br(escapeHtml(s.plain)) + "</div>") +
       section("🎯 什么时候用得上", list(s.use_cases, "case-item")) +
       section("🏠 生活化例子", '<div class="example-box">' + nl2br(escapeHtml(s.example)) + "</div>") +
-      section("📜 原文金句", '<div class="quote-box">' + escapeHtml(s.quote) + "</div>") +
-      section("🧱 方法论骨架", nl2br(escapeHtml(s.core))) +
-      section("📖 书里的案例", list(s.cases, "case-item")) +
-      section("🛠️ 怎么做（步骤）", list(s.steps, "step-item")) +
+      section(labels.quote, '<div class="quote-box">' + escapeHtml(s.quote) + "</div>") +
+      section(labels.core, nl2br(escapeHtml(s.core))) +
+      section(labels.cases, list(s.cases, "case-item")) +
+      section(labels.steps, list(s.steps, "step-item")) +
       section("⚠️ 边界 · 什么时候别用它", list(s.boundary, "boundary-item")) +
+      promptExamples(s) +
+      recommendedWith(s) +
       (related ? section("🔗 相关技能", '<div class="related-chips">' + related + "</div>") : "") +
       (relatedTerms ? section("📇 涉及名词", '<div class="related-chips">' + relatedTerms + "</div>") : "")
     );

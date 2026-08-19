@@ -1,0 +1,17 @@
+{
+  "id": "resolving-merge-conflicts",
+  "name_cn": "解决合并冲突",
+  "content_type": "coding-agent",
+  "role": "核心 Skill",
+  "plain": "它在 merge 或 rebase 冲突中逐块理解双方意图，按最终目标合并，而不是粗暴选择‘ours’或‘theirs’，最后完成验证。",
+  "use_cases": ["正在进行 Git merge 或 rebase 时", "两个分支都改了同一功能时", "冲突解决后需要确认行为没有丢失时"],
+  "example": "一边修登录安全，一边改登录界面，冲突时要保留两边有价值的改动，而不是用一边文件覆盖另一边。",
+  "quote": "冲突解决的是意图，不是文本颜色。",
+  "core": "逐个冲突块追溯共同祖先、双方变化和目标规格，合并后运行针对性测试并完成 Git 操作。",
+  "cases": ["将 feature 分支 rebase 到主干并保留两边的测试。", "处理配置文件冲突时避免把生产参数带入开发分支。"],
+  "steps": ["确认当前 merge/rebase 状态和目标。", "阅读冲突块上下文及两边提交意图。", "逐块按语义解决并标记已处理。", "运行测试、检查 diff 并完成 merge/rebase。"],
+  "boundary": ["不要用 reset --hard 或 checkout 覆盖未确认的工作。", "不要只看冲突文件而忽略提交上下文。", "涉及密钥、生产配置和迁移时必须人工复核。"],
+  "terms": [{"term": "共同祖先", "plain": "两个分支分叉前共同拥有的那版代码。"}, {"term": "语义冲突", "plain": "文本能合并但业务行为会互相破坏的冲突。"}],
+  "prompt_examples": [{"title": "快速调用", "prompt": "$resolving-merge-conflicts 帮我逐块解决当前 Git 冲突，先解释双方意图。"}, {"title": "完整调用", "prompt": "$resolving-merge-conflicts 当前正在____。请读取共同祖先、双方提交和规格，逐个冲突块说明保留理由后解决；不要使用破坏性覆盖命令，完成后运行相关测试并报告剩余风险。"}],
+  "recommended_with": [{"title": "冲突后重新验收", "skills": ["resolving-merge-conflicts", "tdd", "code-review"]}]
+}

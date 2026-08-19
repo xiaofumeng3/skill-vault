@@ -1,0 +1,17 @@
+{
+  "id": "writing-for-agents",
+  "name_cn": "Agent 文档写作",
+  "content_type": "coding-agent",
+  "role": "核心 Skill",
+  "plain": "它专门写给 AI 看的项目文档：短、明确、可执行，告诉 Agent 什么时候读取、哪些规则不能违反、哪里可以找到更多信息。",
+  "use_cases": ["创建或修改 AGENTS.md、CLAUDE.md 和 Skill 时", "项目文档太长但 AI 仍找不到重点时", "想把重复提示变成稳定规则时"],
+  "example": "不要在 AGENTS.md 写一篇历史长文，而是写清‘改 API 必须运行哪个测试，数据库迁移文件放在哪里’。",
+  "quote": "给 Agent 的文档是路标，不是百科全书。",
+  "core": "围绕触发条件、必须遵守的规则、查找路径、命令和验收写短指令，用链接指向详细资料，避免重复和冲突。",
+  "cases": ["为前端目录写局部开发约定。", "把一次次 Code Review 中重复出现的规则沉淀进项目指引。"],
+  "steps": ["确定文档服务的 Agent 和目录范围。", "提取高频、稳定、可验证的规则。", "按触发条件组织短指令和资源链接。", "用真实任务验证 Agent 能找到并执行规则。"],
+  "boundary": ["不要把变化频繁的细节复制到多个规则文件。", "不要用模糊的‘写好代码’替代可验证标准。", "AGENTS.md 和 CLAUDE.md 的优先级必须明确。"],
+  "terms": [{"term": "指路文档", "plain": "告诉 Agent 何时读取哪份规则和资料的短文档。"}, {"term": "触发条件", "plain": "某条规则在什么任务或目录下才适用。"}],
+  "prompt_examples": [{"title": "快速调用", "prompt": "$writing-for-agents 帮我把这条重复的开发约定写成清晰的 Agent 指引。"}, {"title": "完整调用", "prompt": "$writing-for-agents 审查并改写____中的 AGENTS.md/CLAUDE.md。请保持主文件短小，按触发条件写可执行规则，链接到详细文档，消除冲突和重复，并用一个真实任务检查 Agent 是否能正确找到规则。"}],
+  "recommended_with": [{"title": "把经验沉淀下来", "skills": ["writing-for-agents", "code-review", "handoff", "setup-matt-pocock-skills"]}]
+}

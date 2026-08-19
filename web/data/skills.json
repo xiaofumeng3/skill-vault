@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-18T18:05:09",
+ "generated_at": "2026-08-19T17:50:49",
  "categories": [
   {
    "id": "eval",
@@ -32,6 +32,12 @@
    "description": "人 / 协作"
   },
   {
+   "id": "coding",
+   "name": "编程智能体",
+   "icon": "🧑‍💻",
+   "description": "需求 / 代码 / 测试 / 审查"
+  },
+  {
    "id": "meta",
    "name": "元技能 / 工具",
    "icon": "🧰",
@@ -53,6 +59,12 @@
    "category_name": "评估与决策",
    "source": "吴恩达《AI for Everyone》· kangarooking/ai-for-everyone-skill 蒸馏",
    "short_desc": "|\n当用户想快速判断一项任务是否能被当前AI技术自动化时使用。\n用户在问\"这个AI能做吗\"、\"技术上可行吗\"、\"能不能用AI自动完成X\"时激活。\n不适用于: 需要深度可行性分析的项目评估、涉及情感共鸣或复杂推理的创意任务、LLM时代的长文本生成场景。\n---\n\n## Source Metadata",
+   "content_type": "methodology",
+   "role": "内容 Skill",
+   "source_url": "",
+   "source_file_url": "",
+   "snapshot_commit": "",
+   "snapshot_date": "",
    "plain": "一秒法则是一块简单的\"试金石\"，用来快速判断：一件事能不能交给现在的AI来做？做法很简单——你只要问自己：一个熟练的人做这件事，需要想多久？如果连一秒都不用，看一眼就能下结论（比如\"前面有没有车\"\"碗里有没有脏东西\"），那现在的AI大概率也能学会做；如果人需要想几分钟甚至几小时（比如写一份几十页的报告、做一个重要决定），那现在的AI通常还做不好。为什么这么灵？因为AI是靠大量例子学会做事的，人\"一眼就能看明白\"的事，往往规则简单，例子看多了AI就能学会。普通人什么时候用得上？比如你想让AI帮忙检查照片、识别小票、自动分拣东西，可以先拿这个法则过一遍：判断越快越简单，越可能成功。记住，它只是快速初筛，能\"一秒判断\"不代表一定做得成，还得看有没有足够多的例子供AI学习。",
    "use_cases": [
     "当你想知道\"这个活能不能交给AI干\"、拿不准值不值得折腾时用",
@@ -98,7 +110,9 @@
      "id": "ab-mapping",
      "relation": "composes-with"
     }
-   ]
+   ],
+   "prompt_examples": [],
+   "recommended_with": []
   },
   {
    "id": "ab-mapping",
@@ -108,6 +122,12 @@
    "category_name": "评估与决策",
    "source": "吴恩达《AI for Everyone》· kangarooking/ai-for-everyone-skill 蒸馏",
    "short_desc": "|\n当用户想判断一个问题是否能用监督学习解决,或试图把业务问题转化为AI问题时调用。\n用户在问\"AI能不能做X\"、\"这算不算机器学习问题\"、\"我们的业务场景适合用AI吗\"时使用。\n不适用于: 纯数据分析洞察、无明确输入输出的探索性问题、聚类等非监督学习场景。\n---\n\n# A→B 映射 — 监督学习的核心心智模型\n\n## R — 原文 (Reading)\n\n> \"最常见的机器学习类型是一种能够学习从输入到输出映射的AI。\"\n>\n> — 吴恩达, p02\n\n---\n\n## I — 方法论骨架 (Interpretation)",
+   "content_type": "methodology",
+   "role": "内容 Skill",
+   "source_url": "",
+   "source_file_url": "",
+   "snapshot_commit": "",
+   "snapshot_date": "",
    "plain": "这个方法教你怎么把一个\"想请电脑帮忙\"的念头，变成电脑真的学得会的事。电脑学东西和人不一样：人看几个例子就能举一反三，电脑得靠大量的\"带答案的例题\"——每道题都写着题目（比如一封邮件）和标准答案（这算不算垃圾邮件）。这个方法论的核心就一句话：先想清楚\"你要给电脑什么题目（A）\"、\"你希望电脑吐出什么答案（B）\"这两件事。别小看这一步，很多AI项目做砸，不是电脑不够聪明，而是压根没想明白自己要预测什么。比如想让电脑帮忙挑出坏苹果，就得先定清楚：题目是苹果的照片，答案是\"好还是坏\"。把这个想明白了再谈技术，方向才不会跑偏。普通人什么时候能用上？凡是\"给一样东西、想要一个判断或数字\"的事——看照片判断有没有破损、看评价判断好评差评、看面积估个价格——都可以先套这个思路理一遍。",
    "use_cases": [
     "当你想让电脑'看一样东西就给个判断'时用（比如看照片判断水果新不新鲜、零件有没有瑕疵）",
@@ -151,7 +171,9 @@
      "id": "ml-workflow",
      "relation": "depends-on"
     }
-   ]
+   ],
+   "prompt_examples": [],
+   "recommended_with": []
   },
   {
    "id": "ml-feasibility",
@@ -161,6 +183,12 @@
    "category_name": "评估与决策",
    "source": "吴恩达《AI for Everyone》· kangarooking/ai-for-everyone-skill 蒸馏",
    "short_desc": "|\n当用户想系统评估一个AI项目是否值得投入时使用，结合概念简单性和数据充足性两个维度。\n用户在问\"这个想法可行吗\"、\"我们需要多少数据\"、\"技术上能做到吗\"时激活。\n不适用于: 纯数据科学洞察项目、探索性分析、已明确不需要AI的场景。\n---\n\n## Source Metadata",
+   "content_type": "methodology",
+   "role": "内容 Skill",
+   "source_url": "",
+   "source_file_url": "",
+   "snapshot_commit": "",
+   "snapshot_date": "",
    "plain": "这个方法是用来判断\"能不能让电脑替我们干某件事\"的。很多人以为：只要我有想法，电脑就能学会。其实不是——能不能做成，只需要问自己两个问题。第一个问题：这件事要做的判断，是不是\"一眼就能看出来\"的？就像老司机瞄一眼就知道前面有没有车、质检员扫一眼就知道杯子有没有瑕疵——这种不到一秒就能下判断的事，电脑才好学；要是人自己都得想半天，那电脑更学不会。第二个问题：你手头有没有足够多的\"标准答案\"？比如几千张标好\"有缺陷/没缺陷\"的照片。这些例子就像给小孩认字的卡片，电脑照着大量例子学，例子越多越像样。两个问题都答\"是\"，就马上动手；例子不够，就想办法补；判断太难，就别硬上，换个方向。普通人什么时候能用上？比如小区想用摄像头自动抓拍乱停的车、奶茶店想自动挑出磕碰的杯子、或者你想自己做个小工具——动手前先照这个方法掂量掂量，能省下不少时间和冤枉钱。",
    "use_cases": [
     "当你想知道\"让电脑自动做某件事\"的想法靠不靠谱、值不值得花钱投入时用",
@@ -204,7 +232,9 @@
      "id": "triple-due-diligence",
      "relation": "depends-on"
     }
-   ]
+   ],
+   "prompt_examples": [],
+   "recommended_with": []
   },
   {
    "id": "ml-vs-ds",
@@ -214,6 +244,12 @@
    "category_name": "评估与决策",
    "source": "吴恩达《AI for Everyone》· kangarooking/ai-for-everyone-skill 蒸馏",
    "short_desc": "|\n应用从 AI for Everyone 蒸馏出的「ML产出软件,DS产出洞察 — 项目类型判定框架」方法论。Use when the user needs practical guidance, diagnosis, workflow design, decision support, or an action plan related to ml-vs-ds.\n---\n\n## Source Metadata",
+   "content_type": "methodology",
+   "role": "内容 Skill",
+   "source_url": "",
+   "source_file_url": "",
+   "snapshot_commit": "",
+   "snapshot_date": "",
    "plain": "做任何跟\"让电脑帮忙\"有关的项目前，先别急着动手，问自己一个问题：最后要交出去的东西，是一个\"会自己一直干活的机器\"，还是一个\"给人看的分析报告\"？前者叫\"造机器\"式的项目：比如一个能自动拦下垃圾邮件的过滤器，做出来之后它就一直在后台干活，不用人管。后者叫\"写报告\"式的项目：比如帮超市分析哪种饮料卖得好，最后交的是一份PPT，老板看完拍板进多少货，这事就结束了。这两类项目要的人不一样、成功标准不一样、干活流程也不一样。最容易犯的错，就是明明只需要一份报告，却兴师动众去造一台机器；或者明明要造机器，却交份报告了事。所以开工前先分清：你要的是\"会干活的机器\"，还是\"能拍板的报告\"？",
    "use_cases": [
     "当老板问你'这个项目最后到底交付什么'，而你一时答不上来时用",
@@ -252,7 +288,9 @@
      "id": "ab-mapping",
      "relation": "depends-on"
     }
-   ]
+   ],
+   "prompt_examples": [],
+   "recommended_with": []
   },
   {
    "id": "build-vs-buy",
@@ -262,6 +300,12 @@
    "category_name": "评估与决策",
    "source": "吴恩达《AI for Everyone》· kangarooking/ai-for-everyone-skill 蒸馏",
    "short_desc": "|\n应用从 AI for Everyone 蒸馏出的「不在火车前冲刺 — AI自建vs购买决策框架」方法论。Use when the user needs practical guidance, diagnosis, workflow design, decision support, or an action plan related to build-vs-buy.\n---\n\n## Source Metadata",
+   "content_type": "methodology",
+   "role": "内容 Skill",
+   "source_url": "",
+   "source_file_url": "",
+   "snapshot_commit": "",
+   "snapshot_date": "",
    "plain": "这个方法是帮人做一道选择题：一件事，是自己动手做，还是花钱买现成的？它的核心思想是：如果市面上已经有人把这件事做成了\"标准答案\"——大家都在用、越做越好的那种——那你就别再自己从头做一遍，直接拿来用更划算。因为别人背后有整个市场在帮忙，你一个人怎么跑也跑不过他们。反过来，如果这件事只有你能做，做好了能让你比别人强一大截，那才值得自己动手。打个比方：街上已经开满便宜的便利店，你没必要再开一家一模一样的；但如果你家祖传的酱料秘方别人都没有，那就值得自己熬。普通人什么时候用得上？开小店选收银系统、做视频选剪辑软件、装修选成品家具还是定制，都可以先看看：别人是不是已经有做得很好的现成方案了。",
    "use_cases": [
     "当你想开一家小店，纠结收银、记账软件是买现成的还是请人专门开发时用",
@@ -300,7 +344,9 @@
      "id": "triple-due-diligence",
      "relation": "related"
     }
-   ]
+   ],
+   "prompt_examples": [],
+   "recommended_with": []
   },
   {
    "id": "three-value-drivers",
@@ -310,6 +356,12 @@
    "category_name": "评估与决策",
    "source": "吴恩达《AI for Everyone》· kangarooking/ai-for-everyone-skill 蒸馏",
    "short_desc": "|\n应用从 AI for Everyone 蒸馏出的「AI价值驱动三途径 — 降本/增收/新业务」方法论。Use when the user needs practical guidance, diagnosis, workflow design, decision support, or an action plan related to three-value-drivers.\n---\n\n## Source Metadata",
+   "content_type": "methodology",
+   "role": "内容 Skill",
+   "source_url": "",
+   "source_file_url": "",
+   "snapshot_commit": "",
+   "snapshot_date": "",
    "plain": "这个方法是教人判断一件事\"值不值得做\"的。核心特别简单：不管你想做什么项目、花什么钱，只要问自己三个问题——能不能少花钱？能不能多赚钱？能不能开个新买卖？——只要有一个答案是\"能\"，这件事就值得认真考虑；三个都答不上来，就要小心了。\n\n打个比方，你想给家里装自动浇花器，用它来想：装了能省水费吗？能省下请人浇花的钱吗？能不能顺便靠它做点小生意？三个问题一过，该不该装心里就有数了。\n\n普通人什么时候用得上呢？想学新技能、想买新设备、想开个小店、想给单位提改进建议时，都可以先拿这三个问题过一遍，避免一时冲动、白花冤枉钱。它不直接替你做决定，但能帮你把\"值不值\"想清楚，不再凭感觉拍脑袋。",
    "use_cases": [
     "当你在纠结一个想法或项目值不值得投入时用，比如想开个小店、想学个新技能",
@@ -350,7 +402,9 @@
      "id": "cross-functional-brainstorming",
      "relation": "related"
     }
-   ]
+   ],
+   "prompt_examples": [],
+   "recommended_with": []
   },
   {
    "id": "dont-acquire-for-data",
@@ -360,6 +414,12 @@
    "category_name": "评估与决策",
    "source": "吴恩达《AI for Everyone》· kangarooking/ai-for-everyone-skill 蒸馏",
    "short_desc": "|\n应用从 AI for Everyone 蒸馏出的「不为数据而收购 — 数据投资的价值验证原则」方法论。Use when the user needs practical guidance, diagnosis, workflow design, decision support, or an action plan related to dont-acquire-for-data.\n---\n\n## Source Metadata",
+   "content_type": "methodology",
+   "role": "内容 Skill",
+   "source_url": "",
+   "source_file_url": "",
+   "snapshot_commit": "",
+   "snapshot_date": "",
    "plain": "很多人以为\"数据就是新石油\"，只要手里攒着数据就值钱。这个方法论想纠正这个错觉：数据本身不值钱，只有当它能派上用场、变成 AI 能用的\"教具\"时，才谈得上价值。就像一仓库面粉，光堆着不会变成面包——得有菜谱、有师傅、做出来还得卖得掉。所以，在你花钱买数据之前，不管是收购一家公司图它的数据，还是掏钱买现成的数据包，先回答三个问题：谁会用它？拿它干什么？怎么靠它赚回本钱？三个问题答不上来，那句\"这数据很有价值\"多半是自己在骗自己。普通人什么时候用得上？比如你想盘下一家小店，理由是\"它攒了好多年顾客记录\"；或者想花钱买一份现成的客户名单做推广——动手前先想清楚这批数据到底能帮你干什么、怎么帮你回本。想不清楚，就先别掏钱。",
    "use_cases": [
     "当你想收购一家公司或店铺，理由是“他们攒了很多年的客户数据”时用。",
@@ -399,7 +459,9 @@
      "id": "triple-due-diligence",
      "relation": "related"
     }
-   ]
+   ],
+   "prompt_examples": [],
+   "recommended_with": []
   },
   {
    "id": "triple-due-diligence",
@@ -409,6 +471,12 @@
    "category_name": "评估与决策",
    "source": "吴恩达《AI for Everyone》· kangarooking/ai-for-everyone-skill 蒸馏",
    "short_desc": "|\n当用户准备为AI项目投入大量资源，需要全面评估技术可行性、商业价值和伦理影响时使用。\n用户在问\"这个项目值得做吗\"、\"该投入多少\"、\"技术上能做吗\"、\"有没有风险\"时激活。\n不适用于: 小型探索性项目（几天工作量）、纯技术研究、已明确无商业或伦理维度的场景。\n---\n\n## Source Metadata",
+   "content_type": "methodology",
+   "role": "内容 Skill",
+   "source_url": "",
+   "source_file_url": "",
+   "snapshot_commit": "",
+   "snapshot_date": "",
    "plain": "三重尽职调查，就是“动手之前，先查三遍”。无论你打算投入几个月时间和大把钱做什么项目，先别急着干，按三条线分别检查：第一，技术上能不能做——找懂行的人问清楚，这东西到底造不造得出来、要多久、有多难；第二，商业上值不值——把花的钱和能赚的钱都列出来算笔账，看看是省钱、赚钱还是开辟新生意；第三，道德上该不该做——就算又做得出来又赚钱，也要问问会不会伤害某些人、会不会违背良心。三条检查都必须过关，项目才算亮绿灯；任何一条不过关，就该改一改或者干脆不做。普通人什么时候用得上？凡是你要下大注的事情都适用：家里想盘下一家店、想报一个几万块的培训班、想跟人合伙投资、或者公司要上个新系统，都可以先照这三条问自己一遍，避免一腔热情冲上去，最后才发现“做不出来”，或者“做得出来也赚钱、但不该做”。",
    "use_cases": [
     "当你想盘下一家店、投一笔大钱做新项目，怕自己一时冲动拍板时用",
@@ -450,7 +518,9 @@
      "id": "cross-functional-brainstorming",
      "relation": "composes-with"
     }
-   ]
+   ],
+   "prompt_examples": [],
+   "recommended_with": []
   },
   {
    "id": "ai-project-lifecycle",
@@ -460,6 +530,12 @@
    "category_name": "流程与执行",
    "source": "吴恩达《AI for Everyone》· kangarooking/ai-for-everyone-skill 蒸馏",
    "short_desc": "|\n应用从 AI for Everyone 蒸馏出的「AI项目生命周期 — 从立项到落地的完整流程」方法论。Use when the user needs practical guidance, diagnosis, workflow design, decision support, or an action plan related to ai-project-lifecycle.\n---\n\n## Source Metadata",
+   "content_type": "methodology",
+   "role": "内容 Skill",
+   "source_url": "",
+   "source_file_url": "",
+   "snapshot_commit": "",
+   "snapshot_date": "",
    "plain": "这个方法论讲的是：做一个AI项目，就像开一家新店，不能一上来就闷头装修。它把整个过程拆成六个环节——先想清楚要解决什么问题，再准备好“教材”（数据），把会干活的AI做出来，然后摆上货架正式营业（上线），之后天天盯着顾客反馈，最后不断改进。核心思想是：AI不是一次性做出来的神器，而是边用边养、越用越好的帮手；想清楚“要解决什么”比“怎么实现”更重要。普通人什么时候用得上？比如你所在的公司想上AI客服、AI验货，或者你想知道一个AI点子该怎么一步步落地、项目为什么老是延期——这套流程就是一张路线图，告诉你每个阶段做什么、谁负责，避免一上来就埋头猛干，最后发现方向全错了。",
    "use_cases": [
     "当你所在的公司准备上一个AI项目（比如AI客服、自动验货），想搞清楚该从哪一步开始时用",
@@ -500,7 +576,9 @@
      "id": "triple-due-diligence",
      "relation": "related"
     }
-   ]
+   ],
+   "prompt_examples": [],
+   "recommended_with": []
   },
   {
    "id": "ml-workflow",
@@ -510,6 +588,12 @@
    "category_name": "流程与执行",
    "source": "吴恩达《AI for Everyone》· kangarooking/ai-for-everyone-skill 蒸馏",
    "short_desc": "|\n应用从 AI for Everyone 蒸馏出的「ML项目流程 — 收集→训练→部署→迭代」方法论。Use when the user needs practical guidance, diagnosis, workflow design, decision support, or an action plan related to ml-workflow.\n---\n\n## Source Metadata",
+   "content_type": "methodology",
+   "role": "内容 Skill",
+   "source_url": "",
+   "source_file_url": "",
+   "snapshot_commit": "",
+   "snapshot_date": "",
    "plain": "这个方法教我们怎么把一个“让电脑自己学会干活”的项目从头做到尾。它把整个过程拆成四步：先给电脑准备“例题”，比如几千张苹果和香蕉的照片，每张都标好答案；然后让电脑照着例题自己琢磨规律；琢磨好了就放出去给真人用；用的时候如果发现它老出错，就把这些错题收集起来喂给它重新学，越学越准。最关键的是：这不是一条直线走到头，而是转圈的过程——用的人越多，发现的错题越多，电脑学得越好，学得越好就有更多人愿意用。普通人什么时候用得上？比如你想让小区物业搞一个“自动识别乱停车”的系统，或者想让咖啡店用摄像头数排队人数，都可以按这个流程走：先攒带答案的样例，再一点点试，别指望一次就成，放出去用以后盯着出错的地方反复改进。",
    "use_cases": [
     "当你想搞一个“让电脑自动认东西、自动做判断”的项目，却不知道第一步该干什么时用。",
@@ -556,7 +640,9 @@
      "id": "ml-vs-ds",
      "relation": "contrasts-with"
     }
-   ]
+   ],
+   "prompt_examples": [],
+   "recommended_with": []
   },
   {
    "id": "ai-pipeline",
@@ -566,6 +652,12 @@
    "category_name": "流程与执行",
    "source": "吴恩达《AI for Everyone》· kangarooking/ai-for-everyone-skill 蒸馏",
    "short_desc": "|\n应用从 AI for Everyone 蒸馏出的「AI流水线 — 多组件串联的系统设计模式」方法论。Use when the user needs practical guidance, diagnosis, workflow design, decision support, or an action plan related to ai-pipeline.\n---\n\n## Source Metadata",
+   "content_type": "methodology",
+   "role": "内容 Skill",
+   "source_url": "",
+   "source_file_url": "",
+   "snapshot_commit": "",
+   "snapshot_date": "",
    "plain": "有些复杂的事情，一个人干不完，要分成好几道工序，一道接一道地做，前面的结果交给后面用。AI流水线就是这个思路：把一个复杂的AI产品，拆成好几个小步骤，每一步是一个独立的\"小零件\"，串起来像一条流水线。比如智能音箱，要经历\"听到声音→认出是不是在叫它→听懂说了什么→去执行\"好几个环节。这套方法的核心思想是：每一步单独做得好，不代表整条线做得好，因为错误会一步一步传下去，每一步都做对，整体才做对。比如每一步有95%的把握，四个环节下来，整体把握就只剩约81%了。所以不能只盯着某一个环节，要看整条线。普通人什么时候用得上？当你想搞清楚\"为什么这个智能产品时好时坏\"、想向别人解释一个AI产品是怎么一步步工作的，或者想把一个复杂问题拆成几步来解决时，都能用上这套思路。",
    "use_cases": [
     "当你想搞明白一个智能产品（如智能音箱、自动驾驶）是怎么一步步工作的时候用",
@@ -603,7 +695,9 @@
      "id": "ab-mapping",
      "relation": "related"
     }
-   ]
+   ],
+   "prompt_examples": [],
+   "recommended_with": []
   },
   {
    "id": "train-test-split",
@@ -613,6 +707,12 @@
    "category_name": "流程与执行",
    "source": "吴恩达《AI for Everyone》· kangarooking/ai-for-everyone-skill 蒸馏",
    "short_desc": "|\n应用从 AI for Everyone 蒸馏出的「训练集/测试集分离 — AI的'科学方法」方法论。Use when the user needs practical guidance, diagnosis, workflow design, decision support, or an action plan related to train-test-split.\n---\n\n## Source Metadata",
+   "content_type": "methodology",
+   "role": "内容 Skill",
+   "source_url": "",
+   "source_file_url": "",
+   "snapshot_commit": "",
+   "snapshot_date": "",
    "plain": "这套方法教我们怎么判断一个东西是\"真行\"，还是\"只是看起来行\"。打个比方：老师考学生，如果考的全是学生背过的原题，分数肯定高，但那不代表真学会了；只有考从没见过的题，分数才说明真实水平。AI 也一样——先给它一堆资料让它\"学\"，再拿它从没见过的题目考它，考出来的成绩才算数。核心思想就一句话：练习用的题和考试用的题必须分开，绝不能同一批题既当练习又当考试，否则成绩虚高，把自己骗了。普通人什么时候用得上？比如给孩子挑辅导班，别只看机构秀出来的优秀作业，要看孩子做新题的真实表现；买宣称\"准确率99%\"的智能产品时，追问一句：这个数字是在什么情况下测出来的？甚至自己学做饭，想检验手艺，就该做一道没练过的菜。总之，凡是有人拿成绩给你看，先问一句：这是在没见过的题上考出来的吗？",
    "use_cases": [
     "当有人报出一个很高的准确率或好评率，你想知道这个数字可不可信时用",
@@ -650,7 +750,9 @@
      "id": "statistical-acceptance",
      "relation": "related"
     }
-   ]
+   ],
+   "prompt_examples": [],
+   "recommended_with": []
   },
   {
    "id": "iterate-not-perfect",
@@ -660,6 +762,12 @@
    "category_name": "流程与执行",
    "source": "吴恩达《AI for Everyone》· kangarooking/ai-for-everyone-skill 蒸馏",
    "short_desc": "|\n应用从 AI for Everyone 蒸馏出的「迭代而非完美 — AI产品的渐进式改进」方法论。Use when the user needs practical guidance, diagnosis, workflow design, decision support, or an action plan related to iterate-not-perfect.\n---\n\n## Source Metadata",
+   "content_type": "methodology",
+   "role": "内容 Skill",
+   "source_url": "",
+   "source_file_url": "",
+   "snapshot_commit": "",
+   "snapshot_date": "",
    "plain": "这套方法说的是一件事：做事别等做到完美才出手，先拿出一个\"够用就行\"的版本，用起来，再根据大家的反馈一点点改好。很多人做事总想着\"再准备准备\"\"再完善一下\"，结果准备着准备着，机会就过去了，还从没听到过真实使用者的意见。这个方法主张反过来：先定一个\"什么程度就可以拿出来用\"的最低标准，达到了就赶紧上线，同时把收集意见的通道准备好，然后照着反馈一轮一轮地改进。每改进一轮，东西就更好一点，虽然永远到不了\"完美\"，但一直在进步。普通人什么时候用得上？比如你想做个小生意、开个公众号、办个兴趣班，别等把所有细节都想周全才动手，先做出第一版给人看，再根据反馈调整。孩子学骑车、学做菜也一样，先骑起来、先做出来，再慢慢修正，总比站在旁边纠结\"姿势还不标准\"强。",
    "use_cases": [
     "当你准备开网店或做副业，总觉得'货品再全一点、页面再好看一点才能开业'时用——先开起来，再根据顾客反馈调整。",
@@ -701,7 +809,9 @@
      "id": "start-small-find-partner",
      "relation": "related"
     }
-   ]
+   ],
+   "prompt_examples": [],
+   "recommended_with": []
   },
   {
    "id": "dont-wait-perfect-data",
@@ -711,6 +821,12 @@
    "category_name": "流程与执行",
    "source": "吴恩达《AI for Everyone》· kangarooking/ai-for-everyone-skill 蒸馏",
    "short_desc": "|\n应用从 AI for Everyone 蒸馏出的「不等完美数据 — 先用起来再迭代」方法论。Use when the user needs practical guidance, diagnosis, workflow design, decision support, or an action plan related to dont-wait-perfect-data.\n---\n\n## Source Metadata",
+   "content_type": "methodology",
+   "role": "内容 Skill",
+   "source_url": "",
+   "source_file_url": "",
+   "snapshot_commit": "",
+   "snapshot_date": "",
    "plain": "这个方法论说的是：别老想着等一切准备到完美才动手，尤其是等\"数据完美\"。很多人做事前总想把资料、信息整理到挑不出毛病再开始，结果一等就是几个月甚至几年，事情永远开不了头。它的核心想法是：信息不用完美，\"够用\"就可以开工。就像炒菜，不用等所有调料都配齐才下锅，先用手头有的炒起来，味道不对再慢慢调。为什么可以这样？因为机器（AI）能容忍一些不完美和杂乱，先让它跑起来，从实际使用中得到的反馈，比你在家里空想怎么把信息弄完美有用得多；而且数据会越用越好，像滚雪球一样越滚越大。普通人什么时候能用上？学新东西，不用等买齐所有资料才开背；装修，不用等把方案比到十全十美才动工；减肥，不用等找到完美计划才行动。做法很简单：先定一个\"差不多就行\"的标准，达到了就开工，边做边改。记住：完美是行动的敌人。",
    "use_cases": [
     "当你用'数据还没准备好、再等等'当借口、事情迟迟无法启动时用",
@@ -748,7 +864,9 @@
      "id": "data-flywheel",
      "relation": "related"
     }
-   ]
+   ],
+   "prompt_examples": [],
+   "recommended_with": []
   },
   {
    "id": "statistical-acceptance",
@@ -758,6 +876,12 @@
    "category_name": "流程与执行",
    "source": "吴恩达《AI for Everyone》· kangarooking/ai-for-everyone-skill 蒸馏",
    "short_desc": "|\n应用从 AI for Everyone 蒸馏出的「统计化验收标准 — 不追求100%准确」方法论。Use when the user needs practical guidance, diagnosis, workflow design, decision support, or an action plan related to statistical-acceptance.\n---\n\n## Source Metadata",
+   "content_type": "methodology",
+   "role": "内容 Skill",
+   "source_url": "",
+   "source_file_url": "",
+   "snapshot_commit": "",
+   "snapshot_date": "",
    "plain": "很多人以为，让电脑（AI）帮忙做事，就必须百分之百正确，一个错都不能犯。但真实世界没有完美：人会犯错，电脑也一样，数据本身也常有不准确的地方。这套方法叫\"统计化验收标准\"，核心思想很简单：别追求\"零错误\"，而是提前说好\"做到什么程度就算合格\"。比如约定\"一百次里做对九十五次就算达标\"。这样验收时不吵架，出错时也知道该怎么办。普通人什么时候用得上？比如在公司验收一个自动处理的系统、和同事约定任务的合格线、检查机器人客服答得怎么样，都可以先定一条\"合格线\"，而不是指望它永远不出错。提前定好标准，比事后追求完美有用得多。",
    "use_cases": [
     "当有人坚持\"电脑系统必须零错误、一个都不能错\"时用",
@@ -798,7 +922,9 @@
      "id": "iterate-not-perfect",
      "relation": "related"
     }
-   ]
+   ],
+   "prompt_examples": [],
+   "recommended_with": []
   },
   {
    "id": "automate-task",
@@ -808,6 +934,12 @@
    "category_name": "流程与执行",
    "source": "吴恩达《AI for Everyone》· kangarooking/ai-for-everyone-skill 蒸馏",
    "short_desc": "|\n当用户想把某个岗位或流程自动化，需要把宏大目标拆解为具体可执行任务时使用。\n用户在说\"替代XX岗位\"、\"全自动\"、\"AI取代\"、\"把X工作交给AI\"时激活。\n不适用于: 岗位本身只有单一不可拆分的任务、需要整体流程自动化的场景、创意型工作。\n---\n\n## Source Metadata",
+   "content_type": "methodology",
+   "role": "内容 Skill",
+   "source_url": "",
+   "source_file_url": "",
+   "snapshot_commit": "",
+   "snapshot_date": "",
    "plain": "很多人担心\"AI会抢走我的工作\"，但真相是：一个岗位从来不是一件事，而是由一大堆具体小事拼起来的。比如一个前台，她的工作包括接电话、登记访客、整理快递、回复咨询……每一件都是单独的小任务。这个方法的思路是：别想着让AI干掉整个岗位，那太难也太吓人了；而是把这个岗位的工作一件一件列出来，看看哪件事最简单、最容易交给电脑干，就先从那一件开始。就像搬家不一次搬完，先搬最轻的那箱。普通人什么时候用得上？当你想\"把某件事全自动\"又觉得不现实的时候，或者想把某个天天重复的活儿甩给电脑的时候——先把大目标拆成一个个小任务，挑一个最合适的先做起来，比空想\"取代整个岗位\"靠谱得多。",
    "use_cases": [
     "当你说'我想用AI取代某个岗位'时，用它把岗位拆成一个个具体小任务，再选一个切入点",
@@ -848,7 +980,9 @@
      "id": "ml-feasibility",
      "relation": "depends-on"
     }
-   ]
+   ],
+   "prompt_examples": [],
+   "recommended_with": []
   },
   {
    "id": "data-flywheel",
@@ -858,6 +992,12 @@
    "category_name": "数据与技术",
    "source": "吴恩达《AI for Everyone》· kangarooking/ai-for-everyone-skill 蒸馏",
    "short_desc": "|\n应用从 AI for Everyone 蒸馏出的「数据飞轮 — AI产品自我强化的增长引擎」方法论。Use when the user needs practical guidance, diagnosis, workflow design, decision support, or an action plan related to data-flywheel.\n---\n\n## Source Metadata",
+   "content_type": "methodology",
+   "role": "内容 Skill",
+   "source_url": "",
+   "source_file_url": "",
+   "snapshot_commit": "",
+   "snapshot_date": "",
    "plain": "数据飞轮讲的是一个\"越转越好的雪球\"：产品做得越好，用的人就越多；用的人越多，留下的使用痕迹（搜了什么、看了什么、点了什么）就越多；这些痕迹攒起来，能让产品变得更懂你，于是产品又变好，用的人更多。这个循环一旦转起来，别人很难追上，因为领头者已经攒下了海量经验。普通人什么时候能用上？比如你开网店，每次顾客的浏览、购买记录如果能帮你把推荐和货架调得更准，生意就会越做越顺；比如你运营一个社区，大家发的帖子如果能帮你把版面安排得更合口味，人就会越来越多。这套方法也提醒你：光有循环还不够，早期没人没数据时，得先用笨办法把基础做扎实，吸引来第一批用户，飞轮才转得起来；而且只有\"用户越用、产品越好\"的业务才有飞轮，不是所有生意都适用。",
    "use_cases": [
     "当你想弄明白为什么有的App越用越懂你、有的却一直不好用时用",
@@ -902,7 +1042,9 @@
      "id": "dont-wait-perfect-data",
      "relation": "related"
     }
-   ]
+   ],
+   "prompt_examples": [],
+   "recommended_with": []
   },
   {
    "id": "unified-data-warehouse",
@@ -912,6 +1054,12 @@
    "category_name": "数据与技术",
    "source": "吴恩达《AI for Everyone》· kangarooking/ai-for-everyone-skill 蒸馏",
    "short_desc": "|\n应用从 AI for Everyone 蒸馏出的「统一数据仓库 — AI的数据基础设施」方法论。Use when the user needs practical guidance, diagnosis, workflow design, decision support, or an action plan related to unified-data-warehouse.\n---\n\n## Source Metadata",
+   "content_type": "methodology",
+   "role": "内容 Skill",
+   "source_url": "",
+   "source_file_url": "",
+   "snapshot_commit": "",
+   "snapshot_date": "",
    "plain": "统一数据仓库，说人话就是：把一家公司东一摊、西一摊的零散记录，全部搬到同一个大仓库里，按统一的规矩摆放好。很多公司的买卖记录在一个系统里、卖货记录在另一个系统里、客户信息又在别处，就像家里的发票、账单、备忘录散落各处，想查个数要对半天，还经常对不上。统一数据仓库就是给公司建一个「中央档案柜」：所有记录集中存放、格式统一、口径一致，谁需要都能查得到。它通常是公司让电脑帮忙干活（做AI）的第一步——电脑要变聪明，得先「喂」它足够多、足够全的材料，仓库就是那个粮仓。普通人也能用上这个思路：把散落各处的资料集中到一处、统一格式，比如全家人的病历、保单集中放好，以后查起来就方便。别忘了：别等仓库建完美才动手，先存最要紧的，边用边补。",
    "use_cases": [
     "当你发现同一件事在不同地方记的数字对不上（比如报修记录、缴费记录各说各话）时用",
@@ -950,7 +1098,9 @@
      "id": "dont-wait-perfect-data",
      "relation": "related"
     }
-   ]
+   ],
+   "prompt_examples": [],
+   "recommended_with": []
   },
   {
    "id": "ai-strategy-moat",
@@ -960,6 +1110,12 @@
    "category_name": "战略与转型",
    "source": "吴恩达《AI for Everyone》· kangarooking/ai-for-everyone-skill 蒸馏",
    "short_desc": "|\n应用从 AI for Everyone 蒸馏出的「AI战略护城河 — 用AI构建可持续竞争优势」方法论。Use when the user needs practical guidance, diagnosis, workflow design, decision support, or an action plan related to ai-strategy-moat.\n---\n\n## Source Metadata",
+   "content_type": "methodology",
+   "role": "内容 Skill",
+   "source_url": "",
+   "source_file_url": "",
+   "snapshot_commit": "",
+   "snapshot_date": "",
    "plain": "“护城河”这个词来自古代：城堡外面挖一条又宽又深的河，敌人很难打进来。做生意也一样——一家店生意好，很快会有人模仿，能长期挡住模仿者的本事，就叫护城河。这套方法讲的是：AI（人工智能）本身几乎不能当护城河。就像同一台缝纫机谁都能买到，真正拉开差距的，是谁有更好的布料、更多的老顾客、更响的招牌、更大的店面。AI 只是一个“放大器”：你已经比别人强，它能让你强得更多；你本来就平平无奇，它也变不出优势来。真正能守住地盘的是四样东西：别人没有的数据、用的人越多越好用的产品、顾客的信赖，以及生意做大了带来的低成本。普通人什么时候用得上？比如你想给自家小店引进 AI 工具，先别急着花钱，先想清楚：我的店到底靠什么留住客人？AI 是在放大这个强项，还是只给我装了个谁都能装的插件？用这个思路想问题，就不容易被各种“AI 神器”忽悠。",
    "use_cases": [
     "当你想给自家小店、工作室引进 AI 工具，拿不准这笔钱花得值不值时用",
@@ -1003,7 +1159,9 @@
      "id": "three-value-drivers",
      "relation": "related"
     }
-   ]
+   ],
+   "prompt_examples": [],
+   "recommended_with": []
   },
   {
    "id": "ai-transformation-playbook",
@@ -1013,6 +1171,12 @@
    "category_name": "战略与转型",
    "source": "吴恩达《AI for Everyone》· kangarooking/ai-for-everyone-skill 蒸馏",
    "short_desc": "|\n应用从 AI for Everyone 蒸馏出的「AI转型五步指南 — 组织变革路线图」方法论。Use when the user needs practical guidance, diagnosis, workflow design, decision support, or an action plan related to ai-transformation-playbook.\n---\n\n## Source Metadata",
+   "content_type": "methodology",
+   "role": "内容 Skill",
+   "source_url": "",
+   "source_file_url": "",
+   "snapshot_commit": "",
+   "snapshot_date": "",
    "plain": "想象一家饭店想升级成\"自动化餐厅\"：这不只是装一台新机器，而是从点菜、后厨到结账，整个店都要换一套新做法。这个方法就是给这种\"全家大改造\"设计的一张路线图，一共五步。它最核心的道理是：别想一口吃成胖子。先挑一个最容易做成的活儿（哪怕不是最赚钱的），在半年到一年内干出点成绩给大家看，让所有人都相信这条路走得通；然后成立一个专门负责这事的小组，派人到各个部门帮忙；接着给上到老板、下到普通员工都上课，让大家懂这新东西；等实践出经验了，再定下全单位的大方向，并且跟员工、顾客讲清楚我们到底要往哪走。整套流程大概要两三年。它特别适合那种\"想变，但不知道从哪下手\"的单位，比如传统企业、学校、医院要搞整体升级时。",
    "use_cases": [
     "当公司高层宣布“我们要做AI转型”，大家都在等一个具体方案时用",
@@ -1054,7 +1218,9 @@
      "id": "ai-team-building",
      "relation": "related"
     }
-   ]
+   ],
+   "prompt_examples": [],
+   "recommended_with": []
   },
   {
    "id": "pilot-momentum-flywheel",
@@ -1064,6 +1230,12 @@
    "category_name": "战略与转型",
    "source": "吴恩达《AI for Everyone》· kangarooking/ai-for-everyone-skill 蒸馏",
    "short_desc": "|\n应用从 AI for Everyone 蒸馏出的「试点势能飞轮 — 先求成功再求价值」方法论。Use when the user needs practical guidance, diagnosis, workflow design, decision support, or an action plan related to pilot-momentum-flywheel.\n---\n\n## Source Metadata",
+   "content_type": "methodology",
+   "role": "内容 Skill",
+   "source_url": "",
+   "source_file_url": "",
+   "snapshot_commit": "",
+   "snapshot_date": "",
    "plain": "很多人做第一件事时，总爱挑\"最值钱\"的去做，结果一上来就失败，大家从此不敢再碰。这套方法的思路正好反过来：第一个项目不选最值钱的，而选最容易做成的。就像推一辆很重的车，直接推车头推不动，先轻轻一推让车慢慢滚起来，之后越推越省力，车自己就越跑越快——这就是\"飞轮\"。先做成一件小事，大家看到成果、有了信心，愿意跟着干的人就多了，后面就能接越来越大的事。普通人什么时候能用上？家里想搞智能化，别急着全屋改造，先装好一个智能门锁；店里想上自动点单，先在一个柜台试试；团队要开新业务，先挑一个把握最大的小项目打头阵。先把第一个球踢进球门，后面的事就好办多了。",
    "use_cases": [
     "当你手里有好几个新点子、纠结\"先做哪个\"时用",
@@ -1105,7 +1277,9 @@
      "id": "cross-functional-brainstorming",
      "relation": "related"
     }
-   ]
+   ],
+   "prompt_examples": [],
+   "recommended_with": []
   },
   {
    "id": "start-small-find-partner",
@@ -1115,6 +1289,12 @@
    "category_name": "战略与转型",
    "source": "吴恩达《AI for Everyone》· kangarooking/ai-for-everyone-skill 蒸馏",
    "short_desc": "|\n应用从 AI for Everyone 蒸馏出的「从小处着手+寻找伙伴 — AI入门的行动原则」方法论。Use when the user needs practical guidance, diagnosis, workflow design, decision support, or an action plan related to start-small-find-partner.\n---\n\n## Source Metadata",
+   "content_type": "methodology",
+   "role": "内容 Skill",
+   "source_url": "",
+   "source_file_url": "",
+   "snapshot_commit": "",
+   "snapshot_date": "",
    "plain": "想学新东西又怕太难、不知道从哪下手？这套方法告诉你两条最实在的规矩：第一，别一上来就憋大招，先挑一个\"小得能做完\"的事练手；第二，别自己一个人硬扛，找个懂行的朋友或志同道合的人一起干。它的核心想法是：学本领靠的是\"边做边学\"，就像学游泳，看再多的教学视频，也不如下水扑腾两下。第一个小项目可能没什么用，但它能让你摸清整套流程、攒下信心；朋友能帮你补短板，在你快放弃时拉你一把。做完第一个，第二个自然会更好。普通人什么时候用得上？比如你想学做短视频、学理财、学一门手艺，或者公司让你牵头一件新事却毫无头绪——都可以先找个小目标、拉个伴，马上动手，别等\"准备好了\"才开始。",
    "use_cases": [
     "当你想学一门新技能（比如做短视频、学英语）却不知道从哪开始时用",
@@ -1153,7 +1333,9 @@
      "id": "iterate-not-perfect",
      "relation": "related"
     }
-   ]
+   ],
+   "prompt_examples": [],
+   "recommended_with": []
   },
   {
    "id": "cross-functional-brainstorming",
@@ -1163,6 +1345,12 @@
    "category_name": "战略与转型",
    "source": "吴恩达《AI for Everyone》· kangarooking/ai-for-everyone-skill 蒸馏",
    "short_desc": "|\n当用户需要启动AI项目的创意发现阶段，组织跨职能团队寻找AI应用场景时使用。\n用户在问\"我们该做什么AI项目\"、\"怎么找到AI落地场景\"、\"brainstorm AI ideas\"时激活。\n不适用于: 组织完全没有AI专业知识（无内外部顾问可用）、问题已明确定义无需创意探索的场景。\n---\n\n## Source Metadata",
+   "content_type": "methodology",
+   "role": "内容 Skill",
+   "source_url": "",
+   "source_file_url": "",
+   "snapshot_commit": "",
+   "snapshot_date": "",
    "plain": "这个方法教你怎么找到\"值得做的AI项目\"。它的核心思想是：好点子往往出在两个圈的交叠处——一个圈是\"技术能做什么\"，另一个圈是\"什么最值钱、最让人头疼\"。光懂技术的人想出来的点子，技术上能做，但可能没人需要；只懂业务的人想出来的点子，很有价值，但技术上根本做不出来。所以要把两类人请到一起开会：懂技术的专家告诉大家现在技术能干啥，懂业务的专家告诉大家哪里最费钱、最耗时、最麻烦，然后大家一起找两边都对得上的地方，那就是最值得投入的方向。这个方法最要紧的一点是：很多AI项目失败，不是技术不行，而是从一开始就解决了错误的问题。普通人什么时候用得上？比如你开一家小店，想用点新科技提升生意，但不知道从哪下手；单位要搞智能化改造，领导问\"我们能做什么\"；或者你想做个方便家人的小工具，却拿不准做什么最有用——这时候都可以用这个思路：先问\"现在有什么技术做得到\"，再问\"身边什么事最麻烦\"，取两者的交集。",
    "use_cases": [
     "当企业刚成立AI团队，不知道该做第一个什么项目时用",
@@ -1199,7 +1387,9 @@
      "id": "triple-due-diligence",
      "relation": "composes-with"
     }
-   ]
+   ],
+   "prompt_examples": [],
+   "recommended_with": []
   },
   {
    "id": "ai-team-building",
@@ -1209,6 +1399,12 @@
    "category_name": "组织与团队",
    "source": "吴恩达《AI for Everyone》· kangarooking/ai-for-everyone-skill 蒸馏",
    "short_desc": "|\n应用从 AI for Everyone 蒸馏出的「AI团队构建 — 打造高效AI团队的角色与协作」方法论。Use when the user needs practical guidance, diagnosis, workflow design, decision support, or an action plan related to ai-team-building.\n---\n\n## Source Metadata",
+   "content_type": "methodology",
+   "role": "内容 Skill",
+   "source_url": "",
+   "source_file_url": "",
+   "snapshot_commit": "",
+   "snapshot_date": "",
    "plain": "这个方法论讲的是：想让AI（可以把它想成一个特别能干、但什么都不懂的新员工）真正帮公司干活，光招一个会写程序的“聪明人”是不够的，得把一群各有本事的人凑成一个团队，像做一道菜一样分工配合。它的核心思想是：AI项目要成功，靠的不是一两个技术天才，而是一支“各司其职、又能互相听懂”的队伍。队伍里既要有负责把AI造出来的技术人，也要有负责准备“食材”（数据）的人，还要有懂业务、知道客户到底要什么的人，再加上懂行的专家来把关做出来的东西对不对。最重要的是，这些人要说“同一种话”——懂技术的人要稍微懂点业务，懂业务的人要知道技术能干什么、不能干什么，不然就会各说各话。普通人什么时候能用上？比如你在公司牵头上一个要用AI的项目、要给项目招人、或者领导让你组建一个“AI小组”时，都可以用这套方法：先想清楚要解决什么问题，再盘算需要哪几种人，看看现在缺什么，然后补人、定好怎么协作。",
    "use_cases": [
     "当公司要组建或扩充AI团队时用",
@@ -1254,7 +1450,9 @@
      "id": "cross-functional-brainstorming",
      "relation": "related"
     }
-   ]
+   ],
+   "prompt_examples": [],
+   "recommended_with": []
   },
   {
    "id": "role-tiered-training",
@@ -1264,6 +1462,12 @@
    "category_name": "组织与团队",
    "source": "吴恩达《AI for Everyone》· kangarooking/ai-for-everyone-skill 蒸馏",
    "short_desc": "|\n应用从 AI for Everyone 蒸馏出的「分层AI培训 — 高管/经理/工程师的差异化学习」方法论。Use when the user needs practical guidance, diagnosis, workflow design, decision support, or an action plan related to role-tiered-training.\n---\n\n## Source Metadata",
+   "content_type": "methodology",
+   "role": "内容 Skill",
+   "source_url": "",
+   "source_file_url": "",
+   "snapshot_commit": "",
+   "snapshot_date": "",
    "plain": "分层AI培训，就是把\"学AI\"这件事，按人的身份分成不同的班来教。核心思想很简单：不是每个人都得学一样的东西。就像学做饭——餐厅老板要学的是这道菜成本多少、卖多少钱，大厨要学的是刀工火候，服务员只学怎么端菜上桌。让老板去练三年刀工，让大厨去算账，都是浪费。公司里学AI也一样：当领导的，花几个小时搞清楚AI能干什么、不能干什么、值不值得投钱就够了；带项目的负责人，花一两天学会怎么把一个AI项目管好；真正动手做技术的工程师，才需要花上百个小时扎扎实实学技术。这套方法就是为了避免\"所有人上同一门课\"——领导听得一头雾水觉得太技术，工程师又嫌太浅没干货。普通人什么时候用得上？你在单位负责组织培训时，或者被安排学AI时，都可以用这个思路：先想清楚自己或同事是什么角色，再决定学到什么程度。别一股脑往深里钻，也别只学个皮毛。",
    "use_cases": [
     "当公司要推AI培训，却不知道不同层级该学什么时用",
@@ -1301,6 +1505,1533 @@
      "id": "ai-team-building",
      "relation": "related"
     }
+   ],
+   "prompt_examples": [],
+   "recommended_with": []
+  },
+  {
+   "id": "setup-matt-pocock-skills",
+   "name": "setup-matt-pocock-skills",
+   "name_cn": "初始化工程技能",
+   "category": "coding",
+   "category_name": "编程智能体",
+   "source": "mattpocock/skills（固定快照）",
+   "short_desc": "Configure this repo for the engineering skills — set up its issue tracker, triage label vocabulary, and domain doc layout. Run once before first use of the other engineering skills.",
+   "content_type": "coding-agent",
+   "role": "入口 Skill",
+   "source_url": "https://github.com/mattpocock/skills",
+   "source_file_url": "https://github.com/mattpocock/skills/blob/9c9f36ccd3995266cd675468af71639c8dde1ec5/skills/engineering/setup-matt-pocock-skills/SKILL.md",
+   "snapshot_commit": "9c9f36ccd3995266cd675468af71639c8dde1ec5",
+   "snapshot_date": "2026-08-19",
+   "plain": "第一次在一个项目里使用这套工程技能时，先用它把项目的任务追踪方式、问题标签和文档放置位置定下来。就像给 AI 助手发一张项目地图，后面的技能才知道任务写在哪里、术语放在哪里、完成后怎么验收。",
+   "use_cases": [
+    "第一次把这套 Skills 接入一个代码仓库时",
+    "团队需要统一任务、标签和架构文档习惯时",
+    "希望后续 Skill 自动找到项目上下文时"
+   ],
+   "example": "像新员工入职第一天，先告诉他公司用哪套工单系统、文件放哪个文件夹、哪些标签代表紧急问题。规则先定好，后面干活才不会各写各的。",
+   "quote": "先把项目的协作规则写清楚，工程技能才有稳定的落脚点。",
+   "core": "它不负责实现功能，而是建立项目级约定：任务追踪、标签词汇、领域文档和决策记录的位置。",
+   "cases": [
+    "新项目初始化时生成项目协作说明和文档目录。",
+    "老项目把散落在聊天里的规则整理成可被 Agent 读取的约定。"
+   ],
+   "steps": [
+    "识别项目使用的任务追踪方式。",
+    "确认 triage 标签和状态词汇。",
+    "确定 CONTEXT.md、ADR 等文档的存放位置。",
+    "写入项目约定并检查其他 Skill 是否能找到它们。"
+   ],
+   "boundary": [
+    "不要把它当成需求分析或代码实现工具。",
+    "已有成熟项目规范时先读取并兼容，不要覆盖。",
+    "不要把个人偏好写成全团队强制规则。"
+   ],
+   "related": [],
+   "prompt_examples": [
+    {
+     "title": "快速调用",
+     "prompt": "$setup-matt-pocock-skills 配置当前项目，先检查已有文档和任务追踪方式，不要覆盖现有约定。"
+    },
+    {
+     "title": "完整调用",
+     "prompt": "$setup-matt-pocock-skills 初始化这个仓库。请先读取 README、现有规范和目录结构；给出任务追踪、triage 标签、领域文档位置的建议，确认后再写入，最后说明新增了哪些文件。"
+    }
+   ],
+   "recommended_with": [
+    {
+     "title": "初始化后进入开发流程",
+     "skills": [
+      "setup-matt-pocock-skills",
+      "ask-matt",
+      "grill-with-docs",
+      "to-spec"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ask-matt",
+   "name": "ask-matt",
+   "name_cn": "技能路由器",
+   "category": "coding",
+   "category_name": "编程智能体",
+   "source": "mattpocock/skills（固定快照）",
+   "short_desc": "Ask which skill or flow fits your situation. A router over the skills in this repo.",
+   "content_type": "coding-agent",
+   "role": "入口 Skill",
+   "source_url": "https://github.com/mattpocock/skills",
+   "source_file_url": "https://github.com/mattpocock/skills/blob/9c9f36ccd3995266cd675468af71639c8dde1ec5/skills/engineering/ask-matt/SKILL.md",
+   "snapshot_commit": "9c9f36ccd3995266cd675468af71639c8dde1ec5",
+   "snapshot_date": "2026-08-19",
+   "plain": "你不确定该用哪个 Skill 时，就让它先帮你选路。它会根据你现在遇到的问题，告诉你应该先澄清、写规格、拆任务、实现、测试还是审查。",
+   "use_cases": [
+    "不知道当前问题该用哪个 Skill 时",
+    "一个需求同时涉及规划、实现和审查时",
+    "想让 Codex 先给出一套工作流时"
+   ],
+   "example": "像去医院挂号：你不用自己猜该找哪个科室，先把症状说清楚，分诊台帮你安排正确的医生和顺序。",
+   "quote": "先选对工作流，再开始写代码。",
+   "core": "它是一个路由器，不替你完成全部工作；它的价值是根据问题类型选出合适的 Skill 和调用顺序。",
+   "cases": [
+    "增加一个模糊的业务功能时，先让它判断是否需要 grill、spec 和 tickets。",
+    "遇到持续失败的问题时，先让它区分 bug、设计问题还是需求不清。"
+   ],
+   "steps": [
+    "描述目标、当前状态和限制。",
+    "让它识别问题属于哪一类。",
+    "接受或调整推荐的 Skill 顺序。",
+    "按顺序进入具体 Skill。"
+   ],
+   "boundary": [
+    "它不是实现 Skill，不能替代后续执行。",
+    "问题描述过于空泛时，推荐也会不准确。",
+    "涉及安全、数据或生产变更时仍需人工判断。"
+   ],
+   "related": [],
+   "prompt_examples": [
+    {
+     "title": "快速调用",
+     "prompt": "$ask-matt 我想给这个项目增加一个复杂功能，请先判断我应该按什么 Skill 顺序推进。"
+    },
+    {
+     "title": "完整调用",
+     "prompt": "$ask-matt 分析这个需求：目标是____，当前代码在____，限制是____。请给出推荐 Skill、每一步的产出和进入下一步的判断条件，不要直接改代码。"
+    }
+   ],
+   "recommended_with": [
+    {
+     "title": "从模糊需求到可执行计划",
+     "skills": [
+      "ask-matt",
+      "grill-me",
+      "to-spec",
+      "to-tickets"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "grill-me",
+   "name": "grill-me",
+   "name_cn": "追问澄清",
+   "category": "coding",
+   "category_name": "编程智能体",
+   "source": "mattpocock/skills（固定快照）",
+   "short_desc": "A relentless interview to sharpen a plan or design.",
+   "content_type": "coding-agent",
+   "role": "入口 Skill",
+   "source_url": "https://github.com/mattpocock/skills",
+   "source_file_url": "https://github.com/mattpocock/skills/blob/9c9f36ccd3995266cd675468af71639c8dde1ec5/skills/productivity/grill-me/SKILL.md",
+   "snapshot_commit": "9c9f36ccd3995266cd675468af71639c8dde1ec5",
+   "snapshot_date": "2026-08-19",
+   "plain": "它会像一个认真到有点烦的产品经理一样不断追问，把你脑子里的模糊想法问成明确目标、范围、例外和验收标准。",
+   "use_cases": [
+    "需求只有一句话、细节不全时",
+    "方案里有很多默认假设时",
+    "开工前想避免做错方向时"
+   ],
+   "example": "你说‘做个会员系统’，它会继续问：谁能成为会员、有什么权益、什么时候扣费、退款怎么办、管理员能看什么。",
+   "quote": "把没有说出口的假设问出来，需求才真正开始存在。",
+   "core": "通过连续追问暴露决策树上的分支，直到目标、范围、约束和验收方式都能被别人复述。",
+   "cases": [
+    "把‘优化性能’具体成页面响应时间、数据规模和可接受的资源消耗。",
+    "把‘支持多人协作’具体成角色、权限、冲突和审计要求。"
+   ],
+   "steps": [
+    "先复述当前目标。",
+    "一次询问当前最关键的决策分支。",
+    "记录已经确定的边界和未决问题。",
+    "直到不存在会改变实现方向的隐藏假设。"
+   ],
+   "boundary": [
+    "不要在用户还没回答时擅自替用户做重大产品决定。",
+    "简单、明确的小修复不需要长时间追问。",
+    "它澄清的是需求，不是代码审查。"
+   ],
+   "related": [],
+   "prompt_examples": [
+    {
+     "title": "快速调用",
+     "prompt": "$grill-me 把我这个需求问清楚：____。"
+    },
+    {
+     "title": "完整调用",
+     "prompt": "$grill-me 我想实现____。请围绕用户、范围、异常、权限、数据、兼容性和验收标准逐轮提问；每轮只问当前已经具备前置条件的问题，不要替我做未确认的决定。"
+    }
+   ],
+   "recommended_with": [
+    {
+     "title": "先问清楚再落地",
+     "skills": [
+      "grill-me",
+      "to-spec",
+      "to-tickets",
+      "implement"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "grill-with-docs",
+   "name": "grill-with-docs",
+   "name_cn": "带文档的追问",
+   "category": "coding",
+   "category_name": "编程智能体",
+   "source": "mattpocock/skills（固定快照）",
+   "short_desc": "A relentless interview to sharpen a plan or design, which also creates docs (ADR's and glossary) as we go.",
+   "content_type": "coding-agent",
+   "role": "核心 Skill",
+   "source_url": "https://github.com/mattpocock/skills",
+   "source_file_url": "https://github.com/mattpocock/skills/blob/9c9f36ccd3995266cd675468af71639c8dde1ec5/skills/engineering/grill-with-docs/SKILL.md",
+   "snapshot_commit": "9c9f36ccd3995266cd675468af71639c8dde1ec5",
+   "snapshot_date": "2026-08-19",
+   "plain": "它不只追问，还会把讨论中形成的术语、架构决定和边界写进项目文档。以后换一个人或换一个 AI，也能从文档接着做。",
+   "use_cases": [
+    "复杂功能需要多轮讨论时",
+    "团队需要沉淀术语和架构决定时",
+    "担心重要结论只留在聊天记录里时"
+   ],
+   "example": "做支付功能时，讨论完‘订单已支付’和‘支付成功’的区别，它会把这个词汇和决定写进 CONTEXT.md 或 ADR。",
+   "quote": "好的讨论不应该只结束在聊天窗口里。",
+   "core": "在澄清需求的同时维护领域词汇表、上下文文档和 ADR，让对话结果变成可持续使用的项目知识。",
+   "cases": [
+    "记录订单、支付、退款在系统中的精确定义。",
+    "为采用异步事件而不是同步调用的决定留下原因和后果。"
+   ],
+   "steps": [
+    "读取现有上下文和 ADR。",
+    "围绕当前设计逐轮追问。",
+    "把新术语和决定写入正确文档。",
+    "让用户确认文档变更和未决问题。"
+   ],
+   "boundary": [
+    "不要未经确认修改团队规范。",
+    "短期一次性小任务无需建立完整领域文档。",
+    "文档不能代替测试和实际验证。"
+   ],
+   "related": [],
+   "prompt_examples": [
+    {
+     "title": "快速调用",
+     "prompt": "$grill-with-docs 先读项目文档，再帮我把____的设计问清楚并记录下来。"
+    },
+    {
+     "title": "完整调用",
+     "prompt": "$grill-with-docs 我准备实现____。请先检查 CONTEXT.md、ADR 和现有模块；通过分轮提问确认术语、边界和架构取舍，并在得到确认后更新对应文档，最后列出新增和修改的内容。"
+    }
+   ],
+   "recommended_with": [
+    {
+     "title": "可追溯的需求流程",
+     "skills": [
+      "grill-with-docs",
+      "domain-modeling",
+      "to-spec",
+      "implement"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "domain-modeling",
+   "name": "domain-modeling",
+   "name_cn": "领域建模",
+   "category": "coding",
+   "category_name": "编程智能体",
+   "source": "mattpocock/skills（固定快照）",
+   "short_desc": "Build and sharpen a project's domain model. Use when discussing codebase terminology, writing or editing a CONTEXT.md, or recording or editing an ADR.\n---\n\n# Domain Modeling",
+   "content_type": "coding-agent",
+   "role": "核心 Skill",
+   "source_url": "https://github.com/mattpocock/skills",
+   "source_file_url": "https://github.com/mattpocock/skills/blob/9c9f36ccd3995266cd675468af71639c8dde1ec5/skills/engineering/domain-modeling/SKILL.md",
+   "snapshot_commit": "9c9f36ccd3995266cd675468af71639c8dde1ec5",
+   "snapshot_date": "2026-08-19",
+   "plain": "它帮助你把项目里的业务名词、对象、状态和关系说清楚。名字一旦统一，代码、接口、文档和 AI 的理解就会对齐。",
+   "use_cases": [
+    "业务词汇在代码里叫法不一致时",
+    "设计数据模型或模块边界时",
+    "需要维护 CONTEXT.md 或 ADR 时"
+   ],
+   "example": "‘用户’‘账号’‘会员’到底是不是一回事？领域建模会要求团队先分清楚，避免代码里三个名字指向同一个概念。",
+   "quote": "先把事物叫什么、处于什么状态说清楚，再决定代码怎么写。",
+   "core": "从项目语言出发建立对象、行为、状态、关系和不变量的共同模型，并把它落到文档和模块接口中。",
+   "cases": [
+    "将订单状态限制为待支付、已支付、已取消和已退款，并写清转换条件。",
+    "识别‘组织成员’和‘登录用户’是不同概念，避免权限模型混乱。"
+   ],
+   "steps": [
+    "收集现有代码和业务文档中的术语。",
+    "找出同名异义、异名同义和状态冲突。",
+    "定义对象、关系、状态和不变量。",
+    "更新上下文文档并让接口采用统一词汇。"
+   ],
+   "boundary": [
+    "它不是数据库表设计的替代品。",
+    "不要为了漂亮的模型强行改变已经稳定的业务语言。",
+    "模型必须由业务事实和代码行为验证。"
+   ],
+   "related": [],
+   "prompt_examples": [
+    {
+     "title": "快速调用",
+     "prompt": "$domain-modeling 帮我梳理这个模块的核心术语、对象和状态。"
+    },
+    {
+     "title": "完整调用",
+     "prompt": "$domain-modeling 请扫描____相关的代码、测试和文档，列出术语冲突、对象关系、状态转换和不变量；不要先改代码，先给出可确认的领域模型。"
+    }
+   ],
+   "recommended_with": [
+    {
+     "title": "把词汇变成规格",
+     "skills": [
+      "domain-modeling",
+      "grill-with-docs",
+      "codebase-design",
+      "to-spec"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "to-spec",
+   "name": "to-spec",
+   "name_cn": "整理技术规格",
+   "category": "coding",
+   "category_name": "编程智能体",
+   "source": "mattpocock/skills（固定快照）",
+   "short_desc": "Turn the current conversation into a spec and publish it to the project issue tracker — no interview, just synthesis of what you've already discussed.",
+   "content_type": "coding-agent",
+   "role": "核心 Skill",
+   "source_url": "https://github.com/mattpocock/skills",
+   "source_file_url": "https://github.com/mattpocock/skills/blob/9c9f36ccd3995266cd675468af71639c8dde1ec5/skills/engineering/to-spec/SKILL.md",
+   "snapshot_commit": "9c9f36ccd3995266cd675468af71639c8dde1ec5",
+   "snapshot_date": "2026-08-19",
+   "plain": "它把聊天里的目标和决定整理成一份可以交给开发者执行的规格说明。重点是写清楚要做什么、怎么判断做对了，以及明确不做什么。",
+   "use_cases": [
+    "讨论已经比较充分，需要形成正式方案时",
+    "需要让另一个 Agent 或开发者接手时",
+    "想把需求变成可验收的文档时"
+   ],
+   "example": "把‘增加导出功能’整理成支持哪些格式、谁能导出、数据量上限、失败提示和验收用例。",
+   "quote": "规格不是把想法写长，而是让实现和验收有同一份答案。",
+   "core": "从已有对话中提取目标、用户行为、约束、接口、验收标准、范围外事项和开放问题，形成可实施规格。",
+   "cases": [
+    "把产品讨论转换为前后端都能使用的接口与验收文档。",
+    "把一个模糊重构目标变成保持行为不变、覆盖哪些模块的技术规格。"
+   ],
+   "steps": [
+    "汇总已确认的事实和决定。",
+    "补齐行为、异常和验收标准。",
+    "单独列出假设、开放问题和不在范围内的内容。",
+    "写入项目约定的位置并链接相关文档。"
+   ],
+   "boundary": [
+    "它不会替你回答尚未决定的业务问题。",
+    "规格不能脱离现有代码和测试凭空编写。",
+    "不要把实现细节写死到不必要的程度。"
+   ],
+   "related": [],
+   "prompt_examples": [
+    {
+     "title": "快速调用",
+     "prompt": "$to-spec 把我们刚才的讨论整理成可实施规格，并列出验收标准。"
+    },
+    {
+     "title": "完整调用",
+     "prompt": "$to-spec 将当前对话和____项目上下文整理成规格文档。必须包括目标、用户流程、接口/数据、异常、兼容性、验收标准、范围外事项和开放问题；不要补写未确认的业务决定。"
+    }
+   ],
+   "recommended_with": [
+    {
+     "title": "规格驱动开发",
+     "skills": [
+      "to-spec",
+      "to-tickets",
+      "implement",
+      "code-review"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "to-tickets",
+   "name": "to-tickets",
+   "name_cn": "拆分开发任务",
+   "category": "coding",
+   "category_name": "编程智能体",
+   "source": "mattpocock/skills（固定快照）",
+   "short_desc": "Break a plan, spec, or the current conversation into a set of tracer-bullet tickets, each declaring its blocking edges, published to the configured tracker — edges as text in one file per ticket locally, or native blocking links on a real tracker.",
+   "content_type": "coding-agent",
+   "role": "核心 Skill",
+   "source_url": "https://github.com/mattpocock/skills",
+   "source_file_url": "https://github.com/mattpocock/skills/blob/9c9f36ccd3995266cd675468af71639c8dde1ec5/skills/engineering/to-tickets/SKILL.md",
+   "snapshot_commit": "9c9f36ccd3995266cd675468af71639c8dde1ec5",
+   "snapshot_date": "2026-08-19",
+   "plain": "它把一份大规格拆成一组可以独立完成、独立验证的小任务，并标出先做什么、后做什么，避免一上来就面对一团大工程。",
+   "use_cases": [
+    "功能大到一次做不完时",
+    "多人协作需要清晰分工时",
+    "想让每个任务都能产生可运行结果时"
+   ],
+   "example": "做支付系统不会只开一个‘完成支付’任务，而会拆成订单状态、支付接口、回调处理、幂等、前端提示和测试。",
+   "quote": "好任务不是把大任务切成几段文字，而是每一段都能独立验证。",
+   "core": "以 tracer-bullet 为单位拆分任务，明确每个任务的目标、依赖、阻塞关系、涉及文件和验收方式。",
+   "cases": [
+    "将后台重构拆成保持行为不变的垂直切片。",
+    "为一个跨前后端功能标出数据库、API、界面和测试的依赖顺序。"
+   ],
+   "steps": [
+    "读取规格和项目结构。",
+    "找出能独立交付的最小垂直切片。",
+    "为任务声明前置依赖和阻塞边。",
+    "写出完成条件和验证命令。"
+   ],
+   "boundary": [
+    "不要把任务拆成只有改一个文件的水平清单。",
+    "不要为了看起来细而制造无法单独验收的任务。",
+    "依赖关系不清时先回到规格澄清。"
+   ],
+   "related": [],
+   "prompt_examples": [
+    {
+     "title": "快速调用",
+     "prompt": "$to-tickets 把这份规格拆成有依赖关系、可独立验收的开发任务。"
+    },
+    {
+     "title": "完整调用",
+     "prompt": "$to-tickets 根据____规格和当前仓库结构拆任务。每个任务写目标、范围、依赖、涉及模块、验收标准和验证命令；优先输出能尽早跑通的垂直切片。"
+    }
+   ],
+   "recommended_with": [
+    {
+     "title": "从规格进入实现",
+     "skills": [
+      "to-spec",
+      "to-tickets",
+      "wayfinder",
+      "implement"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "wayfinder",
+   "name": "wayfinder",
+   "name_cn": "大型项目导航",
+   "category": "coding",
+   "category_name": "编程智能体",
+   "source": "mattpocock/skills（固定快照）",
+   "short_desc": "Plan a huge chunk of work — more than one agent session can hold — as a shared map of decision tickets on your issue tracker, and resolve them one at a time until the way to the destination is clear.",
+   "content_type": "coding-agent",
+   "role": "核心 Skill",
+   "source_url": "https://github.com/mattpocock/skills",
+   "source_file_url": "https://github.com/mattpocock/skills/blob/9c9f36ccd3995266cd675468af71639c8dde1ec5/skills/engineering/wayfinder/SKILL.md",
+   "snapshot_commit": "9c9f36ccd3995266cd675468af71639c8dde1ec5",
+   "snapshot_date": "2026-08-19",
+   "plain": "当项目大到一个对话做不完时，它会建立一张路线图，把重要决策和任务按依赖排好，逐个清掉，不让团队在大工程里迷路。",
+   "use_cases": [
+    "大型重构或迁移需要多个阶段时",
+    "任务跨越多个对话和多人时",
+    "有很多未知决策会影响后续路线时"
+   ],
+   "example": "把旧支付服务迁到新架构，先解决数据兼容和双写，再切流量，最后删除旧代码，而不是直接开工。",
+   "quote": "大项目的第一产物不是代码，而是知道下一步该解决哪个决策。",
+   "core": "维护一张包含决策票据、依赖关系和当前前沿的共享地图；每次只推进最重要的未决节点。",
+   "cases": [
+    "规划数据库迁移、API 兼容、灰度切换和回滚。",
+    "把跨团队平台重构按决策顺序拆成多个可交接阶段。"
+   ],
+   "steps": [
+    "扫描目标、约束和未知决策。",
+    "建立决策票据及阻塞关系。",
+    "选择当前最靠前的可解决节点。",
+    "每次解决一个节点并更新路线图。"
+   ],
+   "boundary": [
+    "小于一个对话的简单功能不需要它。",
+    "路线图不能替代具体规格和测试。",
+    "不要把所有可能的未来工作都提前规划。"
+   ],
+   "related": [],
+   "prompt_examples": [
+    {
+     "title": "快速调用",
+     "prompt": "$wayfinder 为这个大型改造建立路线图，先找出会阻塞后续工作的决策。"
+    },
+    {
+     "title": "完整调用",
+     "prompt": "$wayfinder 规划____项目，预计跨多个 Codex 对话完成。请读取仓库和现有规格，建立决策票据、依赖图、阶段目标和每阶段的验收信号；每轮只推进当前前沿，不要提前实现未决部分。"
+    }
+   ],
+   "recommended_with": [
+    {
+     "title": "大型工作分阶段推进",
+     "skills": [
+      "wayfinder",
+      "to-tickets",
+      "implement",
+      "handoff"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "triage",
+   "name": "triage",
+   "name_cn": "问题分流",
+   "category": "coding",
+   "category_name": "编程智能体",
+   "source": "mattpocock/skills（固定快照）",
+   "short_desc": "Move issues and external PRs through a state machine of triage roles — categorise, verify, grill if needed, and write agent-ready briefs.",
+   "content_type": "coding-agent",
+   "role": "核心 Skill",
+   "source_url": "https://github.com/mattpocock/skills",
+   "source_file_url": "https://github.com/mattpocock/skills/blob/9c9f36ccd3995266cd675468af71639c8dde1ec5/skills/engineering/triage/SKILL.md",
+   "snapshot_commit": "9c9f36ccd3995266cd675468af71639c8dde1ec5",
+   "snapshot_date": "2026-08-19",
+   "plain": "它把混乱的 Issue 或外部 PR 先分类、核实、追问，再整理成一份开发者可以直接接手的简报。",
+   "use_cases": [
+    "Issue 积压且质量参差不齐时",
+    "需要判断 bug、需求还是咨询时",
+    "外部贡献者提交 PR 需要分流时"
+   ],
+   "example": "‘页面坏了’不是可执行任务，分流后会补成复现步骤、影响范围、预期行为和优先级。",
+   "quote": "先把问题变成可判断的状态，再决定谁来做。",
+   "core": "通过分类、事实核实、必要追问和 agent-ready brief，把入口问题推进到明确状态。",
+   "cases": [
+    "区分真正的回归 bug 与用户误用。",
+    "为外部 PR 补齐风险、测试和维护者需要确认的事项。"
+   ],
+   "steps": [
+    "读取问题和项目上下文。",
+    "分类并确认是否可复现。",
+    "追问缺失的最小信息。",
+    "输出范围、优先级、验收和下一步。"
+   ],
+   "boundary": [
+    "不应在信息不足时武断关闭问题。",
+    "分流不是直接大规模修复。",
+    "安全事件要走专门的安全响应流程。"
+   ],
+   "related": [],
+   "prompt_examples": [
+    {
+     "title": "快速调用",
+     "prompt": "$triage 帮我分流这个 Issue，判断类型、优先级和下一步。"
+    },
+    {
+     "title": "完整调用",
+     "prompt": "$triage 批量处理____里的问题。请逐条读取上下文，分类为 bug/需求/咨询/重复项，核实复现证据，必要时提出最少追问，并输出可直接交给开发者的简报；不要未经证据关闭问题。"
+    }
+   ],
+   "recommended_with": [
+    {
+     "title": "从问题到修复",
+     "skills": [
+      "triage",
+      "to-tickets",
+      "implement",
+      "code-review"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "research",
+   "name": "research",
+   "name_cn": "高可信资料研究",
+   "category": "coding",
+   "category_name": "编程智能体",
+   "source": "mattpocock/skills（固定快照）",
+   "short_desc": "Investigate a question against high-trust primary sources and capture the findings as a Markdown file in the repo. Use when the user wants a topic researched, docs or API facts gathered, or reading legwork delegated to a background agent.\n---",
+   "content_type": "coding-agent",
+   "role": "核心 Skill",
+   "source_url": "https://github.com/mattpocock/skills",
+   "source_file_url": "https://github.com/mattpocock/skills/blob/9c9f36ccd3995266cd675468af71639c8dde1ec5/skills/engineering/research/SKILL.md",
+   "snapshot_commit": "9c9f36ccd3995266cd675468af71639c8dde1ec5",
+   "snapshot_date": "2026-08-19",
+   "plain": "它负责查资料，但不是随便搜几篇文章，而是优先找官方文档、原始论文和一手来源，把结论和证据写成仓库里的 Markdown。",
+   "use_cases": [
+    "需要确认 API、框架或标准行为时",
+    "技术选型需要一手证据时",
+    "研究结果要让团队复查时"
+   ],
+   "example": "要升级某个 SDK，不只看博客，而是查官方迁移指南、变更日志和实际版本约束，再记录结论。",
+   "quote": "研究的交付物不是‘我看过了’，而是别人能复查的证据链。",
+   "core": "围绕一个问题收集高可信原始来源，区分事实与推断，记录链接、日期、结论和未解决的不确定性。",
+   "cases": [
+    "确认某个框架是否支持当前数据库版本。",
+    "比较两种架构时收集官方限制、基准和维护状态。"
+   ],
+   "steps": [
+    "定义问题和需要回答的决策。",
+    "优先查找官方和原始来源。",
+    "提取证据并标注事实、推断和不确定性。",
+    "把结果保存为带来源的 Markdown。"
+   ],
+   "boundary": [
+    "不能把搜索摘要当成最终证据。",
+    "资料研究不能替代在当前项目中的验证。",
+    "不要为了证明预设结论而挑选来源。"
+   ],
+   "related": [],
+   "prompt_examples": [
+    {
+     "title": "快速调用",
+     "prompt": "$research 研究____，只使用高可信一手来源并保存带链接的结论。"
+    },
+    {
+     "title": "完整调用",
+     "prompt": "$research 调查____是否适合当前项目。请优先查官方文档、发布说明和原始论文，记录版本和日期，区分事实与推断，最后写入 docs/research-____.md，并列出仍需本地实验验证的事项。"
+    }
+   ],
+   "recommended_with": [
+    {
+     "title": "研究支撑技术决策",
+     "skills": [
+      "research",
+      "domain-modeling",
+      "to-spec",
+      "codebase-design"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "prototype",
+   "name": "prototype",
+   "name_cn": "快速原型",
+   "category": "coding",
+   "category_name": "编程智能体",
+   "source": "mattpocock/skills（固定快照）",
+   "short_desc": "Build a throwaway prototype to answer a design question. Use when the user wants to sanity-check whether a state model or logic feels right, or explore what a UI should look like.\n---\n\n# Prototype",
+   "content_type": "coding-agent",
+   "role": "核心 Skill",
+   "source_url": "https://github.com/mattpocock/skills",
+   "source_file_url": "https://github.com/mattpocock/skills/blob/9c9f36ccd3995266cd675468af71639c8dde1ec5/skills/engineering/prototype/SKILL.md",
+   "snapshot_commit": "9c9f36ccd3995266cd675468af71639c8dde1ec5",
+   "snapshot_date": "2026-08-19",
+   "plain": "它先做一个可以扔掉的小版本，用来回答‘这个交互顺不顺’或‘这个状态逻辑对不对’，避免在错误方案上投入大量正式代码。",
+   "use_cases": [
+    "设计方向还没定时",
+    "需要验证状态模型或交互时",
+    "正式实现前想快速试错时"
+   ],
+   "example": "做时间轴编辑器前，先用一个单页原型验证拖动、裁剪和缩放是否符合直觉。",
+   "quote": "原型的任务是回答问题，不是提前伪装成产品。",
+   "core": "围绕一个明确设计问题制作最小可运行验证物，刻意控制范围，不把原型质量误当成生产代码质量。",
+   "cases": [
+    "比较两个表单布局哪一个更容易完成。",
+    "验证多步骤向导在返回、跳过和失败时的状态变化。"
+   ],
+   "steps": [
+    "写下要验证的一个问题。",
+    "只实现回答这个问题所需的状态和交互。",
+    "让用户或团队实际操作。",
+    "记录结论后决定丢弃、迭代还是正式实现。"
+   ],
+   "boundary": [
+    "原型不应直接进入生产而不经过重构和安全检查。",
+    "不要在一个原型里塞入所有功能。",
+    "逻辑问题未验证前不要过早追求视觉细节。"
+   ],
+   "related": [],
+   "prompt_examples": [
+    {
+     "title": "快速调用",
+     "prompt": "$prototype 做一个最小原型，验证____这个交互/状态问题，不接后端。"
+    },
+    {
+     "title": "完整调用",
+     "prompt": "$prototype 在当前项目中制作一个可丢弃原型，目标只验证____。请限制在一个路由/页面，列出假设、可操作流程和验证结论，不要把原型代码混入生产模块。"
+    }
+   ],
+   "recommended_with": [
+    {
+     "title": "验证后正式实现",
+     "skills": [
+      "prototype",
+      "grill-me",
+      "to-spec",
+      "implement"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "codebase-design",
+   "name": "codebase-design",
+   "name_cn": "代码库设计",
+   "category": "coding",
+   "category_name": "编程智能体",
+   "source": "mattpocock/skills（固定快照）",
+   "short_desc": "Shared vocabulary for designing deep modules. Use when the user wants to design or improve a module's interface, find deepening opportunities, decide where a seam goes, make code more testable or AI-navigable, or when another skill needs the deep-module vocabulary.\n---\n\n# Codebase Design",
+   "content_type": "coding-agent",
+   "role": "核心 Skill",
+   "source_url": "https://github.com/mattpocock/skills",
+   "source_file_url": "https://github.com/mattpocock/skills/blob/9c9f36ccd3995266cd675468af71639c8dde1ec5/skills/engineering/codebase-design/SKILL.md",
+   "snapshot_commit": "9c9f36ccd3995266cd675468af71639c8dde1ec5",
+   "snapshot_date": "2026-08-19",
+   "plain": "它专门帮助你设计更‘深’的模块：外面接口简单，里面把复杂事情藏好。这样代码更容易测试、修改，也更容易让 AI 找到正确的入口。",
+   "use_cases": [
+    "模块接口越来越宽、调用方越来越多时",
+    "想找一个清晰的代码切口时",
+    "代码难测、难懂或 AI 总改错地方时"
+   ],
+   "example": "与其让十个页面都知道订单状态细节，不如让订单模块提供一个‘是否可取消’接口，把判断规则藏在模块内部。",
+   "quote": "把复杂度放在模块里面，让调用者只面对一个清楚的接口。",
+   "core": "用模块深度、接口宽度、边界、适配器和测试切口来判断设计，把复杂行为集中到可替换、可验证的模块里。",
+   "cases": [
+    "收窄一个被几十处调用的工具函数接口。",
+    "把外部支付 SDK 的差异隔离在适配器后面。"
+   ],
+   "steps": [
+    "画出当前调用关系和变更原因。",
+    "找出复杂度泄漏到调用方的地方。",
+    "设计更深的模块接口和稳定切口。",
+    "用行为测试验证重构前后结果不变。"
+   ],
+   "boundary": [
+    "不要为了抽象而抽象。",
+    "接口应服务真实变化点，不要预测所有未来需求。",
+    "模块边界必须通过调用者和测试验证。"
+   ],
+   "related": [],
+   "prompt_examples": [
+    {
+     "title": "快速调用",
+     "prompt": "$codebase-design 帮我找出____模块最值得加深的接口边界。"
+    },
+    {
+     "title": "完整调用",
+     "prompt": "$codebase-design 分析____模块及其调用方。请识别复杂度泄漏、过宽接口、重复规则和可测试切口，提出一个最小改造方案；说明为什么这个边界比其他方案更稳定，不要直接重构。"
+    }
+   ],
+   "recommended_with": [
+    {
+     "title": "先设计切口再实现",
+     "skills": [
+      "codebase-design",
+      "domain-modeling",
+      "tdd",
+      "implement"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "implement",
+   "name": "implement",
+   "name_cn": "按规格实现",
+   "category": "coding",
+   "category_name": "编程智能体",
+   "source": "mattpocock/skills（固定快照）",
+   "short_desc": "\"Implement a piece of work based on a spec or set of tickets.\"",
+   "content_type": "coding-agent",
+   "role": "核心 Skill",
+   "source_url": "https://github.com/mattpocock/skills",
+   "source_file_url": "https://github.com/mattpocock/skills/blob/9c9f36ccd3995266cd675468af71639c8dde1ec5/skills/engineering/implement/SKILL.md",
+   "snapshot_commit": "9c9f36ccd3995266cd675468af71639c8dde1ec5",
+   "snapshot_date": "2026-08-19",
+   "plain": "它不是看到需求就直接开写，而是先读取规格或任务，确认边界，然后按小步完成、运行验证、检查差异，最后交付可审查的代码。",
+   "use_cases": [
+    "已经有规格或任务可以执行时",
+    "需要让 AI 按计划修改真实项目时",
+    "希望每一步都有验证证据时"
+   ],
+   "example": "规格说‘新增导出 CSV’，它会先找到入口和现有测试，再实现一条完整小路径，而不是随便新建一个孤立工具函数。",
+   "quote": "实现不是把文字翻译成代码，而是让每个承诺都留下验证证据。",
+   "core": "以规格和任务为边界，沿公共接口做垂直切片，频繁类型检查、运行单测和审查 diff，避免未经计划的范围扩张。",
+   "cases": [
+    "根据 tickets 逐个实现一个跨前后端功能。",
+    "在保持旧行为的前提下完成模块重构。"
+   ],
+   "steps": [
+    "读取规格、任务和项目约定。",
+    "确认要改的模块和验证切口。",
+    "逐个完成最小实现并运行局部测试。",
+    "运行完整检查，审查 diff 并报告未完成事项。"
+   ],
+   "boundary": [
+    "没有规格或边界不清时先澄清，不要猜。",
+    "不要为了让测试通过而削弱验收标准。",
+    "生产、权限和数据迁移必须保留人工审查。"
+   ],
+   "related": [],
+   "prompt_examples": [
+    {
+     "title": "快速调用",
+     "prompt": "$implement 根据当前规格实现这个任务，完成后运行相关测试并总结 diff。"
+    },
+    {
+     "title": "完整调用",
+     "prompt": "$implement 根据____规格和____任务实现功能。先读取项目约定和现有测试；按垂直切片逐步修改，每步运行对应检查，不能擅自扩展范围，最后运行完整测试并列出修改文件、验证结果和遗留风险。"
+    }
+   ],
+   "recommended_with": [
+    {
+     "title": "规格驱动实现",
+     "skills": [
+      "to-spec",
+      "to-tickets",
+      "implement",
+      "code-review"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "tdd",
+   "name": "tdd",
+   "name_cn": "测试驱动开发",
+   "category": "coding",
+   "category_name": "编程智能体",
+   "source": "mattpocock/skills（固定快照）",
+   "short_desc": "Test-driven development. Use when the user wants to build features or fix bugs test-first, mentions \"red-green-refactor\", or wants integration tests.\n---\n\n# Test-Driven Development",
+   "content_type": "coding-agent",
+   "role": "核心 Skill",
+   "source_url": "https://github.com/mattpocock/skills",
+   "source_file_url": "https://github.com/mattpocock/skills/blob/9c9f36ccd3995266cd675468af71639c8dde1ec5/skills/engineering/tdd/SKILL.md",
+   "snapshot_commit": "9c9f36ccd3995266cd675468af71639c8dde1ec5",
+   "snapshot_date": "2026-08-19",
+   "plain": "先写一个会失败的测试，再写刚好让它通过的代码，最后整理代码。这样每一步都由一个具体行为牵引，而不是凭感觉写一大堆代码。",
+   "use_cases": [
+    "新增功能想保证行为正确时",
+    "修 Bug 需要留下回归测试时",
+    "希望代码接口天然可测试时"
+   ],
+   "example": "先写‘付款后 30 分钟不能取消’的失败测试，再补规则，最后把重复判断整理成清晰模块。",
+   "quote": "红灯告诉你缺什么，绿灯证明行为对了，重构让代码更干净。",
+   "core": "围绕已确认的公共切口循环执行 red → green → refactor：测试先描述行为，最小实现通过，再在不改变行为的前提下整理。",
+   "cases": [
+    "为 API 错误响应增加行为测试。",
+    "为历史 bug 增加最小复现测试，再修复实现。"
+   ],
+   "steps": [
+    "确认要测试的公共接口和行为。",
+    "写一个独立且应失败的测试。",
+    "写最小实现让它变绿。",
+    "重构并运行局部和完整测试。"
+   ],
+   "boundary": [
+    "不要测试私有实现细节。",
+    "不要先批量写一堆脱离实现的测试。",
+    "外部依赖需要在公共边界做稳定替身。"
+   ],
+   "related": [],
+   "prompt_examples": [
+    {
+     "title": "快速调用",
+     "prompt": "$tdd 为____功能先写失败测试，再做最小实现并运行测试。"
+    },
+    {
+     "title": "完整调用",
+     "prompt": "$tdd 为____建立测试驱动实现。先确认公共接口和测试切口；每轮只写一个能说明行为的失败测试，做最小实现让它通过，再重构；最后运行完整测试并说明覆盖了哪些验收标准。"
+    }
+   ],
+   "recommended_with": [
+    {
+     "title": "测试牵引实现",
+     "skills": [
+      "codebase-design",
+      "tdd",
+      "implement",
+      "code-review"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "diagnosing-bugs",
+   "name": "diagnosing-bugs",
+   "name_cn": "系统化排障",
+   "category": "coding",
+   "category_name": "编程智能体",
+   "source": "mattpocock/skills（固定快照）",
+   "short_desc": "Diagnosis loop for hard bugs and performance regressions. Use when the user says \"diagnose\"/\"debug this\", or reports something broken/throwing/failing/slow.\n---\n\n# Diagnosing Bugs",
+   "content_type": "coding-agent",
+   "role": "核心 Skill",
+   "source_url": "https://github.com/mattpocock/skills",
+   "source_file_url": "https://github.com/mattpocock/skills/blob/9c9f36ccd3995266cd675468af71639c8dde1ec5/skills/engineering/diagnosing-bugs/SKILL.md",
+   "snapshot_commit": "9c9f36ccd3995266cd675468af71639c8dde1ec5",
+   "snapshot_date": "2026-08-19",
+   "plain": "它把‘这里不对’变成一套证据驱动的排查：先稳定复现，再缩小问题，提出假设、加观测、修复并留下回归测试。",
+   "use_cases": [
+    "功能报错、失败或变慢时",
+    "问题偶发、难以稳定复现时",
+    "性能回退需要找根因时"
+   ],
+   "example": "页面偶尔卡顿，不会直接把缓存、数据库和前端全改一遍，而是先记录时间线、缩小复现条件，再用日志和指标验证假设。",
+   "quote": "调试不是猜一个修复，而是建立能区分假设的反馈回路。",
+   "core": "按复现、最小化、假设、仪器化、修复、回归测试的顺序推进，要求每一步都增加对根因的证据。",
+   "cases": [
+    "定位双击提交导致重复订单的竞态。",
+    "找到某次发布后 API 延迟升高的具体查询或序列化环节。"
+   ],
+   "steps": [
+    "记录现象并稳定复现。",
+    "建立最小复现和时间线。",
+    "提出可证伪假设并增加观测。",
+    "修复根因，补回归测试并验证没有新回退。"
+   ],
+   "boundary": [
+    "不要在没有复现或证据时直接大改代码。",
+    "安全问题需要保留最小披露和专门响应流程。",
+    "表面症状消失不代表根因已经解决。"
+   ],
+   "related": [],
+   "prompt_examples": [
+    {
+     "title": "快速调用",
+     "prompt": "$diagnosing-bugs 诊断这个问题：____。先复现和定位根因，不要直接猜修复。"
+    },
+    {
+     "title": "完整调用",
+     "prompt": "$diagnosing-bugs 调查____问题。请按复现→最小化→假设→仪器化→修复→回归测试推进；每一步报告证据和排除的假设，修复后运行相关及完整测试。"
+    }
+   ],
+   "recommended_with": [
+    {
+     "title": "有证据地修 Bug",
+     "skills": [
+      "diagnosing-bugs",
+      "tdd",
+      "implement",
+      "code-review"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "resolving-merge-conflicts",
+   "name": "resolving-merge-conflicts",
+   "name_cn": "解决合并冲突",
+   "category": "coding",
+   "category_name": "编程智能体",
+   "source": "mattpocock/skills（固定快照）",
+   "short_desc": "\"Use when you need to resolve an in-progress git merge/rebase conflict.\"\n---",
+   "content_type": "coding-agent",
+   "role": "核心 Skill",
+   "source_url": "https://github.com/mattpocock/skills",
+   "source_file_url": "https://github.com/mattpocock/skills/blob/9c9f36ccd3995266cd675468af71639c8dde1ec5/skills/engineering/resolving-merge-conflicts/SKILL.md",
+   "snapshot_commit": "9c9f36ccd3995266cd675468af71639c8dde1ec5",
+   "snapshot_date": "2026-08-19",
+   "plain": "它在 merge 或 rebase 冲突中逐块理解双方意图，按最终目标合并，而不是粗暴选择‘ours’或‘theirs’，最后完成验证。",
+   "use_cases": [
+    "正在进行 Git merge 或 rebase 时",
+    "两个分支都改了同一功能时",
+    "冲突解决后需要确认行为没有丢失时"
+   ],
+   "example": "一边修登录安全，一边改登录界面，冲突时要保留两边有价值的改动，而不是用一边文件覆盖另一边。",
+   "quote": "冲突解决的是意图，不是文本颜色。",
+   "core": "逐个冲突块追溯共同祖先、双方变化和目标规格，合并后运行针对性测试并完成 Git 操作。",
+   "cases": [
+    "将 feature 分支 rebase 到主干并保留两边的测试。",
+    "处理配置文件冲突时避免把生产参数带入开发分支。"
+   ],
+   "steps": [
+    "确认当前 merge/rebase 状态和目标。",
+    "阅读冲突块上下文及两边提交意图。",
+    "逐块按语义解决并标记已处理。",
+    "运行测试、检查 diff 并完成 merge/rebase。"
+   ],
+   "boundary": [
+    "不要用 reset --hard 或 checkout 覆盖未确认的工作。",
+    "不要只看冲突文件而忽略提交上下文。",
+    "涉及密钥、生产配置和迁移时必须人工复核。"
+   ],
+   "related": [],
+   "prompt_examples": [
+    {
+     "title": "快速调用",
+     "prompt": "$resolving-merge-conflicts 帮我逐块解决当前 Git 冲突，先解释双方意图。"
+    },
+    {
+     "title": "完整调用",
+     "prompt": "$resolving-merge-conflicts 当前正在____。请读取共同祖先、双方提交和规格，逐个冲突块说明保留理由后解决；不要使用破坏性覆盖命令，完成后运行相关测试并报告剩余风险。"
+    }
+   ],
+   "recommended_with": [
+    {
+     "title": "冲突后重新验收",
+     "skills": [
+      "resolving-merge-conflicts",
+      "tdd",
+      "code-review"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "improve-codebase-architecture",
+   "name": "improve-codebase-architecture",
+   "name_cn": "架构改进扫描",
+   "category": "coding",
+   "category_name": "编程智能体",
+   "source": "mattpocock/skills（固定快照）",
+   "short_desc": "Scan a codebase for deepening opportunities, present them as a visual HTML report, then grill through whichever one you pick.",
+   "content_type": "coding-agent",
+   "role": "核心 Skill",
+   "source_url": "https://github.com/mattpocock/skills",
+   "source_file_url": "https://github.com/mattpocock/skills/blob/9c9f36ccd3995266cd675468af71639c8dde1ec5/skills/engineering/improve-codebase-architecture/SKILL.md",
+   "snapshot_commit": "9c9f36ccd3995266cd675468af71639c8dde1ec5",
+   "snapshot_date": "2026-08-19",
+   "plain": "它会扫描整个代码库，找出哪些模块太浅、接口太宽、职责混乱，然后生成一份报告，让你选择最值得改的一处，再进入追问和改造。",
+   "use_cases": [
+    "代码越改越乱时",
+    "想系统改善模块边界时",
+    "需要按价值排序架构债务时"
+   ],
+   "example": "报告发现所有页面都直接操作数据库，于是先挑最影响变更速度的一条业务链加深，而不是全项目一起重写。",
+   "quote": "架构改进应该从一个有证据的高杠杆切口开始。",
+   "core": "以代码库设计的深模块 vocabulary 扫描改进机会，输出可视化报告，再通过追问选择一个最有价值、最可控的改造点。",
+   "cases": [
+    "找出重复业务规则和跨层泄漏。",
+    "比较多个候选重构点的收益、风险和验证成本。"
+   ],
+   "steps": [
+    "读取结构、依赖和测试情况。",
+    "识别模块浅、接口宽和职责分散的位置。",
+    "生成候选改进报告。",
+    "选择一个切口并转入规格、TDD 和实现。"
+   ],
+   "boundary": [
+    "它是扫描和排序工具，不是自动重写整个系统。",
+    "没有测试保护的核心模块应先补验证。",
+    "报告中的机会需要结合业务优先级判断。"
+   ],
+   "related": [],
+   "prompt_examples": [
+    {
+     "title": "快速调用",
+     "prompt": "$improve-codebase-architecture 扫描项目，找出最值得改善的三个架构切口。"
+    },
+    {
+     "title": "完整调用",
+     "prompt": "$improve-codebase-architecture 分析____代码库。请结合依赖、变更热点、测试边界和模块深度生成 HTML 报告，按收益/风险/验证成本排序；先让我选择一个切口，再进入设计和实现。"
+    }
+   ],
+   "recommended_with": [
+    {
+     "title": "架构改进闭环",
+     "skills": [
+      "improve-codebase-architecture",
+      "grill-me",
+      "codebase-design",
+      "tdd",
+      "code-review"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "code-review",
+   "name": "code-review",
+   "name_cn": "双轴代码审查",
+   "category": "coding",
+   "category_name": "编程智能体",
+   "source": "mattpocock/skills（固定快照）",
+   "short_desc": "Review the changes since a fixed point (commit, branch, tag, or merge-base) along two axes — Standards (does the code follow this repo's documented coding standards?) and Spec (does the code match what the originating issue/spec asked for?). Runs both reviews in parallel sub-agents and reports them side by side. Use when the user wants to review a branch, a PR, work-in-progress changes, or asks to \"review since X\".\n---",
+   "content_type": "coding-agent",
+   "role": "核心 Skill",
+   "source_url": "https://github.com/mattpocock/skills",
+   "source_file_url": "https://github.com/mattpocock/skills/blob/9c9f36ccd3995266cd675468af71639c8dde1ec5/skills/engineering/code-review/SKILL.md",
+   "snapshot_commit": "9c9f36ccd3995266cd675468af71639c8dde1ec5",
+   "snapshot_date": "2026-08-19",
+   "plain": "它把代码审查拆成两条线：一条看是否符合项目规范，一条看是否真的满足原来的规格，避免‘代码写得漂亮但做错了事’。",
+   "use_cases": [
+    "功能完成后审查分支或未提交修改时",
+    "提交 PR 前检查回归和范围时",
+    "需要按规格逐项验收时"
+   ],
+   "example": "一个 PR 可能风格完全合格，却漏掉退款失败的处理；双轴审查会把规范和需求问题分开报告。",
+   "quote": "符合规范不等于符合需求，两条审查线都要过。",
+   "core": "固定比较点后分别检查 Standards 和 Spec，报告每个发现所在文件、理由、严重性和对应要求，不把一条线的优点掩盖另一条线的问题。",
+   "cases": [
+    "审查一个功能分支是否偷偷改了范围外模块。",
+    "检查重构是否保持行为并遵守项目命名、测试和架构约定。"
+   ],
+   "steps": [
+    "固定 diff 比较点并读取规格。",
+    "收集仓库规范和验证命令。",
+    "分别进行规范轴和规格轴审查。",
+    "按轴输出发现并给出修复建议。"
+   ],
+   "boundary": [
+    "审查不是替代自动化测试。",
+    "没有规格时要明确标注‘无规格可审’。",
+    "基线代码味道是判断建议，不要伪装成硬性违规。"
+   ],
+   "related": [],
+   "prompt_examples": [
+    {
+     "title": "快速调用",
+     "prompt": "$code-review 审查当前未提交修改，分别检查项目规范和原始需求。"
+    },
+    {
+     "title": "完整调用",
+     "prompt": "$code-review 从____作为固定比较点审查当前分支。请先读取项目规范和____规格，分成 Standards 与 Spec 两个维度逐文件检查，报告缺失、范围外行为、回归风险和判断依据，不要直接修改代码。"
+    }
+   ],
+   "recommended_with": [
+    {
+     "title": "实现后的交付检查",
+     "skills": [
+      "implement",
+      "tdd",
+      "code-review",
+      "handoff"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "to-questionnaire",
+   "name": "to-questionnaire",
+   "name_cn": "生成决策问卷",
+   "category": "coding",
+   "category_name": "编程智能体",
+   "source": "mattpocock/skills（固定快照）",
+   "short_desc": "Turn a decision you can't fully answer into a questionnaire for someone else to fill in.",
+   "content_type": "coding-agent",
+   "role": "核心 Skill",
+   "source_url": "https://github.com/mattpocock/skills",
+   "source_file_url": "https://github.com/mattpocock/skills/blob/9c9f36ccd3995266cd675468af71639c8dde1ec5/skills/productivity/to-questionnaire/SKILL.md",
+   "snapshot_commit": "9c9f36ccd3995266cd675468af71639c8dde1ec5",
+   "snapshot_date": "2026-08-19",
+   "plain": "当你自己无法回答一个决定时，它会把问题整理成一份给真正决策人的问卷，让对方只需要回答关键选择，不必重新读一大段背景。",
+   "use_cases": [
+    "需要业务负责人决定而对方不在当前对话时",
+    "技术方案有多个会影响范围的选择时",
+    "想异步收集决策时"
+   ],
+   "example": "是否支持多币种、退款由谁审批、数据保留多久，这些问题可以整理成负责人能快速回答的问卷。",
+   "quote": "把‘我不知道’变成对方能回答的具体选择。",
+   "core": "识别当前无法独立决定的分支，补充最小背景、选项、取舍和回答格式，产出可异步填写的问卷。",
+   "cases": [
+    "让产品负责人确认权限模型。",
+    "让运维负责人确认发布窗口、回滚策略和资源预算。"
+   ],
+   "steps": [
+    "列出阻塞实现的未决问题。",
+    "为每个问题补充背景和影响。",
+    "提供互斥选项及推荐答案。",
+    "标注回答后会解锁的下一步。"
+   ],
+   "boundary": [
+    "不要把已经能从代码和文档查到的事实问给用户。",
+    "问题不应包含过多实现细节。",
+    "问卷不是替代紧急事故沟通。"
+   ],
+   "related": [],
+   "prompt_examples": [
+    {
+     "title": "快速调用",
+     "prompt": "$to-questionnaire 把当前阻塞开发的决定整理成一份简短问卷。"
+    },
+    {
+     "title": "完整调用",
+     "prompt": "$to-questionnaire 根据当前规格和代码上下文，找出只有____负责人能决定的问题。每题提供背景、互斥选项、推荐答案、影响范围和回答格式，不要询问可以自行查到的事实。"
+    }
+   ],
+   "recommended_with": [
+    {
+     "title": "异步解除阻塞",
+     "skills": [
+      "to-questionnaire",
+      "wayfinder",
+      "to-spec",
+      "handoff"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "wizard",
+   "name": "wizard",
+   "name_cn": "人工操作向导",
+   "category": "coding",
+   "category_name": "编程智能体",
+   "source": "mattpocock/skills（固定快照）",
+   "short_desc": "Generate an interactive bash wizard that walks a human through steps only they can perform. Use when provisioning infrastructure, setting up credentials or CI secrets, walking an unfamiliar third-party dashboard, or running a one-off migration or cutover. Don't invoke this for steps the agent can perform itself.\n---\n\n# Wizard",
+   "content_type": "coding-agent",
+   "role": "核心 Skill",
+   "source_url": "https://github.com/mattpocock/skills",
+   "source_file_url": "https://github.com/mattpocock/skills/blob/9c9f36ccd3995266cd675468af71639c8dde1ec5/skills/engineering/wizard/SKILL.md",
+   "snapshot_commit": "9c9f36ccd3995266cd675468af71639c8dde1ec5",
+   "snapshot_date": "2026-08-19",
+   "plain": "有些步骤 AI 没有权限或不适合替你做，比如登录云平台、设置密钥、点击一次性迁移按钮。它会生成一个交互式向导，让人只执行这些必须人工完成的部分。",
+   "use_cases": [
+    "配置云资源或第三方后台时",
+    "需要用户输入凭据或审批时",
+    "一次性迁移和切换必须人工确认时"
+   ],
+   "example": "AI 可以写好部署脚本，但登录云控制台、选择生产账号和确认扣费，应该由人按向导完成。",
+   "quote": "只把必须由人完成的步骤交给人，其余交给自动化。",
+   "core": "生成清晰、可重复、带检查点和安全提示的交互式 shell 向导，避免让人手工记忆复杂操作。",
+   "cases": [
+    "引导用户设置 CI 密钥但不读取或打印密钥。",
+    "引导运维按顺序执行一次数据库切换并确认回滚点。"
+   ],
+   "steps": [
+    "识别必须人工完成的步骤。",
+    "明确输入、权限和风险。",
+    "生成逐步提示、校验和暂停点。",
+    "说明完成后如何验证和恢复。"
+   ],
+   "boundary": [
+    "Agent 能安全执行的步骤不应推给用户。",
+    "向导不能把秘密写入日志。",
+    "生产切换仍需要明确审批和回滚。"
+   ],
+   "related": [],
+   "prompt_examples": [
+    {
+     "title": "快速调用",
+     "prompt": "$wizard 为____生成一个只包含必须人工操作的交互向导。"
+    },
+    {
+     "title": "完整调用",
+     "prompt": "$wizard 为____部署/迁移流程生成交互式向导。请区分 Agent 可自动完成与用户必须完成的步骤，不能读取或打印秘密；每一步提供校验、审批确认、失败处理和回滚方式。"
+    }
+   ],
+   "recommended_with": [
+    {
+     "title": "安全发布流程",
+     "skills": [
+      "wizard",
+      "to-questionnaire",
+      "code-review",
+      "handoff"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "teach",
+   "name": "teach",
+   "name_cn": "交互式教学",
+   "category": "coding",
+   "category_name": "编程智能体",
+   "source": "mattpocock/skills（固定快照）",
+   "short_desc": "Teach the user a new skill or concept, within this workspace.",
+   "content_type": "coding-agent",
+   "role": "核心 Skill",
+   "source_url": "https://github.com/mattpocock/skills",
+   "source_file_url": "https://github.com/mattpocock/skills/blob/9c9f36ccd3995266cd675468af71639c8dde1ec5/skills/productivity/teach/SKILL.md",
+   "snapshot_commit": "9c9f36ccd3995266cd675468af71639c8dde1ec5",
+   "snapshot_date": "2026-08-19",
+   "plain": "它不是一次性给你一篇教程，而是围绕当前项目分阶段教你一个概念，边问边练，并根据你的回答调整下一步。",
+   "use_cases": [
+    "想在真实项目里学会一个技术概念时",
+    "新人需要边做边理解代码库时",
+    "希望学习过程留下可复用材料时"
+   ],
+   "example": "学习事件驱动架构时，先从项目里一条真实事件开始，再让你修改一个小消费者并解释结果。",
+   "quote": "最好的学习不是看完答案，而是能在自己的项目里做出来并解释。",
+   "core": "根据学习目标和当前水平安排短步骤、提问、练习和反馈，把概念连接到工作区中的真实代码。",
+   "cases": [
+    "带新人理解一个陌生服务的请求流。",
+    "逐步学习测试替身并为现有模块补一个测试。"
+   ],
+   "steps": [
+    "确认学习目标和已有基础。",
+    "用项目中的真实例子解释概念。",
+    "安排一个小练习并检查理解。",
+    "根据反馈推进或回退难度。"
+   ],
+   "boundary": [
+    "它不是替你完成任务的实现 Skill。",
+    "高风险生产操作不应作为未经监督的练习。",
+    "学习结果需要通过实际代码和测试验证。"
+   ],
+   "related": [],
+   "prompt_examples": [
+    {
+     "title": "快速调用",
+     "prompt": "$teach 在当前项目里教我理解____，每次只讲一个小概念并给我练习。"
+    },
+    {
+     "title": "完整调用",
+     "prompt": "$teach 我想在____项目中学会____。先评估我的基础，制定 3～5 个短阶段；每阶段用真实代码解释，给一个我可以亲自完成的练习，检查我的回答后再继续，不要直接替我做完。"
+    }
+   ],
+   "recommended_with": [
+    {
+     "title": "边学边改",
+     "skills": [
+      "teach",
+      "research",
+      "prototype",
+      "tdd"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "wait-what",
+   "name": "wait-what",
+   "name_cn": "重新表达",
+   "category": "coding",
+   "category_name": "编程智能体",
+   "source": "mattpocock/skills（固定快照）",
+   "short_desc": "Stop. That last message did not land — re-pitch it.",
+   "content_type": "coding-agent",
+   "role": "核心 Skill",
+   "source_url": "https://github.com/mattpocock/skills",
+   "source_file_url": "https://github.com/mattpocock/skills/blob/9c9f36ccd3995266cd675468af71639c8dde1ec5/skills/productivity/wait-what/SKILL.md",
+   "snapshot_commit": "9c9f36ccd3995266cd675468af71639c8dde1ec5",
+   "snapshot_date": "2026-08-19",
+   "plain": "当上一条解释没有让人听懂时，它会停下来换一种说法，使用项目里已经约定的词汇和更具体的例子重新讲，而不是继续堆更多术语。",
+   "use_cases": [
+    "用户说没听懂或答非所问时",
+    "技术解释太抽象、太冗长时",
+    "团队对同一个词理解不一致时"
+   ],
+   "example": "‘依赖反转’没人明白，就换成‘高层业务不要直接认识某个数据库驱动’并画出当前和目标调用关系。",
+   "quote": "解释没落地时，换表达，不是怪听众。",
+   "core": "识别沟通没有成功的信号，重新选择术语、层级、例子和结构，直到对方能复述关键点。",
+   "cases": [
+    "把编译器错误从术语说明换成定位文件、原因和下一步。",
+    "把架构方案用当前项目的真实模块名称重讲。"
+   ],
+   "steps": [
+    "承认上一种说法没有传达清楚。",
+    "确认对方卡在概念、上下文还是行动上。",
+    "换成更短、更具体、更贴近项目的表达。",
+    "让对方复述或执行一个小验证。"
+   ],
+   "boundary": [
+    "不要为了讨好而牺牲技术准确性。",
+    "无法确定卡点时先问一个澄清问题。",
+    "重新表达不能掩盖真实的需求冲突。"
+   ],
+   "related": [],
+   "prompt_examples": [
+    {
+     "title": "快速调用",
+     "prompt": "$wait-what 刚才的解释没有让我听懂，请用更直白的中文和当前项目的例子重讲。"
+    },
+    {
+     "title": "完整调用",
+     "prompt": "$wait-what 你上一条回答没有解决我的问题。请先判断我卡在概念、代码位置还是下一步行动，再用项目已有术语、一个具体例子和明确步骤重新解释；最后让我能复述验收要点。"
+    }
+   ],
+   "recommended_with": [
+    {
+     "title": "沟通失败后的恢复",
+     "skills": [
+      "wait-what",
+      "grill-me",
+      "domain-modeling",
+      "to-spec"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "handoff",
+   "name": "handoff",
+   "name_cn": "工作交接",
+   "category": "coding",
+   "category_name": "编程智能体",
+   "source": "mattpocock/skills（固定快照）",
+   "short_desc": "Compact the current conversation into a handoff document for another agent to pick up.",
+   "content_type": "coding-agent",
+   "role": "核心 Skill",
+   "source_url": "https://github.com/mattpocock/skills",
+   "source_file_url": "https://github.com/mattpocock/skills/blob/9c9f36ccd3995266cd675468af71639c8dde1ec5/skills/productivity/handoff/SKILL.md",
+   "snapshot_commit": "9c9f36ccd3995266cd675468af71639c8dde1ec5",
+   "snapshot_date": "2026-08-19",
+   "plain": "它把当前对话压缩成另一个人或另一个 Agent 可以继续工作的交接文档：已经做了什么、为什么这样做、改了哪些文件、还差什么。",
+   "use_cases": [
+    "对话快到上下文上限时",
+    "需要换人或换 Agent 接手时",
+    "长任务暂停后准备恢复时"
+   ],
+   "example": "不只说‘做到一半’，而是列出已完成的接口、当前失败测试、下一个命令和不能忘的设计决定。",
+   "quote": "交接的目标不是总结过去，而是让下一步可以马上开始。",
+   "core": "提取目标、状态、决策、修改文件、验证证据、阻塞项和下一步，形成短而完整的恢复入口。",
+   "cases": [
+    "将一次长时间重构交给下一位开发者。",
+    "把云端任务的当前进度同步回本地仓库。"
+   ],
+   "steps": [
+    "回顾目标和已确认的范围。",
+    "列出已完成、进行中和未开始的工作。",
+    "记录关键决定、文件、命令和失败证据。",
+    "给出下一步和恢复前必须检查的条件。"
+   ],
+   "boundary": [
+    "不能把未验证的猜测写成完成事实。",
+    "交接文档不应替代正式规格和 ADR。",
+    "包含秘密时必须脱敏。"
+   ],
+   "related": [],
+   "prompt_examples": [
+    {
+     "title": "快速调用",
+     "prompt": "$handoff 把当前进度整理成交接文档，突出下一步和未解决问题。"
+    },
+    {
+     "title": "完整调用",
+     "prompt": "$handoff 为____项目生成交接文档。请包括目标与范围、已完成事项、关键决策、修改文件、运行过的命令及结果、当前失败、阻塞项、下一步和风险；不要把未验证内容写成事实，也不要包含秘密。"
+    }
+   ],
+   "recommended_with": [
+    {
+     "title": "长任务持续推进",
+     "skills": [
+      "handoff",
+      "wayfinder",
+      "implement",
+      "code-review"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "writing-for-agents",
+   "name": "writing-for-agents",
+   "name_cn": "Agent 文档写作",
+   "category": "coding",
+   "category_name": "编程智能体",
+   "source": "mattpocock/skills（固定快照）",
+   "short_desc": "Writing documents for agents. Use when creating or editing skills, or modifying AGENTS.md or CLAUDE.md.\n---",
+   "content_type": "coding-agent",
+   "role": "核心 Skill",
+   "source_url": "https://github.com/mattpocock/skills",
+   "source_file_url": "https://github.com/mattpocock/skills/blob/9c9f36ccd3995266cd675468af71639c8dde1ec5/skills/productivity/writing-for-agents/SKILL.md",
+   "snapshot_commit": "9c9f36ccd3995266cd675468af71639c8dde1ec5",
+   "snapshot_date": "2026-08-19",
+   "plain": "它专门写给 AI 看的项目文档：短、明确、可执行，告诉 Agent 什么时候读取、哪些规则不能违反、哪里可以找到更多信息。",
+   "use_cases": [
+    "创建或修改 AGENTS.md、CLAUDE.md 和 Skill 时",
+    "项目文档太长但 AI 仍找不到重点时",
+    "想把重复提示变成稳定规则时"
+   ],
+   "example": "不要在 AGENTS.md 写一篇历史长文，而是写清‘改 API 必须运行哪个测试，数据库迁移文件放在哪里’。",
+   "quote": "给 Agent 的文档是路标，不是百科全书。",
+   "core": "围绕触发条件、必须遵守的规则、查找路径、命令和验收写短指令，用链接指向详细资料，避免重复和冲突。",
+   "cases": [
+    "为前端目录写局部开发约定。",
+    "把一次次 Code Review 中重复出现的规则沉淀进项目指引。"
+   ],
+   "steps": [
+    "确定文档服务的 Agent 和目录范围。",
+    "提取高频、稳定、可验证的规则。",
+    "按触发条件组织短指令和资源链接。",
+    "用真实任务验证 Agent 能找到并执行规则。"
+   ],
+   "boundary": [
+    "不要把变化频繁的细节复制到多个规则文件。",
+    "不要用模糊的‘写好代码’替代可验证标准。",
+    "AGENTS.md 和 CLAUDE.md 的优先级必须明确。"
+   ],
+   "related": [],
+   "prompt_examples": [
+    {
+     "title": "快速调用",
+     "prompt": "$writing-for-agents 帮我把这条重复的开发约定写成清晰的 Agent 指引。"
+    },
+    {
+     "title": "完整调用",
+     "prompt": "$writing-for-agents 审查并改写____中的 AGENTS.md/CLAUDE.md。请保持主文件短小，按触发条件写可执行规则，链接到详细文档，消除冲突和重复，并用一个真实任务检查 Agent 是否能正确找到规则。"
+    }
+   ],
+   "recommended_with": [
+    {
+     "title": "把经验沉淀下来",
+     "skills": [
+      "writing-for-agents",
+      "code-review",
+      "handoff",
+      "setup-matt-pocock-skills"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "grilling",
+   "name": "grilling",
+   "name_cn": "追问引擎",
+   "category": "coding",
+   "category_name": "编程智能体",
+   "source": "mattpocock/skills（固定快照）",
+   "short_desc": "Grill the user relentlessly about a plan, decision, or idea. Use when the user wants to stress-test their thinking, or uses any 'grill' trigger phrases.\n---",
+   "content_type": "coding-agent",
+   "role": "底层支持",
+   "source_url": "https://github.com/mattpocock/skills",
+   "source_file_url": "https://github.com/mattpocock/skills/blob/9c9f36ccd3995266cd675468af71639c8dde1ec5/skills/productivity/grilling/SKILL.md",
+   "snapshot_commit": "9c9f36ccd3995266cd675468af71639c8dde1ec5",
+   "snapshot_date": "2026-08-19",
+   "plain": "这是追问类 Skill 背后的通用引擎：它维护一棵设计决策树，每轮只问当前已经具备前置条件的问题，直到所有会影响方案的分支都被确认。",
+   "use_cases": [
+    "需要系统压力测试一个方案时",
+    "多个决策互相依赖、不能乱问时",
+    "想确保没有默默假设时"
+   ],
+   "example": "先确认是否要支持退款，再问退款审批人和接口；不先定业务范围，就不提前问实现细节。",
+   "quote": "问题也有依赖顺序，先问对的问题才能走出完整方案。",
+   "core": "将设计拆成决策树，维护当前 frontier，收集事实与用户决策，直到没有未访问且会改变结果的分支。",
+   "cases": [
+    "支撑 grill-me 的多轮需求澄清。",
+    "在架构选择中先解决前置决策，再展开后续接口问题。"
+   ],
+   "steps": [
+    "列出所有可能影响方案的决定。",
+    "识别当前已解锁的 frontier。",
+    "一次询问整个 frontier 并记录答案。",
+    "根据答案展开下一轮直到树收敛。"
+   ],
+   "boundary": [
+    "环境事实应由 Agent 查询，不能把可查事实丢给用户。",
+    "用户决策未确认前不应执行有分歧的实现。",
+    "简单问题不要为了形式强行展开复杂决策树。"
+   ],
+   "related": [],
+   "prompt_examples": [
+    {
+     "title": "快速调用",
+     "prompt": "$grilling 帮我压力测试这个方案，并按决策依赖顺序提问。"
+    },
+    {
+     "title": "完整调用",
+     "prompt": "$grilling 对____方案建立设计决策树。请先查清环境事实，再只询问当前 frontier；每轮编号、给出推荐答案并等待我决定，直到没有会改变设计的未决分支，不要提前执行。"
+    }
+   ],
+   "recommended_with": [
+    {
+     "title": "作为追问底层",
+     "skills": [
+      "grilling",
+      "grill-me",
+      "grill-with-docs",
+      "to-spec"
+     ]
+    }
    ]
   },
   {
@@ -1311,6 +3042,12 @@
    "category_name": "元技能 / 工具",
    "source": "kangarooking/cangjie-skill（拆书蒸馏元技能）",
    "short_desc": "Distill a book, long-video transcript, podcast, course, or interview into a coherent set of executable skills. Use when the user asks to \"拆书\" / \"蒸馏一本书\" / \"把 XX 书做成 skill\" / \"把这个视频/播客/课程蒸馏成 skill\" / \"turn a book or video into skills\" — i.e. wants the frameworks, principles, and methodologies in long-form content extracted into atomic, reusable Claude skills that an agent can invoke in real-world situations. NOT for simple summarization, book reviews, or role-playing as the author (that is nuwa-skill's job).\n---\n\n# cangjie-skill — 把一本书蒸馏成一组可执行 skills 的元 skill\n\n## 使命",
+   "content_type": "methodology",
+   "role": "内容 Skill",
+   "source_url": "",
+   "source_file_url": "",
+   "snapshot_commit": "",
+   "snapshot_date": "",
    "plain": "书里藏着很多有用的方法,但一本几百页的书太长,普通人没时间也没耐心看完。这个方法论叫'拆书蒸馏术'——就像把一大锅汤慢慢熬成一小碗浓汤,只留下最浓的精华,把书里的干货提炼成一条条能直接照着做的小工具。它的核心思想是:读书不追求'读完',而追求'用上'。做法是一套固定流程:先把整本书通读一遍搞懂大意,再派几个分工不同的小助手分别找出书里的方法、原则、案例和术语,接着层层筛选去掉废话和人人皆知的常识,把剩下的干货改写成'什么时候用、怎么用、什么时候别用'的行动指南,最后出题考一考这些指南好不好使,不好使就返工重做。普通人什么时候能用上?比如把一本讲沟通的书变成随身'说话锦囊',把听过的长播客变成能照着做的清单,或者让读过的每本书都不白读、读完真能改变行动。",
    "use_cases": [
     "当你想把一本书里的方法变成能照着做的清单时用",
@@ -1347,7 +3084,9 @@
     "第一次使用建议先试点 1 本验证流程,不要一上来就批量处理。",
     "新技能没经过测试和安装就不算完成:不测试会埋下误导,不安装则无法被真正调用。"
    ],
-   "related": []
+   "related": [],
+   "prompt_examples": [],
+   "recommended_with": []
   },
   {
    "id": "find-skills",
@@ -1357,6 +3096,12 @@
    "category_name": "元技能 / 工具",
    "source": "DSH 内置技能（skills.sh 生态）",
    "short_desc": "Helps users discover and install agent skills when they ask questions like \"how do I do X\", \"find a skill for X\", \"is there a skill that can...\", or express interest in extending capabilities. This skill should be used when the user is looking for functionality that might exist as an installable skill.\n---\n\n# Find Skills",
+   "content_type": "methodology",
+   "role": "内容 Skill",
+   "source_url": "",
+   "source_file_url": "",
+   "snapshot_commit": "",
+   "snapshot_date": "",
    "plain": "这个技能教 AI 助手怎么帮你'找现成的技能包'并装进电脑里用。你可以把技能包想成'给 AI 加的新本领插件'——比如让 AI 会做网页、会写测试、会检查代码，这些本领都是别人做好、免费放在网上的。以前你想让 AI 干一件新事，可能得从头教它；有了这个技能，AI 会先用一条命令去'技能商店'搜一搜，看看哪个技能包下载量高、哪个是官方出品的，然后帮你装好。普通人什么时候能用上？比如你问 AI'能不能帮我检查这段代码写得规不规范'，AI 发现没有现成技能时，就会主动去搜索并安装一个代码检查技能包，再回来帮你干活。核心思想就一句话：别自己造轮子，先去公共技能市场找现成的。",
    "use_cases": [
     "当你想让 AI 做一件新事情，想知道有没有现成的技能包时用",
@@ -1390,7 +3135,9 @@
     "推荐前一定要验证来源，官方（如 vercel-labs、anthropics、microsoft）比陌生作者可信。",
     "这个技能只管搜索和安装现成技能，创建新技能要用 npx skills init。"
    ],
-   "related": []
+   "related": [],
+   "prompt_examples": [],
+   "recommended_with": []
   },
   {
    "id": "loop-three-elements",
@@ -1400,6 +3147,12 @@
    "category_name": "循环工程",
    "source": "kangarooking/loop-engineering-skill（Loop Engineering 视频合集蒸馏）",
    "short_desc": "|\n设计或审计任何循环系统的起点: 将循环拆解为 Trigger(触发器)、Action(动作)、Stop Condition(停止条件) 三要素。\n当用户需要设计一个新循环、诊断一个失效循环、或向他人解释\"什么是 Loop\"时使用。\n不适用于: 单次任务执行、非循环的自动化脚本、或已经稳定运行无需重新设计的系统。\n关键 trigger: \"设计一个 loop\"、\"这个循环为什么不停止\"、\"什么是 loop 的最小结构\"。\n---\n\n## Source Metadata",
+   "content_type": "methodology",
+   "role": "内容 Skill",
+   "source_url": "",
+   "source_file_url": "",
+   "snapshot_commit": "",
+   "snapshot_date": "",
    "plain": "这个方法教我们怎么设计一个会自己反复干活的小系统（也叫循环系统）。它把任何这样的系统拆成三块：触发器——什么时候开始干活，比如每天早晨8点自动启动；动作——启动后具体做什么，比如读取信息、分析、写结果；停止条件——什么时候算干完了，比如凑够5条就停，或者最多跑8轮就停。这三块缺一不可：没有触发器，系统不知道该何时开始；没有动作，系统只是个空壳；没有停止条件，系统会一直跑下去，直到把资源耗光。普通人什么时候用得上？比如你想做一个每天自动汇总新闻、自动整理邮件的小工具，只要先想清楚「何时启动、做什么、何时停止」这三件事，就能把想法变成一个可靠、不会失控的自动小工具。",
    "use_cases": [
     "当你想设计一个新循环、让 AI 每天自动做某件事时用，先拆出触发器、动作、停止条件三要素",
@@ -1439,7 +3192,9 @@
      "id": "loop-build-path",
      "relation": "related"
     }
-   ]
+   ],
+   "prompt_examples": [],
+   "recommended_with": []
   },
   {
    "id": "loop-worthiness-test",
@@ -1449,6 +3204,12 @@
    "category_name": "循环工程",
    "source": "kangarooking/loop-engineering-skill（Loop Engineering 视频合集蒸馏）",
    "short_desc": "|\n判断一个任务是否值得做成 Loop 的四条决策标准。\n当用户在纠结\"这件事要不要自动化\"、\"该不该用 loop\"、或\"为什么我的 loop 得不偿失\"时使用。\n不适用于: 已经决定要做 loop 后的设计阶段、或一次性任务。\n关键 trigger: \"这件事值得做 loop 吗\"、\"该不该自动化\"、\"loop 成本太高怎么办\"。\n---\n\n## Source Metadata",
+   "content_type": "methodology",
+   "role": "内容 Skill",
+   "source_url": "",
+   "source_file_url": "",
+   "snapshot_commit": "",
+   "snapshot_date": "",
    "plain": "这个方法是帮你判断：一件事值不值得让 AI 没日没夜地自动循环去干。很多人一看到 AI 很能干，就兴奋地把什么都交给它自动跑，结果搭了一套复杂的系统，钱花了不少，活却没省多少——这就是过度工程化。这个方法给了四条检查标准：第一，这件事是不是每周都会重复发生；第二，做出来的结果能不能让机器自动检查好坏；第三，你花不花得起反复试错的钱；第四，AI 手里有没有干这活需要的工具。四条全满足，才值得做成自动循环；不满足，就别硬做，用一次性的简单办法就行。普通人什么时候用得上？比如你想让 AI 每天帮你整理信息、生成内容之前，先拿这四条过一遍，能避免白花钱、白费劲。",
    "use_cases": [
     "当你在纠结\"这件事要不要自动化、该不该做成 AI 循环\"时用",
@@ -1492,7 +3253,9 @@
      "id": "comprehension-gap",
      "relation": "related"
     }
-   ]
+   ],
+   "prompt_examples": [],
+   "recommended_with": []
   },
   {
    "id": "goal-verification",
@@ -1502,6 +3265,12 @@
    "category_name": "循环工程",
    "source": "kangarooking/loop-engineering-skill（Loop Engineering 视频合集蒸馏）",
    "short_desc": "|\n设计 Loop 的 Goal 和 Verification 环节: 将模糊目标转化为可验证的停止条件。\n当用户发现 loop 产出质量不稳定、循环无法停止、或\"不知道什么时候算做完\"时使用。\n不适用于: 目标已经非常清晰可量的任务、或非循环场景。\n关键 trigger: \"loop 停不下来\"、\"产出质量不稳定\"、\"怎么定义完成\"、\"goal 怎么写\"。\n---\n\n## Source Metadata",
+   "content_type": "methodology",
+   "role": "内容 Skill",
+   "source_url": "",
+   "source_file_url": "",
+   "snapshot_commit": "",
+   "snapshot_date": "",
    "plain": "让AI自己反复干活（我们叫它\"循环\"）的时候，最怕两件事：一是它停不下来，二是它干出来的东西时好时坏。这套方法解决的就是这个问题：在让AI开工之前，先把\"什么叫干完了\"说清楚。怎么算说清楚？就是目标必须能测量、能检查——比如不说\"把图片做得好看\"，而说\"评分到8分以上，最多改5轮\"。前者是感觉，谁也说不准；后者是数字，到了就是到了，没到就是没到，AI自己也能判断。核心思想就一句话：循环的质量，取决于\"怎么判断完成\"这步的质量。普通人什么时候能用上？比如你让AI帮你写文章、做图、整理资料，如果它没完没了或者结果不稳定，你就该给它定一个可检查的完成标准：要几篇、多少分、最多几轮、最多多长时间，到了就停，这样你省心，结果也靠谱。",
    "use_cases": [
     "当AI循环跑了很久还停不下来时用",
@@ -1544,7 +3313,9 @@
      "id": "loop-build-path",
      "relation": "related"
     }
-   ]
+   ],
+   "prompt_examples": [],
+   "recommended_with": []
   },
   {
    "id": "loop-5plus1-architecture",
@@ -1554,6 +3325,12 @@
    "category_name": "循环工程",
    "source": "kangarooking/loop-engineering-skill（Loop Engineering 视频合集蒸馏）",
    "short_desc": "|\n设计或审计完整 Loop 系统的组件架构: 5 大组件 + 1 根脊柱。\n当用户需要搭建一个完整的 (而非最小可用的) loop 系统、或审计现有系统的组件完整性时使用。\n不适用于: 最小可用 loop 的设计、或单次任务的自动化。\n关键 trigger: \"设计一个完整的 loop 系统\"、\"我的 loop 缺什么\"、\"loop 系统怎么组织\"。\n---\n\n## Source Metadata",
+   "content_type": "methodology",
+   "role": "内容 Skill",
+   "source_url": "",
+   "source_file_url": "",
+   "snapshot_commit": "",
+   "snapshot_date": "",
    "plain": "这套方法讲的是一个“全自动机器人小分队”该怎么搭，一共要凑齐五样东西加一本记性本。首先得有个闹钟，到点自动开工，不用人催，这叫心跳；接着每个机器人都有自己的独立小办公室，一起干活也不会互相踩脚，这叫工作树；办公室里贴着工作守则，谁进来都先读一遍再动手，这叫技能；光有规矩还不行，机器人还得有手脚，能自己去翻资料、查数据库、发消息，这叫连接器；一个人干容易出错，所以写东西的和检查东西的要分成两个机器人，这叫子智能体。最后也是最关键的一样，全队共用一个记性本，把干过的事、试过的办法、没做完的事都记下来，这样机器人聊完天也不会忘，这叫脊柱。五样加一本记性本凑齐，一套完整的自动化系统就成型了。普通人什么时候用得上？比如你想让电脑每天自动整理邮件、写汇报、跟进客户，或者想检查自己搭的流程到底缺了哪块，都可以拿这份清单对照一下。",
    "use_cases": [
     "当你想搭建一套完整的自动化系统（比如每天自动处理邮件、生成报告、跟进客户）时用",
@@ -1594,7 +3371,9 @@
      "id": "goal-verification",
      "relation": "related"
     }
-   ]
+   ],
+   "prompt_examples": [],
+   "recommended_with": []
   },
   {
    "id": "loop-build-path",
@@ -1604,6 +3383,12 @@
    "category_name": "循环工程",
    "source": "kangarooking/loop-engineering-skill（Loop Engineering 视频合集蒸馏）",
    "short_desc": "|\n从\"手动做事\"到\"系统自动做事\"的四步渐进构建路径。\n当用户已经决定要做 loop、但不知道从何入手时;或团队正在将手工流程自动化时使用。\n不适用于: 尚未决定要不要做 loop 的任务、或已经稳定运行的 loop 优化。\n关键 trigger: \"怎么开始做 loop\"、\"自动化第一步\"、\"从手动到自动\"。\n---\n\n## Source Metadata",
+   "content_type": "methodology",
+   "role": "内容 Skill",
+   "source_url": "",
+   "source_file_url": "",
+   "snapshot_commit": "",
+   "snapshot_date": "",
    "plain": "这个方法教你怎么把一件反复要做的杂事，一步步变成AI自动帮你做、还会自己检查改错的系统。核心思想是别想一步到位，而是走四步渐进的路：第一步，先手动指挥AI做几遍，确认它真的能干成这件事；第二步，把指挥它的方法写成固定说明书（技能包），让AI每次照着做都一样；第三步，给AI装上触发器，比如定个时间让它到点就自动开工——但到这一步还只是\"自动化\"，只会按表干活，不会自我改进；第四步，加上检查环节和记账本，AI干完活会自己判断好不好、记下历史、下次调整。到这一步才是真正的\"循环\"。关键区别是：自动化是到点就干，循环是干了→检查→调整→再干的闭环。普通人什么时候能用上？当你有一件每天重复、规则清楚、AI又能干成的杂事（比如整理资料、回固定格式的邮件）时，就可以照这个路径把它交给AI。",
    "use_cases": [
     "当你想把一件反复做的杂事交给AI、却不知道第一步该从哪里开始时用",
@@ -1646,7 +3431,9 @@
      "id": "goal-verification",
      "relation": "related"
     }
-   ]
+   ],
+   "prompt_examples": [],
+   "recommended_with": []
   },
   {
    "id": "maker-checker",
@@ -1656,6 +3443,12 @@
    "category_name": "循环工程",
    "source": "kangarooking/loop-engineering-skill（Loop Engineering 视频合集蒸馏）",
    "short_desc": "|\n设计 Loop 中的 Maker-Checker 模式: 用独立 agent 审查产出,避免自产自检。\n当用户发现 loop 产出质量不稳定、agent 自我评估过于宽容、或需要提升产出可信度时使用。\n不适用于: 产出可以客观验证 (测试通过/失败) 的任务、或成本极其敏感的场景。\n关键 trigger: \"agent 自评不准确\"、\"产出质量不稳定\"、\"怎么让 agent 审查 agent\"。\n---\n\n## Source Metadata",
+   "content_type": "methodology",
+   "role": "内容 Skill",
+   "source_url": "",
+   "source_file_url": "",
+   "snapshot_commit": "",
+   "snapshot_date": "",
    "plain": "这个方法论解决一个很常见的问题：一个人（或一个AI）干完活后自己检查自己，往往检查不出毛病——就像学生自己给自己批改作业，总觉得自己写得挺好。Maker-Checker模式的做法很简单：把“干活”和“检查”拆成两个不同的角色。干活的人（Maker）专心把事情做出来，检查的人（Checker）在旁边挑毛病、打分、提意见，但它不能改动干活人的成果，只能评估。因为两个人思路不一样，检查的人更容易发现干活的人自己看不见的错误。这个道理在生活里到处都用得上：比如你写完一份重要文件，最好找别人帮忙过一遍，而不是自己反复看；做饭时可以让家人尝尝咸淡；发工资前让另一个人核对一遍数字。用在AI身上也一样：让一个AI写东西，再让另一个AI独立检查，就能减少“自己夸自己”造成的错误，让结果更可靠。核心思想就一句话：干活的和检查的必须是两个人，别让同一个人既当运动员又当裁判。",
    "use_cases": [
     "当你发现AI自己说“做得很好”，但实际结果很糟糕时用",
@@ -1697,7 +3490,9 @@
      "id": "loop-three-elements",
      "relation": "related"
     }
-   ]
+   ],
+   "prompt_examples": [],
+   "recommended_with": []
   },
   {
    "id": "comprehension-gap",
@@ -1707,6 +3502,12 @@
    "category_name": "循环工程",
    "source": "kangarooking/loop-engineering-skill（Loop Engineering 视频合集蒸馏）",
    "short_desc": "|\n识别和管理 Loop 系统的认知风险: 自动化程度越高,你真正理解的部分越少。\n当用户发现\"仓库里有很多代码但我看不懂\"、\"loop 产出很多但不确定对不对\"、或需要向团队警示 AI 使用风险时使用。\n不适用于: 纯技术调试、或产出完全可客观验证的场景。\n关键 trigger: \"AI 生成的代码我看不懂\"、\"产出太多理解不过来\"、\"AI 使用风险\"。\n---\n\n## Source Metadata",
+   "content_type": "methodology",
+   "role": "内容 Skill",
+   "source_url": "",
+   "source_file_url": "",
+   "snapshot_commit": "",
+   "snapshot_date": "",
    "plain": "这个方法是给让AI帮忙干活的人提个醒。AI自动做一件事、再做下一件，像机器转圈一样不停运转，我们叫它\"循环\"。循环干得越快、越多，你就越容易看不懂它到底做了什么——它一天能产出几千行东西，而你真正亲眼看过、亲手检查过的只有一点点。你脑子里真正弄懂的部分，和它实际做出来的东西之间，就出现了一条看不见的沟，这条沟就是风险：越是你不了解的内容，风险越大。最危险的还不是AI犯错，而是你习惯了它\"吐出来什么就信什么\"，舒舒服服地全盘照收，什么都不检查。这个方法论的核心思想就一句话：AI再能干，最后把关的还得是你自己，验证永远在你手上，你要时不时亲自抽查它干的活，看得懂才放心。普通人什么时候用得上？比如你用AI帮你写工作总结、整理表格、回复消息，干得多了，就偶尔打开看看它写了什么、有没有乱来，别全盘照收。",
    "use_cases": [
     "当AI帮你自动干的活越来越多，你开始看不懂它产出的是什么时用",
@@ -1750,7 +3551,9 @@
      "id": "three-stage-evolution",
      "relation": "related"
     }
-   ]
+   ],
+   "prompt_examples": [],
+   "recommended_with": []
   },
   {
    "id": "three-stage-evolution",
@@ -1760,6 +3563,12 @@
    "category_name": "循环工程",
    "source": "kangarooking/loop-engineering-skill（Loop Engineering 视频合集蒸馏）",
    "short_desc": "|\n评估个人或团队在 AI 工具使用上的进化阶段,给出下一步提升建议。\n当用户想判断\"我现在 AI 用得怎么样\"、\"下一步该学什么\"、或团队要做 AI 能力评估时使用。\n不适用于: 已经处于 Loop 阶段需要优化具体系统的场景。\n关键 trigger: \"我现在在哪个阶段\"、\"AI 使用下一步\"、\"团队 AI 能力评估\"。\n---\n\n## Source Metadata",
+   "content_type": "methodology",
+   "role": "内容 Skill",
+   "source_url": "",
+   "source_file_url": "",
+   "snapshot_commit": "",
+   "snapshot_date": "",
    "plain": "这个模型讲的是“人和AI合作”的三个阶段。第一阶段叫“逐行驾驶”：你自己动手做一件事，AI在旁边帮你补全，就像你开车、AI帮你按导航。第二阶段叫“并行手动”：你同时开好几个AI对话窗口，每个窗口都在干活，你像调度员一样在窗口之间来回切换，效率高了，但每件事都得你亲手发起。第三阶段叫“系统自主”：你不再一个个发对话，而是设计一套系统，让AI自己去看材料、发现问题、决定怎么做，你只负责搭建和监督。核心思想是：用得越好，人越少插手细节，从“自己动手”慢慢变成“设计系统让AI干活”。普通人什么时候用得上？比如你好奇“我AI用得怎么样”“下一步该学什么”，或者团队想评估大家的AI水平时，就用这套模型给自己定位。",
    "use_cases": [
     "当你想知道“我现在AI用得怎么样”时用",
@@ -1800,7 +3609,9 @@
      "id": "comprehension-gap",
      "relation": "related"
     }
-   ]
+   ],
+   "prompt_examples": [],
+   "recommended_with": []
   }
  ],
  "terms": [
@@ -2671,7 +4482,345 @@
    "term": "验收标准",
    "plain": "事先说好做到什么程度算合格，比如出错不超过几次、达到多少分，照着这个标准检查成果。",
    "skills": [
-    "role-tiered-training"
+    "role-tiered-training",
+    "grill-me"
+   ]
+  },
+  {
+   "term": "项目约定",
+   "plain": "团队对任务、文档、标签和验证方式的共同规则。",
+   "skills": [
+    "setup-matt-pocock-skills"
+   ]
+  },
+  {
+   "term": "ADR",
+   "plain": "记录一个重要技术决定、背景和取舍的短文档。",
+   "skills": [
+    "setup-matt-pocock-skills"
+   ]
+  },
+  {
+   "term": "路由",
+   "plain": "根据问题把你带到合适的处理流程。",
+   "skills": [
+    "ask-matt"
+   ]
+  },
+  {
+   "term": "工作流",
+   "plain": "多个步骤和工具按一定顺序配合完成一件事。",
+   "skills": [
+    "ask-matt"
+   ]
+  },
+  {
+   "term": "决策树",
+   "plain": "一个选择会引出后续选择的分支结构。",
+   "skills": [
+    "grill-me"
+   ]
+  },
+  {
+   "term": "领域词汇表",
+   "plain": "项目中关键业务词语的统一解释。",
+   "skills": [
+    "grill-with-docs"
+   ]
+  },
+  {
+   "term": "上下文文档",
+   "plain": "帮助新成员快速理解项目概念和约束的文档。",
+   "skills": [
+    "grill-with-docs"
+   ]
+  },
+  {
+   "term": "不变量",
+   "plain": "无论怎么操作都必须成立的规则。",
+   "skills": [
+    "domain-modeling"
+   ]
+  },
+  {
+   "term": "状态转换",
+   "plain": "一个对象从当前状态变成另一个状态的合法过程。",
+   "skills": [
+    "domain-modeling"
+   ]
+  },
+  {
+   "term": "规格",
+   "plain": "告诉实现者做什么、做到什么程度的可执行说明。",
+   "skills": [
+    "to-spec"
+   ]
+  },
+  {
+   "term": "范围外",
+   "plain": "这次明确不做、避免工作不断膨胀的部分。",
+   "skills": [
+    "to-spec"
+   ]
+  },
+  {
+   "term": "垂直切片",
+   "plain": "从界面或入口一直贯穿到真实结果、可以跑通的一小块功能。",
+   "skills": [
+    "to-tickets",
+    "implement"
+   ]
+  },
+  {
+   "term": "阻塞边",
+   "plain": "一个任务必须等另一个任务完成才能开始的关系。",
+   "skills": [
+    "to-tickets"
+   ]
+  },
+  {
+   "term": "决策票据",
+   "plain": "专门记录一个会影响路线的选择和结论的小任务。",
+   "skills": [
+    "wayfinder"
+   ]
+  },
+  {
+   "term": "前沿",
+   "plain": "当前所有前置条件已满足、可以马上处理的任务集合。",
+   "skills": [
+    "wayfinder"
+   ]
+  },
+  {
+   "term": "分流",
+   "plain": "把不同类型的问题送到合适的处理路径。",
+   "skills": [
+    "triage"
+   ]
+  },
+  {
+   "term": "可接手简报",
+   "plain": "另一个开发者拿到后可以直接开始工作的清晰说明。",
+   "skills": [
+    "triage"
+   ]
+  },
+  {
+   "term": "一手来源",
+   "plain": "由标准制定者、项目维护者或原始研究者直接发布的资料。",
+   "skills": [
+    "research"
+   ]
+  },
+  {
+   "term": "证据链",
+   "plain": "从来源到结论，中间每一步都能被检查的关系。",
+   "skills": [
+    "research"
+   ]
+  },
+  {
+   "term": "原型",
+   "plain": "用来验证想法的小型可运行版本。",
+   "skills": [
+    "prototype"
+   ]
+  },
+  {
+   "term": "设计问题",
+   "plain": "需要通过实际操作而不是争论来回答的体验或逻辑问题。",
+   "skills": [
+    "prototype"
+   ]
+  },
+  {
+   "term": "深模块",
+   "plain": "接口相对简单，但内部承载了较多复杂行为的模块。",
+   "skills": [
+    "codebase-design"
+   ]
+  },
+  {
+   "term": "切口",
+   "plain": "可以观察、测试或替换系统行为的边界。",
+   "skills": [
+    "codebase-design"
+   ]
+  },
+  {
+   "term": "范围扩张",
+   "plain": "实现过程中顺手做了规格没有要求的额外工作。",
+   "skills": [
+    "implement"
+   ]
+  },
+  {
+   "term": "红绿重构",
+   "plain": "测试失败、实现通过、整理代码的短循环。",
+   "skills": [
+    "tdd"
+   ]
+  },
+  {
+   "term": "回归测试",
+   "plain": "防止已经修好的问题以后又出现的测试。",
+   "skills": [
+    "tdd"
+   ]
+  },
+  {
+   "term": "最小复现",
+   "plain": "能稳定触发问题、且尽可能少的输入和代码路径。",
+   "skills": [
+    "diagnosing-bugs"
+   ]
+  },
+  {
+   "term": "可证伪假设",
+   "plain": "可以通过一次观测证明它不成立的具体猜测。",
+   "skills": [
+    "diagnosing-bugs"
+   ]
+  },
+  {
+   "term": "共同祖先",
+   "plain": "两个分支分叉前共同拥有的那版代码。",
+   "skills": [
+    "resolving-merge-conflicts"
+   ]
+  },
+  {
+   "term": "语义冲突",
+   "plain": "文本能合并但业务行为会互相破坏的冲突。",
+   "skills": [
+    "resolving-merge-conflicts"
+   ]
+  },
+  {
+   "term": "架构债务",
+   "plain": "现在能运行但会持续增加修改成本的设计问题。",
+   "skills": [
+    "improve-codebase-architecture"
+   ]
+  },
+  {
+   "term": "高杠杆切口",
+   "plain": "改动相对小，却能让很多后续工作变容易的边界。",
+   "skills": [
+    "improve-codebase-architecture"
+   ]
+  },
+  {
+   "term": "固定点",
+   "plain": "用来比较变更前后的 commit、分支或合并基点。",
+   "skills": [
+    "code-review"
+   ]
+  },
+  {
+   "term": "范围蔓延",
+   "plain": "改动超出原始需求，导致风险和审查成本增加。",
+   "skills": [
+    "code-review"
+   ]
+  },
+  {
+   "term": "未决分支",
+   "plain": "不同选择会导致不同实现路线、但目前还没定下来的问题。",
+   "skills": [
+    "to-questionnaire"
+   ]
+  },
+  {
+   "term": "取舍",
+   "plain": "选择一个方案时必须接受的成本或限制。",
+   "skills": [
+    "to-questionnaire"
+   ]
+  },
+  {
+   "term": "人工检查点",
+   "plain": "必须由人确认后才能继续的步骤。",
+   "skills": [
+    "wizard"
+   ]
+  },
+  {
+   "term": "回滚点",
+   "plain": "出问题时可以退回到安全状态的位置。",
+   "skills": [
+    "wizard"
+   ]
+  },
+  {
+   "term": "脚手架",
+   "plain": "给学习者提供的起步结构、提示和边界。",
+   "skills": [
+    "teach"
+   ]
+  },
+  {
+   "term": "反馈循环",
+   "plain": "做练习、看结果、调整下一步的过程。",
+   "skills": [
+    "teach"
+   ]
+  },
+  {
+   "term": "共享词汇",
+   "plain": "团队对同一个概念使用的统一叫法。",
+   "skills": [
+    "wait-what"
+   ]
+  },
+  {
+   "term": "可复述",
+   "plain": "对方能用自己的话准确说出重点。",
+   "skills": [
+    "wait-what"
+   ]
+  },
+  {
+   "term": "恢复入口",
+   "plain": "接手者读完后能马上知道从哪里继续的最小信息集合。",
+   "skills": [
+    "handoff"
+   ]
+  },
+  {
+   "term": "阻塞项",
+   "plain": "不解决就无法继续推进的具体问题。",
+   "skills": [
+    "handoff"
+   ]
+  },
+  {
+   "term": "指路文档",
+   "plain": "告诉 Agent 何时读取哪份规则和资料的短文档。",
+   "skills": [
+    "writing-for-agents"
+   ]
+  },
+  {
+   "term": "触发条件",
+   "plain": "某条规则在什么任务或目录下才适用。",
+   "skills": [
+    "writing-for-agents"
+   ]
+  },
+  {
+   "term": "frontier",
+   "plain": "前置条件已经满足、现在可以问或处理的决策集合。",
+   "skills": [
+    "grilling"
+   ]
+  },
+  {
+   "term": "共享理解",
+   "plain": "双方对目标、边界和选择结果的理解一致。",
+   "skills": [
+    "grilling"
    ]
   },
   {

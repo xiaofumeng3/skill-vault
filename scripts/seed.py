@@ -3,7 +3,7 @@
 """
 skill-vault 数据构建脚本
 =======================
-1. 读取 content/*.json（27 个 skill 的内容包）
+1. 读取 content/*.json（60 个 skill 的内容包）
 2. 从 skills_src/*/SKILL.md 提取官方描述(short_desc)与相关技能(related)
 3. 构建 SQLite 数据库 db/skills.db（categories / skills / terms 三张表）
 4. 导出 web/data/skills.json 供前端使用
@@ -31,6 +31,7 @@ CATEGORIES = [
     {"id": "data",  "name": "数据与技术", "icon": "📊", "description": "数据基础设施"},
     {"id": "strat", "name": "战略与转型", "icon": "🚀", "description": "组织层面怎么走"},
     {"id": "org",   "name": "组织与团队", "icon": "👥", "description": "人 / 协作"},
+    {"id": "coding", "name": "编程智能体", "icon": "🧑‍💻", "description": "需求 / 代码 / 测试 / 审查"},
     {"id": "meta",  "name": "元技能 / 工具", "icon": "🧰", "description": "工具类技能"},
     {"id": "loop",  "name": "循环工程", "icon": "⚡", "description": "设计 AI 自动化循环系统（Loop Engineering）"},
 ]
@@ -40,6 +41,38 @@ SOURCE_AI = "吴恩达《AI for Everyone》· kangarooking/ai-for-everyone-skill
 SOURCE_CANGJIE = "kangarooking/cangjie-skill（拆书蒸馏元技能）"
 SOURCE_FIND = "DSH 内置技能（skills.sh 生态）"
 SOURCE_LOOP = "kangarooking/loop-engineering-skill（Loop Engineering 视频合集蒸馏）"
+SOURCE_MATT = "mattpocock/skills（固定快照）"
+MATT_REPO_URL = "https://github.com/mattpocock/skills"
+MATT_COMMIT = "9c9f36ccd3995266cd675468af71639c8dde1ec5"
+MATT_SNAPSHOT_DATE = "2026-08-19"
+
+MATT_SOURCE_PATHS = {
+    "ask-matt": "skills/engineering/ask-matt",
+    "code-review": "skills/engineering/code-review",
+    "codebase-design": "skills/engineering/codebase-design",
+    "diagnosing-bugs": "skills/engineering/diagnosing-bugs",
+    "domain-modeling": "skills/engineering/domain-modeling",
+    "grill-with-docs": "skills/engineering/grill-with-docs",
+    "implement": "skills/engineering/implement",
+    "improve-codebase-architecture": "skills/engineering/improve-codebase-architecture",
+    "prototype": "skills/engineering/prototype",
+    "research": "skills/engineering/research",
+    "resolving-merge-conflicts": "skills/engineering/resolving-merge-conflicts",
+    "setup-matt-pocock-skills": "skills/engineering/setup-matt-pocock-skills",
+    "tdd": "skills/engineering/tdd",
+    "to-spec": "skills/engineering/to-spec",
+    "to-tickets": "skills/engineering/to-tickets",
+    "triage": "skills/engineering/triage",
+    "wayfinder": "skills/engineering/wayfinder",
+    "wizard": "skills/engineering/wizard",
+    "grill-me": "skills/productivity/grill-me",
+    "grilling": "skills/productivity/grilling",
+    "handoff": "skills/productivity/handoff",
+    "teach": "skills/productivity/teach",
+    "to-questionnaire": "skills/productivity/to-questionnaire",
+    "wait-what": "skills/productivity/wait-what",
+    "writing-for-agents": "skills/productivity/writing-for-agents",
+}
 
 # ---------- skill -> (分类, 来源) 映射（扩展时在此追加一行） ----------
 SKILL_META = {
@@ -68,6 +101,31 @@ SKILL_META = {
     "cross-functional-brainstorming": ("strat", SOURCE_AI),
     "ai-team-building": ("org", SOURCE_AI),
     "role-tiered-training": ("org", SOURCE_AI),
+    "setup-matt-pocock-skills": ("coding", SOURCE_MATT),
+    "ask-matt": ("coding", SOURCE_MATT),
+    "grill-me": ("coding", SOURCE_MATT),
+    "grill-with-docs": ("coding", SOURCE_MATT),
+    "domain-modeling": ("coding", SOURCE_MATT),
+    "to-spec": ("coding", SOURCE_MATT),
+    "to-tickets": ("coding", SOURCE_MATT),
+    "wayfinder": ("coding", SOURCE_MATT),
+    "triage": ("coding", SOURCE_MATT),
+    "research": ("coding", SOURCE_MATT),
+    "prototype": ("coding", SOURCE_MATT),
+    "codebase-design": ("coding", SOURCE_MATT),
+    "implement": ("coding", SOURCE_MATT),
+    "tdd": ("coding", SOURCE_MATT),
+    "diagnosing-bugs": ("coding", SOURCE_MATT),
+    "resolving-merge-conflicts": ("coding", SOURCE_MATT),
+    "improve-codebase-architecture": ("coding", SOURCE_MATT),
+    "code-review": ("coding", SOURCE_MATT),
+    "to-questionnaire": ("coding", SOURCE_MATT),
+    "wizard": ("coding", SOURCE_MATT),
+    "teach": ("coding", SOURCE_MATT),
+    "wait-what": ("coding", SOURCE_MATT),
+    "handoff": ("coding", SOURCE_MATT),
+    "writing-for-agents": ("coding", SOURCE_MATT),
+    "grilling": ("coding", SOURCE_MATT),
     "cangjie-skill": ("meta", SOURCE_CANGJIE),
     "find-skills": ("meta", SOURCE_FIND),
     "loop-three-elements": ("loop", SOURCE_LOOP),
@@ -172,6 +230,12 @@ def main():
             category_id TEXT REFERENCES categories(id),
             source      TEXT,
             short_desc  TEXT,
+            content_type TEXT,
+            role        TEXT,
+            source_url  TEXT,
+            source_file_url TEXT,
+            snapshot_commit TEXT,
+            snapshot_date TEXT,
             plain       TEXT,
             use_cases   TEXT,
             example     TEXT,
@@ -181,6 +245,8 @@ def main():
             steps       TEXT,
             boundary    TEXT,
             related     TEXT,
+            prompt_examples TEXT,
+            recommended_with TEXT,
             sort_order  INTEGER
         );
         CREATE TABLE terms (
@@ -208,11 +274,21 @@ def main():
         desc, related = parse_skill_md(sid)
         cur.execute(
             """INSERT INTO skills
-               (id, name, name_cn, category_id, source, short_desc, plain,
-                use_cases, example, quote, core, cases, steps, boundary, related, sort_order)
-               VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
+               (id, name, name_cn, category_id, source, short_desc,
+                content_type, role, source_url, source_file_url, snapshot_commit,
+                snapshot_date,
+                plain, use_cases, example, quote, core, cases, steps, boundary,
+                related, prompt_examples, recommended_with, sort_order)
+               VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
             (
                 sid, sid, c.get("name_cn", ""), cat, source, desc,
+                c.get("content_type", "methodology"),
+                c.get("role", "内容 Skill"),
+                MATT_REPO_URL if sid in MATT_SOURCE_PATHS else "",
+                (f"{MATT_REPO_URL}/blob/{MATT_COMMIT}/{MATT_SOURCE_PATHS[sid]}/SKILL.md"
+                 if sid in MATT_SOURCE_PATHS else ""),
+                MATT_COMMIT if sid in MATT_SOURCE_PATHS else "",
+                MATT_SNAPSHOT_DATE if sid in MATT_SOURCE_PATHS else "",
                 c.get("plain", ""),
                 json.dumps(c.get("use_cases", []), ensure_ascii=False),
                 c.get("example", ""),
@@ -222,6 +298,8 @@ def main():
                 json.dumps(c.get("steps", []), ensure_ascii=False),
                 json.dumps(c.get("boundary", []), ensure_ascii=False),
                 json.dumps(related, ensure_ascii=False),
+                json.dumps(c.get("prompt_examples", []), ensure_ascii=False),
+                json.dumps(c.get("recommended_with", []), ensure_ascii=False),
                 order,
             ),
         )
@@ -244,6 +322,13 @@ def main():
                 "category_name": CATEGORY_NAMES[cat],
                 "source": source,
                 "short_desc": desc,
+                "content_type": c.get("content_type", "methodology"),
+                "role": c.get("role", "内容 Skill"),
+                "source_url": MATT_REPO_URL if sid in MATT_SOURCE_PATHS else "",
+                "source_file_url": (f"{MATT_REPO_URL}/blob/{MATT_COMMIT}/{MATT_SOURCE_PATHS[sid]}/SKILL.md"
+                                    if sid in MATT_SOURCE_PATHS else ""),
+                "snapshot_commit": MATT_COMMIT if sid in MATT_SOURCE_PATHS else "",
+                "snapshot_date": MATT_SNAPSHOT_DATE if sid in MATT_SOURCE_PATHS else "",
                 "plain": c.get("plain", ""),
                 "use_cases": c.get("use_cases", []),
                 "example": c.get("example", ""),
@@ -253,6 +338,8 @@ def main():
                 "steps": c.get("steps", []),
                 "boundary": c.get("boundary", []),
                 "related": related,
+                "prompt_examples": c.get("prompt_examples", []),
+                "recommended_with": c.get("recommended_with", []),
             }
         )
 

@@ -1,0 +1,6 @@
+{
+  "repository": "https://github.com/mattpocock/skills",
+  "commit": "9c9f36ccd3995266cd675468af71639c8dde1ec5",
+  "captured_at": "2026-08-19",
+  "note": "Fixed snapshot copied into skill-vault; not automatically synchronized."
+}

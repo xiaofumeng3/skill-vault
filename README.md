@@ -1,13 +1,14 @@
 # 🧠 skill-vault — AI 方法论技能库
 
-把已安装的 27 个 AI 方法论技能做成一个**带数据库的可视化网页**：每个技能有小白版大白话解释、使用场景、生活化例子、原文金句、方法论骨架、书中案例、可执行步骤、边界，另有独立的名词术语表。响应式设计，手机可直接访问。
+把已安装的 60 个技能做成一个**带数据库的可视化网页**：现有 AI 方法论技能，加上 25 个编程智能体工作流。每个技能有小白版大白话解释、使用场景、生活化例子、原则/骨架、案例、可执行步骤、边界和术语；编程智能体另外提供可复制的 Codex 调用示例、推荐组合、角色标签和固定版本来源。响应式设计，手机可直接访问。
 
 ## 📁 项目结构
 
 ```
 skill-vault/
-├── skills_src/           # 原始 SKILL.md 源文件（35 个技能，只读参考）
+├── skills_src/           # 原始 SKILL.md 源文件（60 个技能，只读参考）
 │   └── <skill-id>/SKILL.md   # ★ 规范：每个技能一个目录，直接放在 skills_src/ 下（目录名 = 技能 id）
+│   └── _upstream/             # 第三方固定快照、许可证和来源元数据
 ├── content/              # 内容包 JSON（每个技能一个：大白话解释/场景/案例…）
 ├── scripts/
 │   ├── seed.py           # ★ 主构建脚本：建库 + 导入 + 导出
@@ -21,14 +22,14 @@ skill-vault/
     └── data/skills.json  # 前端数据源（由 seed.py 从数据库导出）
 ```
 
-**数据流**：`skills_src/*.md + content/*.json → seed.py → db/skills.db → web/data/skills.json → 网页`
+**数据流**：`skills_src/* + content/*.json → seed.py → db/skills.db → web/data/skills.json → 网页`
 
 ## 🗄️ 数据库（db/skills.db）
 
 | 表 | 说明 | 关键字段 |
 |---|---|---|
 | `categories` | 分类 | id, name, icon |
-| `skills` | 技能主表 | id, name_cn, category_id, source, plain(大白话), use_cases, example, quote, core, cases, steps, boundary, related |
+| `skills` | 技能主表 | id, name_cn, category_id, content_type, role, source, plain(大白话), use_cases, example, quote/core, cases, steps, boundary, prompt_examples, recommended_with, source_file_url, snapshot_commit, snapshot_date |
 | `terms` | 名词术语 | term, plain(大白话解释), skill_id |
 
 > 网页不直接连数据库——`seed.py` 把数据导出成 `web/data/skills.json`（纯静态，任何托管都能跑，无需后端）。
@@ -41,7 +42,9 @@ skill-vault/
 
 > 相关技能（related）解析支持两种 SKILL.md 写法：正文的 `**id** (relation)` 格式，以及 yaml 块里的 `related_skills: [a, b]` / `- slug: a` 格式。
 
-分类 id：`eval` 评估与决策 / `exec` 流程与执行 / `data` 数据与技术 / `strat` 战略与转型 / `org` 组织与团队 / `meta` 元技能工具（也可在 `CATEGORIES` 里新增分类）。
+分类 id：`eval` 评估与决策 / `exec` 流程与执行 / `data` 数据与技术 / `strat` 战略与转型 / `org` 组织与团队 / `coding` 编程智能体 / `meta` 元技能工具 / `loop` 循环工程（也可在 `CATEGORIES` 里新增分类）。
+
+编程智能体固定快照：`mattpocock/skills@9c9f36ccd3995266cd675468af71639c8dde1ec5`（快照日期：`2026-08-19`）。来源仓库、原始 `SKILL.md` 和许可证保存在 `skills_src/_upstream/mattpocock-skills/`。
 
 ## 🖥️ 本地预览
 
@@ -71,3 +74,4 @@ python -m http.server 8765 --bind 0.0.0.0 --directory web
 | 重建数据库 + 导出前端数据 | `python scripts/seed.py` |
 | 校验数据完整性 | `python scripts/verify.py` |
 | 改某个技能的大白话解释 | 编辑 `content/<id>.json` 后重建 |
+| 校验编程智能体收录 | `python scripts/test_coding_skills.py` |

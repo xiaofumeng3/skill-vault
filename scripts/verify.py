@@ -22,5 +22,13 @@ conn.close()
 d = json.load(open(r"G:\mywork\skill-vault\web\data\skills.json", encoding="utf-8"))
 print("== web json ==")
 print("  skills:", len(d["skills"]), "terms:", len(d["terms"]), "categories:", len(d["categories"]))
+coding = [s for s in d["skills"] if s.get("category") == "coding"]
+print("  coding skills:", len(coding))
+assert len(d["skills"]) == 60, "expected 60 skills"
+assert len(coding) == 25, "expected 25 coding-agent skills"
+assert all(s.get("content_type") == "coding-agent" for s in coding)
+assert all(len(s.get("prompt_examples", [])) == 2 for s in coding)
+assert all(s.get("snapshot_commit") for s in coding)
+assert all(s.get("snapshot_date") == "2026-08-19" for s in coding)
 print("  first skill keys:", sorted(d["skills"][0].keys()))
 print("  all skills:", [s["id"] for s in d["skills"]])

@@ -1,0 +1,17 @@
+{
+  "id": "improve-codebase-architecture",
+  "name_cn": "架构改进扫描",
+  "content_type": "coding-agent",
+  "role": "核心 Skill",
+  "plain": "它会扫描整个代码库，找出哪些模块太浅、接口太宽、职责混乱，然后生成一份报告，让你选择最值得改的一处，再进入追问和改造。",
+  "use_cases": ["代码越改越乱时", "想系统改善模块边界时", "需要按价值排序架构债务时"],
+  "example": "报告发现所有页面都直接操作数据库，于是先挑最影响变更速度的一条业务链加深，而不是全项目一起重写。",
+  "quote": "架构改进应该从一个有证据的高杠杆切口开始。",
+  "core": "以代码库设计的深模块 vocabulary 扫描改进机会，输出可视化报告，再通过追问选择一个最有价值、最可控的改造点。",
+  "cases": ["找出重复业务规则和跨层泄漏。", "比较多个候选重构点的收益、风险和验证成本。"],
+  "steps": ["读取结构、依赖和测试情况。", "识别模块浅、接口宽和职责分散的位置。", "生成候选改进报告。", "选择一个切口并转入规格、TDD 和实现。"],
+  "boundary": ["它是扫描和排序工具，不是自动重写整个系统。", "没有测试保护的核心模块应先补验证。", "报告中的机会需要结合业务优先级判断。"],
+  "terms": [{"term": "架构债务", "plain": "现在能运行但会持续增加修改成本的设计问题。"}, {"term": "高杠杆切口", "plain": "改动相对小，却能让很多后续工作变容易的边界。"}],
+  "prompt_examples": [{"title": "快速调用", "prompt": "$improve-codebase-architecture 扫描项目，找出最值得改善的三个架构切口。"}, {"title": "完整调用", "prompt": "$improve-codebase-architecture 分析____代码库。请结合依赖、变更热点、测试边界和模块深度生成 HTML 报告，按收益/风险/验证成本排序；先让我选择一个切口，再进入设计和实现。"}],
+  "recommended_with": [{"title": "架构改进闭环", "skills": ["improve-codebase-architecture", "grill-me", "codebase-design", "tdd", "code-review"]}]
+}
